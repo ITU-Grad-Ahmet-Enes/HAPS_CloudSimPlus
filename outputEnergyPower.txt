@@ -1,0 +1,721 @@
+Number of brokers: 3
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 1.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 50.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 225.93
+Broker ID: 2, Total Energy Consumption in KWatt: 225.93
+Broker ID: 3, Total Energy Consumption in KWatt: 225.93
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 268.49
+Broker ID: 2, Total Energy Consumption in KWatt: 309.49
+Broker ID: 3, Total Energy Consumption in KWatt: 384.49
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 507.81
+Broker ID: 2, Total Energy Consumption in KWatt: 467.81
+Broker ID: 3, Total Energy Consumption in KWatt: 427.81
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 534.6
+Broker ID: 2, Total Energy Consumption in KWatt: 344.6
+Broker ID: 3, Total Energy Consumption in KWatt: 344.6
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 663.97
+Broker ID: 2, Total Energy Consumption in KWatt: 508.97
+Broker ID: 3, Total Energy Consumption in KWatt: 468.97
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 416.16
+Broker ID: 2, Total Energy Consumption in KWatt: 580.32
+Broker ID: 3, Total Energy Consumption in KWatt: 660.32
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 575.19
+Broker ID: 2, Total Energy Consumption in KWatt: 773.52
+Broker ID: 3, Total Energy Consumption in KWatt: 653.52
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 823.11
+Broker ID: 2, Total Energy Consumption in KWatt: 823.11
+Broker ID: 3, Total Energy Consumption in KWatt: 659.36
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 808.26
+Broker ID: 2, Total Energy Consumption in KWatt: 773.26
+Broker ID: 3, Total Energy Consumption in KWatt: 733.26
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 817.22
+Broker ID: 2, Total Energy Consumption in KWatt: 818.22
+Broker ID: 3, Total Energy Consumption in KWatt: 818.22
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 827.74
+Broker ID: 2, Total Energy Consumption in KWatt: 827.74
+Broker ID: 3, Total Energy Consumption in KWatt: 827.74
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 2.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 100.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 2000, Ram for Host: 4096, Storage for Host: 2000000, BW for Host: 20000, Mips for Vm: 2000, Size for Vm: 20000, Ram for Vm: 1024, BW for Vm: 2000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 426.78
+Broker ID: 2, Total Energy Consumption in KWatt: 426.78
+Broker ID: 3, Total Energy Consumption in KWatt: 426.78
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 549.69
+Broker ID: 2, Total Energy Consumption in KWatt: 624.69
+Broker ID: 3, Total Energy Consumption in KWatt: 549.69
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 508.53
+Broker ID: 2, Total Energy Consumption in KWatt: 703.53
+Broker ID: 3, Total Energy Consumption in KWatt: 588.53
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 659.23
+Broker ID: 2, Total Energy Consumption in KWatt: 579.23
+Broker ID: 3, Total Energy Consumption in KWatt: 659.23
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 731.77
+Broker ID: 2, Total Energy Consumption in KWatt: 851.77
+Broker ID: 3, Total Energy Consumption in KWatt: 811.77
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 850.12
+Broker ID: 2, Total Energy Consumption in KWatt: 726.62
+Broker ID: 3, Total Energy Consumption in KWatt: 970.12
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 973.44
+Broker ID: 2, Total Energy Consumption in KWatt: 809.11
+Broker ID: 3, Total Energy Consumption in KWatt: 933.44
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 917.74
+Broker ID: 2, Total Energy Consumption in KWatt: 977.74
+Broker ID: 3, Total Energy Consumption in KWatt: 781.08
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 913.93
+Broker ID: 2, Total Energy Consumption in KWatt: 913.93
+Broker ID: 3, Total Energy Consumption in KWatt: 913.93
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 898.05
+Broker ID: 2, Total Energy Consumption in KWatt: 938.05
+Broker ID: 3, Total Energy Consumption in KWatt: 828.05
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 815.87
+Broker ID: 2, Total Energy Consumption in KWatt: 815.87
+Broker ID: 3, Total Energy Consumption in KWatt: 815.87
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 3.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 150.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 3000, Ram for Host: 6144, Storage for Host: 3000000, BW for Host: 30000, Mips for Vm: 3000, Size for Vm: 30000, Ram for Vm: 1536, BW for Vm: 3000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 610.13
+Broker ID: 2, Total Energy Consumption in KWatt: 610.13
+Broker ID: 3, Total Energy Consumption in KWatt: 610.13
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 698.19
+Broker ID: 2, Total Energy Consumption in KWatt: 698.19
+Broker ID: 3, Total Energy Consumption in KWatt: 659.86
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 846.98
+Broker ID: 2, Total Energy Consumption in KWatt: 886.98
+Broker ID: 3, Total Energy Consumption in KWatt: 766.98
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 965.68
+Broker ID: 2, Total Energy Consumption in KWatt: 845.68
+Broker ID: 3, Total Energy Consumption in KWatt: 807.35
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 1054.04
+Broker ID: 2, Total Energy Consumption in KWatt: 894.04
+Broker ID: 3, Total Energy Consumption in KWatt: 773.04
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 1048.2
+Broker ID: 2, Total Energy Consumption in KWatt: 928.2
+Broker ID: 3, Total Energy Consumption in KWatt: 1008.2
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 877.71
+Broker ID: 2, Total Energy Consumption in KWatt: 1076.87
+Broker ID: 3, Total Energy Consumption in KWatt: 1076.87
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 1121.99
+Broker ID: 2, Total Energy Consumption in KWatt: 997.41
+Broker ID: 3, Total Energy Consumption in KWatt: 1116.99
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 1163.56
+Broker ID: 2, Total Energy Consumption in KWatt: 1032.89
+Broker ID: 3, Total Energy Consumption in KWatt: 1032.89
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1039.13
+Broker ID: 2, Total Energy Consumption in KWatt: 821.63
+Broker ID: 3, Total Energy Consumption in KWatt: 1116.63
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 830.16
+Broker ID: 2, Total Energy Consumption in KWatt: 830.16
+Broker ID: 3, Total Energy Consumption in KWatt: 830.16
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 4.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 200.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 4000, Ram for Host: 8192, Storage for Host: 4000000, BW for Host: 40000, Mips for Vm: 4000, Size for Vm: 40000, Ram for Vm: 2048, BW for Vm: 4000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 807.01
+Broker ID: 2, Total Energy Consumption in KWatt: 807.01
+Broker ID: 3, Total Energy Consumption in KWatt: 807.01
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 909.38
+Broker ID: 2, Total Energy Consumption in KWatt: 951.88
+Broker ID: 3, Total Energy Consumption in KWatt: 986.88
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 1029.83
+Broker ID: 2, Total Energy Consumption in KWatt: 876.5
+Broker ID: 3, Total Energy Consumption in KWatt: 914.83
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 965.85
+Broker ID: 2, Total Energy Consumption in KWatt: 1008.35
+Broker ID: 3, Total Energy Consumption in KWatt: 1008.35
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 1086.8
+Broker ID: 2, Total Energy Consumption in KWatt: 1287.8
+Broker ID: 3, Total Energy Consumption in KWatt: 1127.8
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 1218.47
+Broker ID: 2, Total Energy Consumption in KWatt: 1253.47
+Broker ID: 3, Total Energy Consumption in KWatt: 1178.47
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 1127.98
+Broker ID: 2, Total Energy Consumption in KWatt: 1247.98
+Broker ID: 3, Total Energy Consumption in KWatt: 1362.98
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 1210.8
+Broker ID: 2, Total Energy Consumption in KWatt: 1373.3
+Broker ID: 3, Total Energy Consumption in KWatt: 1253.3
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 1255.84
+Broker ID: 2, Total Energy Consumption in KWatt: 1335.84
+Broker ID: 3, Total Energy Consumption in KWatt: 1255.84
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1035.91
+Broker ID: 2, Total Energy Consumption in KWatt: 1134.91
+Broker ID: 3, Total Energy Consumption in KWatt: 1035.91
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 823.8
+Broker ID: 2, Total Energy Consumption in KWatt: 823.8
+Broker ID: 3, Total Energy Consumption in KWatt: 823.8
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 5.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 250.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 5000, Ram for Host: 10240, Storage for Host: 5000000, BW for Host: 50000, Mips for Vm: 5000, Size for Vm: 50000, Ram for Vm: 2560, BW for Vm: 5000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 966.45
+Broker ID: 2, Total Energy Consumption in KWatt: 966.45
+Broker ID: 3, Total Energy Consumption in KWatt: 966.45
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 1040.91
+Broker ID: 2, Total Energy Consumption in KWatt: 1079.24
+Broker ID: 3, Total Energy Consumption in KWatt: 1079.24
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 1077.25
+Broker ID: 2, Total Energy Consumption in KWatt: 1117.25
+Broker ID: 3, Total Energy Consumption in KWatt: 1037.25
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 1334.18
+Broker ID: 2, Total Energy Consumption in KWatt: 1214.18
+Broker ID: 3, Total Energy Consumption in KWatt: 1174.18
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 1298.09
+Broker ID: 2, Total Energy Consumption in KWatt: 1218.09
+Broker ID: 3, Total Energy Consumption in KWatt: 1218.09
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 1411.05
+Broker ID: 2, Total Energy Consumption in KWatt: 1212.72
+Broker ID: 3, Total Energy Consumption in KWatt: 1331.05
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 1500.96
+Broker ID: 2, Total Energy Consumption in KWatt: 1382.63
+Broker ID: 3, Total Energy Consumption in KWatt: 1460.96
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 1122.88
+Broker ID: 2, Total Energy Consumption in KWatt: 1527.88
+Broker ID: 3, Total Energy Consumption in KWatt: 1489.55
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 1365.31
+Broker ID: 2, Total Energy Consumption in KWatt: 1095.31
+Broker ID: 3, Total Energy Consumption in KWatt: 1423.65
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1256.17
+Broker ID: 2, Total Energy Consumption in KWatt: 1256.17
+Broker ID: 3, Total Energy Consumption in KWatt: 826.17
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 818.41
+Broker ID: 2, Total Energy Consumption in KWatt: 818.41
+Broker ID: 3, Total Energy Consumption in KWatt: 818.41
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 6.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 300.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 6000, Ram for Host: 12288, Storage for Host: 6000000, BW for Host: 60000, Mips for Vm: 6000, Size for Vm: 60000, Ram for Vm: 3072, BW for Vm: 6000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 1191.96
+Broker ID: 2, Total Energy Consumption in KWatt: 1191.96
+Broker ID: 3, Total Energy Consumption in KWatt: 1191.96
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 1283.89
+Broker ID: 2, Total Energy Consumption in KWatt: 1160.56
+Broker ID: 3, Total Energy Consumption in KWatt: 1243.89
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 1352.04
+Broker ID: 2, Total Energy Consumption in KWatt: 1392.04
+Broker ID: 3, Total Energy Consumption in KWatt: 1269.54
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 1488.28
+Broker ID: 2, Total Energy Consumption in KWatt: 1408.28
+Broker ID: 3, Total Energy Consumption in KWatt: 1488.28
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 1455.54
+Broker ID: 2, Total Energy Consumption in KWatt: 1573.04
+Broker ID: 3, Total Energy Consumption in KWatt: 1498.04
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 1634.5
+Broker ID: 2, Total Energy Consumption in KWatt: 1554.5
+Broker ID: 3, Total Energy Consumption in KWatt: 1477.84
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 1541.76
+Broker ID: 2, Total Energy Consumption in KWatt: 1501.76
+Broker ID: 3, Total Energy Consumption in KWatt: 1541.76
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 1610.19
+Broker ID: 2, Total Energy Consumption in KWatt: 1659.36
+Broker ID: 3, Total Energy Consumption in KWatt: 1740.19
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 1693.16
+Broker ID: 2, Total Energy Consumption in KWatt: 1735.66
+Broker ID: 3, Total Energy Consumption in KWatt: 1575.66
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1366.35
+Broker ID: 2, Total Energy Consumption in KWatt: 1196.35
+Broker ID: 3, Total Energy Consumption in KWatt: 1366.35
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 821.29
+Broker ID: 2, Total Energy Consumption in KWatt: 821.29
+Broker ID: 3, Total Energy Consumption in KWatt: 821.29
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 7.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 350.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 7000, Ram for Host: 14336, Storage for Host: 7000000, BW for Host: 70000, Mips for Vm: 7000, Size for Vm: 70000, Ram for Vm: 3584, BW for Vm: 7000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 1345.81
+Broker ID: 2, Total Energy Consumption in KWatt: 1345.81
+Broker ID: 3, Total Energy Consumption in KWatt: 1345.81
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 1391.85
+Broker ID: 2, Total Energy Consumption in KWatt: 1391.85
+Broker ID: 3, Total Energy Consumption in KWatt: 1349.35
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 1419.12
+Broker ID: 2, Total Energy Consumption in KWatt: 1539.12
+Broker ID: 3, Total Energy Consumption in KWatt: 1459.12
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 1591.47
+Broker ID: 2, Total Energy Consumption in KWatt: 1431.47
+Broker ID: 3, Total Energy Consumption in KWatt: 1511.47
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 1871.08
+Broker ID: 2, Total Energy Consumption in KWatt: 1671.08
+Broker ID: 3, Total Energy Consumption in KWatt: 1671.08
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 1571.66
+Broker ID: 2, Total Energy Consumption in KWatt: 1691.66
+Broker ID: 3, Total Energy Consumption in KWatt: 1811.66
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 1755.5
+Broker ID: 2, Total Energy Consumption in KWatt: 1910.5
+Broker ID: 3, Total Energy Consumption in KWatt: 1835.5
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 1467.8
+Broker ID: 2, Total Energy Consumption in KWatt: 1909.3
+Broker ID: 3, Total Energy Consumption in KWatt: 1712.8
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 1853.48
+Broker ID: 2, Total Energy Consumption in KWatt: 1853.48
+Broker ID: 3, Total Energy Consumption in KWatt: 1020.98
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1499.27
+Broker ID: 2, Total Energy Consumption in KWatt: 1261.77
+Broker ID: 3, Total Energy Consumption in KWatt: 1261.77
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 819.27
+Broker ID: 2, Total Energy Consumption in KWatt: 819.27
+Broker ID: 3, Total Energy Consumption in KWatt: 819.27
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 8.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 400.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 8000, Ram for Host: 16384, Storage for Host: 8000000, BW for Host: 80000, Mips for Vm: 8000, Size for Vm: 80000, Ram for Vm: 4096, BW for Vm: 8000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 1485.81
+Broker ID: 2, Total Energy Consumption in KWatt: 1485.81
+Broker ID: 3, Total Energy Consumption in KWatt: 1485.81
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 1669.77
+Broker ID: 2, Total Energy Consumption in KWatt: 1589.77
+Broker ID: 3, Total Energy Consumption in KWatt: 1589.77
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 1592.53
+Broker ID: 2, Total Energy Consumption in KWatt: 1752.53
+Broker ID: 3, Total Energy Consumption in KWatt: 1592.53
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 1749.55
+Broker ID: 2, Total Energy Consumption in KWatt: 1749.55
+Broker ID: 3, Total Energy Consumption in KWatt: 1789.55
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 1826.08
+Broker ID: 2, Total Energy Consumption in KWatt: 1866.08
+Broker ID: 3, Total Energy Consumption in KWatt: 1660.08
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 1822.83
+Broker ID: 2, Total Energy Consumption in KWatt: 1977.83
+Broker ID: 3, Total Energy Consumption in KWatt: 1902.83
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 2030.61
+Broker ID: 2, Total Energy Consumption in KWatt: 2070.61
+Broker ID: 3, Total Energy Consumption in KWatt: 1990.61
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 2021.7
+Broker ID: 2, Total Energy Consumption in KWatt: 2061.7
+Broker ID: 3, Total Energy Consumption in KWatt: 2061.7
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 1795.33
+Broker ID: 2, Total Energy Consumption in KWatt: 1307.16
+Broker ID: 3, Total Energy Consumption in KWatt: 2040.49
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1309.4
+Broker ID: 2, Total Energy Consumption in KWatt: 1789.4
+Broker ID: 3, Total Energy Consumption in KWatt: 824.4
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 816.06
+Broker ID: 2, Total Energy Consumption in KWatt: 816.06
+Broker ID: 3, Total Energy Consumption in KWatt: 816.06
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 9.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 450.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 9000, Ram for Host: 18432, Storage for Host: 9000000, BW for Host: 90000, Mips for Vm: 9000, Size for Vm: 90000, Ram for Vm: 4608, BW for Vm: 9000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 1753.84
+Broker ID: 2, Total Energy Consumption in KWatt: 1753.84
+Broker ID: 3, Total Energy Consumption in KWatt: 1753.84
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 1923.5
+Broker ID: 2, Total Energy Consumption in KWatt: 1923.5
+Broker ID: 3, Total Energy Consumption in KWatt: 1805.17
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 1870.8
+Broker ID: 2, Total Energy Consumption in KWatt: 1870.8
+Broker ID: 3, Total Energy Consumption in KWatt: 1905.8
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 1981.97
+Broker ID: 2, Total Energy Consumption in KWatt: 1981.97
+Broker ID: 3, Total Energy Consumption in KWatt: 2061.97
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 1970.59
+Broker ID: 2, Total Energy Consumption in KWatt: 2131.42
+Broker ID: 3, Total Energy Consumption in KWatt: 2091.42
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 2177.34
+Broker ID: 2, Total Energy Consumption in KWatt: 2212.34
+Broker ID: 3, Total Energy Consumption in KWatt: 2177.34
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 2316.43
+Broker ID: 2, Total Energy Consumption in KWatt: 2018.93
+Broker ID: 3, Total Energy Consumption in KWatt: 2316.43
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 2302.87
+Broker ID: 2, Total Energy Consumption in KWatt: 1450.37
+Broker ID: 3, Total Energy Consumption in KWatt: 2221.87
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 2023.88
+Broker ID: 2, Total Energy Consumption in KWatt: 2096.88
+Broker ID: 3, Total Energy Consumption in KWatt: 1413.88
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 2242.86
+Broker ID: 2, Total Energy Consumption in KWatt: 1432.19
+Broker ID: 3, Total Energy Consumption in KWatt: 1142.19
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 833.86
+Broker ID: 2, Total Energy Consumption in KWatt: 833.86
+Broker ID: 3, Total Energy Consumption in KWatt: 833.86
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 10.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 500.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 10000, Ram for Host: 20480, Storage for Host: 10000000, BW for Host: 100000, Mips for Vm: 10000, Size for Vm: 100000, Ram for Vm: 5120, BW for Vm: 10000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 1835.6
+Broker ID: 2, Total Energy Consumption in KWatt: 1835.6
+Broker ID: 3, Total Energy Consumption in KWatt: 1835.6
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 1876.83
+Broker ID: 2, Total Energy Consumption in KWatt: 1916.83
+Broker ID: 3, Total Energy Consumption in KWatt: 1956.83
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 2020.49
+Broker ID: 2, Total Energy Consumption in KWatt: 1900.49
+Broker ID: 3, Total Energy Consumption in KWatt: 1980.49
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 1954.0
+Broker ID: 2, Total Energy Consumption in KWatt: 2074.0
+Broker ID: 3, Total Energy Consumption in KWatt: 2034.0
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 2133.4
+Broker ID: 2, Total Energy Consumption in KWatt: 1973.4
+Broker ID: 3, Total Energy Consumption in KWatt: 2213.4
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 2219.1
+Broker ID: 2, Total Energy Consumption in KWatt: 2259.1
+Broker ID: 3, Total Energy Consumption in KWatt: 2139.1
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 2301.34
+Broker ID: 2, Total Energy Consumption in KWatt: 2178.84
+Broker ID: 3, Total Energy Consumption in KWatt: 2301.34
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 2124.96
+Broker ID: 2, Total Energy Consumption in KWatt: 2434.96
+Broker ID: 3, Total Energy Consumption in KWatt: 1494.96
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 2047.49
+Broker ID: 2, Total Energy Consumption in KWatt: 2362.49
+Broker ID: 3, Total Energy Consumption in KWatt: 1737.49
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1136.59
+Broker ID: 2, Total Energy Consumption in KWatt: 2067.26
+Broker ID: 3, Total Energy Consumption in KWatt: 1136.59
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 828.68
+Broker ID: 2, Total Energy Consumption in KWatt: 828.68
+Broker ID: 3, Total Energy Consumption in KWatt: 828.68
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 11.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 550.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 11000, Ram for Host: 22528, Storage for Host: 11000000, BW for Host: 110000, Mips for Vm: 11000, Size for Vm: 110000, Ram for Vm: 5632, BW for Vm: 11000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 2100.0
+Broker ID: 2, Total Energy Consumption in KWatt: 2100.0
+Broker ID: 3, Total Energy Consumption in KWatt: 2100.0
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 2240.21
+Broker ID: 2, Total Energy Consumption in KWatt: 2160.21
+Broker ID: 3, Total Energy Consumption in KWatt: 2160.21
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 2194.27
+Broker ID: 2, Total Energy Consumption in KWatt: 2397.77
+Broker ID: 3, Total Energy Consumption in KWatt: 2277.77
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 2226.66
+Broker ID: 2, Total Energy Consumption in KWatt: 2266.66
+Broker ID: 3, Total Energy Consumption in KWatt: 2341.66
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 2522.17
+Broker ID: 2, Total Energy Consumption in KWatt: 2399.67
+Broker ID: 3, Total Energy Consumption in KWatt: 2562.17
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 2593.59
+Broker ID: 2, Total Energy Consumption in KWatt: 2593.59
+Broker ID: 3, Total Energy Consumption in KWatt: 2513.59
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 2657.14
+Broker ID: 2, Total Energy Consumption in KWatt: 2697.14
+Broker ID: 3, Total Energy Consumption in KWatt: 2498.81
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 2273.96
+Broker ID: 2, Total Energy Consumption in KWatt: 2273.96
+Broker ID: 3, Total Energy Consumption in KWatt: 2578.96
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 2611.34
+Broker ID: 2, Total Energy Consumption in KWatt: 2691.34
+Broker ID: 3, Total Energy Consumption in KWatt: 1976.34
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1589.3
+Broker ID: 2, Total Energy Consumption in KWatt: 2761.8
+Broker ID: 3, Total Energy Consumption in KWatt: 1961.8
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 815.68
+Broker ID: 2, Total Energy Consumption in KWatt: 815.68
+Broker ID: 3, Total Energy Consumption in KWatt: 815.68
+
+---------------------------------------------------------------------------------------------------------
+Base station number: 20, HAPS Number: 5, Power: 12.0
+MAX_BASE_POWER_WATTS_SEC: 50.0
+MAX_HAPS_POWER_WATTS_SEC: 600.0
+
+Base Stations Properties 
+------------------------------------------
+Number of Stations: 20, Number of Hosts: 20, Number of Vms: 20, Mips for Host: 1000, Ram for Host: 2048, Storage for Host: 1000000, BW for Host: 10000, Mips for Vm: 1000, Size for Vm: 10000, Ram for Vm: 512, BW for Vm: 1000
+
+HAPS Stations Properties 
+------------------------------------------
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5, Mips for Host: 12000, Ram for Host: 24576, Storage for Host: 12000000, BW for Host: 120000, Mips for Vm: 12000, Size for Vm: 120000, Ram for Vm: 6144, BW for Vm: 12000
+
+Lambda Results 
+------------------------------------------
+For Lambda: 0.0
+Broker ID: 1, Total Energy Consumption in KWatt: 2185.26
+Broker ID: 2, Total Energy Consumption in KWatt: 2185.26
+Broker ID: 3, Total Energy Consumption in KWatt: 2185.26
+For Lambda: 0.1
+Broker ID: 1, Total Energy Consumption in KWatt: 2287.23
+Broker ID: 2, Total Energy Consumption in KWatt: 2247.23
+Broker ID: 3, Total Energy Consumption in KWatt: 2247.23
+For Lambda: 0.2
+Broker ID: 1, Total Energy Consumption in KWatt: 2452.51
+Broker ID: 2, Total Energy Consumption in KWatt: 2377.51
+Broker ID: 3, Total Energy Consumption in KWatt: 2337.51
+For Lambda: 0.3
+Broker ID: 1, Total Energy Consumption in KWatt: 2406.33
+Broker ID: 2, Total Energy Consumption in KWatt: 2322.83
+Broker ID: 3, Total Energy Consumption in KWatt: 2406.33
+For Lambda: 0.4
+Broker ID: 1, Total Energy Consumption in KWatt: 2607.45
+Broker ID: 2, Total Energy Consumption in KWatt: 2487.45
+Broker ID: 3, Total Energy Consumption in KWatt: 2404.95
+For Lambda: 0.5
+Broker ID: 1, Total Energy Consumption in KWatt: 2437.21
+Broker ID: 2, Total Energy Consumption in KWatt: 2595.54
+Broker ID: 3, Total Energy Consumption in KWatt: 2675.54
+For Lambda: 0.6
+Broker ID: 1, Total Energy Consumption in KWatt: 2499.0
+Broker ID: 2, Total Energy Consumption in KWatt: 2617.33
+Broker ID: 3, Total Energy Consumption in KWatt: 2617.33
+For Lambda: 0.7
+Broker ID: 1, Total Energy Consumption in KWatt: 2761.91
+Broker ID: 2, Total Energy Consumption in KWatt: 2761.91
+Broker ID: 3, Total Energy Consumption in KWatt: 1986.91
+For Lambda: 0.8
+Broker ID: 1, Total Energy Consumption in KWatt: 816.46
+Broker ID: 2, Total Energy Consumption in KWatt: 1606.46
+Broker ID: 3, Total Energy Consumption in KWatt: 2425.46
+For Lambda: 0.9
+Broker ID: 1, Total Energy Consumption in KWatt: 1617.32
+Broker ID: 2, Total Energy Consumption in KWatt: 812.32
+Broker ID: 3, Total Energy Consumption in KWatt: 1998.99
+For Lambda: 1.0
+Broker ID: 1, Total Energy Consumption in KWatt: 817.98
+Broker ID: 2, Total Energy Consumption in KWatt: 817.98
+Broker ID: 3, Total Energy Consumption in KWatt: 817.98
