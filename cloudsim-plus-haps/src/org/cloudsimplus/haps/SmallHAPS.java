@@ -1,7 +1,6 @@
 package org.cloudsimplus.haps;
 
 import org.apache.commons.math3.distribution.ExponentialDistribution;
-import org.apache.commons.math3.distribution.WeibullDistribution;
 import org.apache.commons.math3.random.JDKRandomGenerator;
 import org.apache.commons.math3.random.RandomGenerator;
 import org.cloudbus.cloudsim.allocationpolicies.VmAllocationPolicySimple;
@@ -27,13 +26,15 @@ import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelFull;
 import org.cloudbus.cloudsim.vms.HostResourceStats;
 import org.cloudbus.cloudsim.vms.Vm;
 import org.cloudbus.cloudsim.vms.VmSimple;
+import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.haps.headers.BigSmallDCBroker;
-import org.cloudsimplus.haps.headers.DatacenterBrokerLambda;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
+
+import static java.util.Comparator.comparingLong;
 
 public class SmallHAPS {
 
@@ -62,14 +63,13 @@ public class SmallHAPS {
     // Properties of CLOUDLETS
     private static final int NUMBER_OF_CLOUDLETS = 100;
     private static final int numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
-    long lengthCLOUDLETS = 10000;
+    long lengthCLOUDLETS = 28754000;
 
     private final CloudSim simulation;
     private final List<Vm> vmList;
     private final List<Cloudlet> cloudletList;
     private final List<Datacenter> datacenterList;
     private final List<DatacenterBroker> brokers;
-    private static Map<Double, Map<Long, Double>> brokerLambdaEnergyConsumption;
 
     public static void main(String[] args) throws IOException {
         new SmallHAPS();
@@ -78,7 +78,7 @@ public class SmallHAPS {
     private SmallHAPS() {
 
         NUMBER_OF_HAPS = 25;
-        HOST_HAPS_NUMBER = 25;
+        HOST_HAPS_NUMBER = NUMBER_OF_HAPS;
         VMS_HAPS_NUMBER = HOST_HAPS_NUMBER;
 
         mipsHAPSHost = 1000;
@@ -96,7 +96,6 @@ public class SmallHAPS {
         this.cloudletList = new ArrayList<>(NUMBER_OF_CLOUDLETS);
         this.datacenterList = new ArrayList<>();
         this.brokers = createBrokers(0.0);
-        brokerLambdaEnergyConsumption = new TreeMap<>();
 
         createDatacenter();
         createVmsAndCloudlets();
@@ -108,11 +107,11 @@ public class SmallHAPS {
     }
 
 
-    private List<DatacenterBroker> createBrokers(double lamda) {
+    private List<DatacenterBroker> createBrokers(double lambda) {
         final List<DatacenterBroker> list = new ArrayList<>(NUMBER_OF_BROKERS);
         for(int i = 0; i < NUMBER_OF_BROKERS; i++) {
-            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",NUMBER_OF_HAPS/5,VMS_HAPS_NUMBER/5);
-            broker.setLambdaValue(lamda);
+            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker);
+            broker.setLambdaValue(lambda);
             list.add(broker);
         }
         return list;
@@ -150,16 +149,10 @@ public class SmallHAPS {
         // Assigning Vms
         int i=0;
         for (DatacenterBroker broker : brokers) {
-            //for(; i<VMS_HAPS_NUMBER;i++) {
-
-                Vm vm = createVm(i++);
-                vmList.add(vm);
-                broker.submitVm(vm);
-                //if((i+1)%5 == 0)
-                    //break;
-            //}
+            Vm vm = createVm(i++);
+            vmList.add(vm);
+            broker.submitVm(vm);
         }
-
         // Assigning Cloudlets
         i=0;
         for (DatacenterBroker broker : brokers) {
@@ -171,7 +164,6 @@ public class SmallHAPS {
                     i++;
                     break;
                 }
-
             }
         }
     }
@@ -202,7 +194,7 @@ public class SmallHAPS {
         RandomGenerator rg = new JDKRandomGenerator();
 
         ExponentialDistribution expDist = new ExponentialDistribution(rg,2200);
-        double delayTime = expDist.sample();
+        double delayTime = (expDist.sample() + expDist.sample() + expDist.sample()) / 3;
         cloudlet.setSubmissionDelay(delayTime);
         cloudlet.setExecStartTime(delayTime);
         return cloudlet;
@@ -211,80 +203,19 @@ public class SmallHAPS {
     private void printResultsOnlyNumbers(){
         for (DatacenterBroker broker : brokers) {
 
-            //TEST AMACLI
-            /*for(Vm vm : vmList){
-                final HostResourceStats cpuStats = vm.getHost().getCpuUtilizationStats();
-                final double utilizationPercentMean = cpuStats.getMean();
-                Double powerConsumptionInKWatt = vm.getHost().getPowerModel().getPower(utilizationPercentMean);
-                System.out.println(powerConsumptionInKWatt);
-            }*/
 
-            Double powerConsumptionInKWatt = 0.0;
-            Map<Long,Double> datacenterEnergyConsumption = new TreeMap<>();
-            for(int i = 0; i < broker.getCloudletFinishedList().size(); i++){
-                DecimalFormat df = new DecimalFormat("#.##");
-
-                final HostResourceStats cpuStats = broker.getCloudletCreatedList().get(i).getVm().getHost().getCpuUtilizationStats();
-                final double utilizationPercentMean = cpuStats.getMean();
-                powerConsumptionInKWatt = broker.getCloudletCreatedList().get(i).getVm().getHost().getPowerModel().getPower(utilizationPercentMean);
-
-                long datacenterID = broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getId();
-                datacenterEnergyConsumption.put(datacenterID,powerConsumptionInKWatt);
-            }
-
-            Double TotalPowerConsumptionInKWatt = 0.0;
-            for(Map.Entry entry : datacenterEnergyConsumption.entrySet()) {
-                DecimalFormat df = new DecimalFormat("#.##");
-                TotalPowerConsumptionInKWatt += Double.parseDouble(df.format(entry.getValue()).replaceAll(",", "."));
-            }
-
-            List<Cloudlet> sortedFinishedCloudletList;
-            sortedFinishedCloudletList = broker.getCloudletFinishedList();
-            sortedFinishedCloudletList.sort(Comparator.comparingDouble(Cloudlet::getActualCpuTime));
-
-            DecimalFormat df = new DecimalFormat("#.##");
-
-            if(brokerLambdaEnergyConsumption.containsKey(((DatacenterBrokerLambda) broker).getLambdaValue())) {
-                brokerLambdaEnergyConsumption.get(((DatacenterBrokerLambda) broker).getLambdaValue()).put(broker.getId(), Double.valueOf(df.format(TotalPowerConsumptionInKWatt).replaceAll(",", ".")));
-            } else {
-                Map<Long,Double> brokerEnergyConsumption = new TreeMap<>();
-                brokerEnergyConsumption.put(broker.getId(), Double.valueOf(df.format(TotalPowerConsumptionInKWatt).replaceAll(",", ".")));
-                brokerLambdaEnergyConsumption.put(((DatacenterBrokerLambda) broker).getLambdaValue(), brokerEnergyConsumption);
-            }
-
-            //if(((DatacenterBrokerLambda) broker).getLambdaValue() == 1.0) {
-            if(brokerLambdaEnergyConsumption.size() == 11){
-                if(brokerLambdaEnergyConsumption.get(1.0).size() == NUMBER_OF_BROKERS) {
-                    try(BufferedWriter br = new BufferedWriter(new FileWriter("outputOnlyNumbersEnergyPower.txt",true))) {
-                        //br.newLine();
-
-                        // First Base Properties
-                        br.write(MAX_HAPS_POWER_WATTS_SEC + "\n");
-                        for(Map.Entry entry : brokerLambdaEnergyConsumption.entrySet()) {
-
-                            for(Map.Entry value : ((Map<Long, Integer>)entry.getValue()).entrySet()) {
-                                br.write("" + value.getValue());
-                                br.newLine();
-                            }
-                        }
-                        br.flush();
-                        brokerLambdaEnergyConsumption.clear();
-                    } catch (IOException e) {
-                        System.out.println("Unable to read file ");
-                    }
-                }
-            }
         }
     }
 
     private void printResults() {
+        Double TotalPowerConsumptionInKWatt = 0.0;
         for (DatacenterBroker broker : brokers) {
 
-            /*final List<Cloudlet> finishedCloudlets = broker.getCloudletFinishedList();
+            final List<Cloudlet> finishedCloudlets = broker.getCloudletFinishedList();
             final Comparator<Cloudlet> hostComparator = comparingLong(cl -> cl.getVm().getHost().getId());
             finishedCloudlets.sort(hostComparator.thenComparing(cl -> cl.getVm().getId()));
 
-            new CloudletsTableBuilder(finishedCloudlets).build();*/
+            new CloudletsTableBuilder(finishedCloudlets).build();
 
             Double powerConsumptionInKWatt = 0.0;
             Map<Long,Double> datacenterEnergyConsumption = new TreeMap<>();
@@ -294,79 +225,41 @@ public class SmallHAPS {
                 final HostResourceStats cpuStats = broker.getCloudletCreatedList().get(i).getVm().getHost().getCpuUtilizationStats();
                 final double utilizationPercentMean = cpuStats.getMean();
                 powerConsumptionInKWatt = broker.getCloudletCreatedList().get(i).getVm().getHost().getPowerModel().getPower(utilizationPercentMean);
-                /*System.out.printf(
-                        "\tHost %d CPU Usage mean: %6.1f%% | Power Consumption mean: %8.0f W%n",
-                        broker.getCloudletCreatedList().get(i).getVm().getHost().getId(), utilizationPercentMean * 100, watts);*/
-
-                //System.out.println(broker.getCloudletCreatedList().get(i).getVm().getHost().po.getDatacenter().getPowerModel().getPowerMeasurement());
-
-                //powerConsumptionInKWatt = Double.parseDouble(df.format(broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getPowerModel().getPowerMeasurement()).replaceAll(",", "."));
+                powerConsumptionInKWatt = powerConsumptionInKWatt * broker.getCloudletCreatedList().get(i).getVm().getHost().getTotalUpTime();
                 long datacenterID = broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getId();
                 datacenterEnergyConsumption.put(datacenterID,powerConsumptionInKWatt);
             }
-
-            Double TotalPowerConsumptionInKWatt = 0.0;
             for(Map.Entry entry : datacenterEnergyConsumption.entrySet()) {
                 DecimalFormat df = new DecimalFormat("#.##");
                 TotalPowerConsumptionInKWatt += Double.parseDouble(df.format(entry.getValue()).replaceAll(",", "."));
             }
-
-            List<Cloudlet> sortedFinishedCloudletList;
-            sortedFinishedCloudletList = broker.getCloudletFinishedList();
-            sortedFinishedCloudletList.sort(Comparator.comparingDouble(Cloudlet::getActualCpuTime));
-
-            DecimalFormat df = new DecimalFormat("#.##");
-
-            if(brokerLambdaEnergyConsumption.containsKey(((DatacenterBrokerLambda) broker).getLambdaValue())) {
-                brokerLambdaEnergyConsumption.get(((DatacenterBrokerLambda) broker).getLambdaValue()).put(broker.getId(), Double.valueOf(df.format(TotalPowerConsumptionInKWatt).replaceAll(",", ".")));
-            } else {
-                Map<Long,Double> brokerEnergyConsumption = new TreeMap<>();
-                brokerEnergyConsumption.put(broker.getId(), Double.valueOf(df.format(TotalPowerConsumptionInKWatt).replaceAll(",", ".")));
-                brokerLambdaEnergyConsumption.put(((DatacenterBrokerLambda) broker).getLambdaValue(), brokerEnergyConsumption);
-            }
-
-            if(brokerLambdaEnergyConsumption.size() == 11){
-                if(brokerLambdaEnergyConsumption.get(1.0).size() == NUMBER_OF_BROKERS) {
-                    try(BufferedWriter br = new BufferedWriter(new FileWriter("outputEnergyPower.txt",true))) {
-                        br.newLine();
-                        br.write("---------------------------------------------------------------------------------------------------------\n");
-                        br.newLine();
-                        br.write("HAPS Stations Properties \n" +
-                                "------------------------------------------\n" +
-                                "Number of Stations: " + NUMBER_OF_HAPS +
-                                ", Number of Hosts: " + HOST_HAPS_NUMBER +
-                                ", Number of Vms: " + VMS_HAPS_NUMBER +
-                                ", Mips for Host: " + mipsHAPSHost +
-                                ", Ram for Host: " + ramHAPSHost +
-                                ", Storage for Host: " + storageHAPSHost +
-                                ", BW for Host: " + bwHAPSHost +
-                                ", Mips for Vm: " + mipsHAPSVm +
-                                ", Size for Vm: " + sizeHAPSVm +
-                                ", Ram for Vm: " + ramHAPSVm +
-                                ", BW for Vm: " + bwHAPSVm + "\n");
-                        br.newLine();
-                        br.write("Lambda Results \n" +
-                                "------------------------------------------");
-                        br.newLine();
-                        for(Map.Entry entry : brokerLambdaEnergyConsumption.entrySet()) {
-                            br.write("For Lambda: " + entry.getKey());
-                            br.newLine();
-                            for(Map.Entry value : ((Map<Long, Integer>)entry.getValue()).entrySet()) {
-                                br.write("Broker ID: " + value.getKey() + ", Total Energy Consumption in KWatt: " + value.getValue());
-                                br.newLine();
-                                /*if(value.getKey(). == NUMBER_OF_BROKERS){
-                                    br.newLine();
-                                }*/
-                            }
-                        }
-                        br.flush();
-                        brokerLambdaEnergyConsumption.clear();
-                    } catch (IOException e) {
-                        System.out.println("Unable to read file ");
-                    }
-                }
-            }
+        }
+        try(BufferedWriter br = new BufferedWriter(new FileWriter("smallHAPS.txt",false))) {
+            br.write("Number of Brokers : "+ NUMBER_OF_BROKERS);
+            br.newLine();
+            br.write("MAX_HAPS_POWER_WATTS_SEC: "+ MAX_HAPS_POWER_WATTS_SEC + " HAPS_STATIC_POWER_WATTS_SEC: " + HAPS_STATIC_POWER_WATTS_SEC);
+            br.newLine();
+            br.write("Total Energy Consumption is " + TotalPowerConsumptionInKWatt.intValue() / 1000 + " kW");
+            br.newLine();
+            br.write("---------------------------------------------------------------------------------------\n"+ "HAPS Stations Properties " );
+            br.newLine();
+            br.write("Number of Stations: " + NUMBER_OF_HAPS +
+                    ", Number of Hosts: " + HOST_HAPS_NUMBER +
+                    ", Number of Vms: " + VMS_HAPS_NUMBER);
+            br.newLine();
+            br.write("Mips for Host: " + mipsHAPSHost +
+                    ", Ram for Host: " + ramHAPSHost +
+                    ", Storage for Host: " + storageHAPSHost +
+                    ", BW for Host: " + bwHAPSHost);
+            br.newLine();
+            br.write("Mips for Vm: " + mipsHAPSVm +
+                    ", Size for Vm: " + sizeHAPSVm +
+                    ", Ram for Vm: " + ramHAPSVm +
+                    ", BW for Vm: " + bwHAPSVm + "\n");
+            br.newLine();
+            br.flush();
+        } catch (IOException e) {
+            System.out.println("Unable to read file ");
         }
     }
-
 }

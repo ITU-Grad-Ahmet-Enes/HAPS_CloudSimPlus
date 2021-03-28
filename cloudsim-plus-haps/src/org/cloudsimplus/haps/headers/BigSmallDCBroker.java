@@ -17,21 +17,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
         this.lambdaValue = lambdaValue;
     }
 
-    /**
-     * Index of the last HAPS VM selected from the {@link #getVmExecList()}
-     * to run some Cloudlet.
-     */
-    private int lastSelectedHAPSVmIndex;
-
-    /**
-     * Index of the last HAPS Datacenter selected to place some VM.
-     */
-    private int lastSelectedHAPSDcIndex = -1;
-
-    private int numberOfDcHAPS;
-
-    private int numberOfVmHAPS;
-
+    private int numberOfCloudletPerBroker;
 
     /**
      * Creates a new DatacenterBroker.
@@ -50,7 +36,6 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
      */
     public BigSmallDCBroker(final CloudSim simulation, final String name) {
         super(simulation, name);
-        this.lastSelectedHAPSVmIndex = -1;
     }
 
     /**
@@ -58,14 +43,11 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
      *
      * @param simulation the CloudSim instance that represents the simulation the Entity is related to
      * @param name the DatacenterBroker name
-     * @param numberOfDcHAPS number of datacenter HAPS
-     * @param numberOfVmHAPS number of vm HAPS
+
      */
-    public BigSmallDCBroker(final CloudSim simulation, final String name, int numberOfDcHAPS, int numberOfVmHAPS) {
+    public BigSmallDCBroker(final CloudSim simulation, final String name, int numberOfCloudletPerBroker) {
         super(simulation, name);
-        this.lastSelectedHAPSVmIndex = -1;
-        this.numberOfDcHAPS = numberOfDcHAPS;
-        this.numberOfVmHAPS = numberOfVmHAPS;
+        this.numberOfCloudletPerBroker = numberOfCloudletPerBroker;
     }
 
     /**
@@ -89,14 +71,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
         if(getDatacenterList().isEmpty()) {
             throw new IllegalStateException("You don't have any Datacenter created.");
         }
-
         return getDatacenterList().get((int) vm.getId());
-
-        /*If all Datacenter were tried already, return Datacenter.NULL to indicate
-         * there isn't a suitable Datacenter to place waiting VMs.
-        if(lastSelectedDcIndex == getDatacenterList().size()-1){
-            return Datacenter.NULL;
-        }*/
     }
 
     /**
@@ -118,11 +93,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
         if (getVmExecList().isEmpty()) {
             return Vm.NULL;
         }
-
-        if(lastSelectedHAPSVmIndex == numberOfVmHAPS-1) {
-            lastSelectedHAPSVmIndex = -1;
-        }
-
-        return getDatacenterList().get((int) cloudlet.getId() % getDatacenterList().size()).getHost(0).getVmList().get(0);
+        int division = (int) (cloudlet.getId() / numberOfCloudletPerBroker);
+        return getDatacenterList().get(division).getHost(0).getVmList().get(0);
     }
 }

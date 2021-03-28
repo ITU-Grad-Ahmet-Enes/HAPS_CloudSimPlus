@@ -1,0 +1,9 @@
+Number of Brokers : 5
+MAX_HAPS_POWER_WATTS_SEC: 250.0 HAPS_STATIC_POWER_WATTS_SEC: 175.0
+Total Energy Consumption is 30288 kW
+---------------------------------------------------------------------------------------
+HAPS Stations Properties 
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5
+Mips for Host: 5000, Ram for Host: 10240, Storage for Host: 5000000, BW for Host: 50000
+Mips for Vm: 5000, Size for Vm: 5000000, Ram for Vm: 10240, BW for Vm: 50000
+

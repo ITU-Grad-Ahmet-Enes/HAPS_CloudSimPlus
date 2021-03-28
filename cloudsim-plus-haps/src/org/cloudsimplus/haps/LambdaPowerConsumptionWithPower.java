@@ -207,7 +207,7 @@ public class LambdaPowerConsumptionWithPower {
                 final HostResourceStats cpuStats = broker.getCloudletCreatedList().get(i).getVm().getHost().getCpuUtilizationStats();
                 final double utilizationPercentMean = cpuStats.getMean();
                 powerConsumptionInKWatt = broker.getCloudletCreatedList().get(i).getVm().getHost().getPowerModel().getPower(utilizationPercentMean);
-
+                powerConsumptionInKWatt = powerConsumptionInKWatt * broker.getCloudletCreatedList().get(i).getVm().getHost().getTotalUpTime();
                 //powerConsumptionInKWatt = Double.parseDouble(df.format(broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getPowerModel().getPowerMeasurement()).replaceAll(",", "."));
 
                 long datacenterID = broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getId();
@@ -276,6 +276,7 @@ public class LambdaPowerConsumptionWithPower {
                 final HostResourceStats cpuStats = broker.getCloudletCreatedList().get(i).getVm().getHost().getCpuUtilizationStats();
                 final double utilizationPercentMean = cpuStats.getMean();
                 powerConsumptionInKWatt = broker.getCloudletCreatedList().get(i).getVm().getHost().getPowerModel().getPower(utilizationPercentMean);
+                powerConsumptionInKWatt = powerConsumptionInKWatt * broker.getCloudletCreatedList().get(i).getVm().getHost().getTotalUpTime();
                 /*System.out.printf(
                         "\tHost %d CPU Usage mean: %6.1f%% | Power Consumption mean: %8.0f W%n",
                         broker.getCloudletCreatedList().get(i).getVm().getHost().getId(), utilizationPercentMean * 100, watts);*/
