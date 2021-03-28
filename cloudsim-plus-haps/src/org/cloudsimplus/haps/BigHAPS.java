@@ -1,4 +1,5 @@
 package org.cloudsimplus.haps;
+
 import org.apache.commons.math3.distribution.WeibullDistribution;
 import org.apache.commons.math3.random.JDKRandomGenerator;
 import org.apache.commons.math3.random.RandomGenerator;
@@ -8,11 +9,9 @@ import org.cloudbus.cloudsim.cloudlets.Cloudlet;
 import org.cloudbus.cloudsim.cloudlets.CloudletSimple;
 import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.datacenters.Datacenter;
-import org.cloudbus.cloudsim.power.PowerMeter;
 import org.cloudbus.cloudsim.datacenters.DatacenterSimple;
 import org.cloudbus.cloudsim.hosts.Host;
 import org.cloudbus.cloudsim.hosts.HostSimple;
-import org.cloudbus.cloudsim.power.models.PowerModel;
 import org.cloudbus.cloudsim.power.models.PowerModelHost;
 import org.cloudbus.cloudsim.power.models.PowerModelHostSimple;
 import org.cloudbus.cloudsim.provisioners.PeProvisionerSimple;
@@ -27,31 +26,15 @@ import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelFull;
 import org.cloudbus.cloudsim.vms.HostResourceStats;
 import org.cloudbus.cloudsim.vms.Vm;
 import org.cloudbus.cloudsim.vms.VmSimple;
-import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.haps.headers.DatacenterBrokerLambda;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.text.DecimalFormat;
 import java.util.*;
 
-import static java.util.Comparator.comparingLong;
+public class BigHAPS {
 
-public class LambdaPowerConsumptionWithPower {
-
-    /**
-     * Defines the power a Host uses, even if it's idle (in Watts).
-     */
-    //private static final double STATIC_POWER = 35;
-
-    /**
-     * The max power a Host uses (in Watts).
-     */
-    //private static final int MAX_POWER = 50;
-
-    // Number of broker
     private static final int NUMBER_OF_BROKERS = 3;
     private static final int SCHEDULING_INTERVAL = 10;
 
@@ -97,7 +80,7 @@ public class LambdaPowerConsumptionWithPower {
     private final long bwHAPSVm;
 
     // Properties of CLOUDLETS
-    private static final int NUMBER_OF_CLOUDLETS = 1000;
+    private static final int NUMBER_OF_CLOUDLETS = 10000000;
     long lengthCLOUDLETS = 10000;
 
 
@@ -114,7 +97,7 @@ public class LambdaPowerConsumptionWithPower {
         RandomGenerator rg = new JDKRandomGenerator();
         weibullDistribution = new WeibullDistribution(rg,1.0,25, WeibullDistribution.DEFAULT_INVERSE_ABSOLUTE_ACCURACY);
         DecimalFormat newFormat = new DecimalFormat("#.#");
-        List<LambdaPowerConsumptionWithPower> simulationList = new ArrayList<>(10);
+        List<BigHAPS> simulationList = new ArrayList<>(10);
         for(int j=0; j<12; j++ ) {
             int powerConsumptionFactor = (j+1) * 2;
             if(j==0) {
@@ -131,17 +114,17 @@ public class LambdaPowerConsumptionWithPower {
                 //double twoDecimal =  Double.parseDouble(newFormat.format(i));
                 double twoDecimal =  Double.parseDouble(newFormat.format(i).replaceAll(",", "."));
                 simulationList.add(
-                        new LambdaPowerConsumptionWithPower(twoDecimal, powerConsumptionFactor, HAPSPowerFactor)
+                        new BigHAPS(twoDecimal, powerConsumptionFactor, HAPSPowerFactor)
                 );
             }
         }
-        simulationList.parallelStream().forEach(LambdaPowerConsumptionWithPower::run);
-        simulationList.forEach(LambdaPowerConsumptionWithPower::printResults);
-        simulationList.forEach(LambdaPowerConsumptionWithPower::printResultsOnlyNumbers);
+        simulationList.parallelStream().forEach(BigHAPS::run);
+        simulationList.forEach(BigHAPS::printResults);
+        simulationList.forEach(BigHAPS::printResultsOnlyNumbers);
 
     }
 
-    private LambdaPowerConsumptionWithPower(double lambda, int powerConsumptionFactor, int HAPSPowerFactor) {
+    private BigHAPS(double lambda, int powerConsumptionFactor, int HAPSPowerFactor) {
         // Datacenter Properties
         NUMBER_OF_BASE = 20;
         HOST_BASE_NUMBER = 20;
@@ -516,4 +499,5 @@ public class LambdaPowerConsumptionWithPower {
         cloudlet.setExecStartTime(weibullDistList.get((int)id));
         return cloudlet;
     }
+
 }
