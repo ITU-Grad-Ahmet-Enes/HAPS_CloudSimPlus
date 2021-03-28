@@ -27,6 +27,7 @@ import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelFull;
 import org.cloudbus.cloudsim.vms.HostResourceStats;
 import org.cloudbus.cloudsim.vms.Vm;
 import org.cloudbus.cloudsim.vms.VmSimple;
+import org.cloudsimplus.haps.headers.BigSmallDCBroker;
 import org.cloudsimplus.haps.headers.DatacenterBrokerLambda;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -59,7 +60,7 @@ public class SmallHAPS {
     private final long bwHAPSVm;
 
     // Properties of CLOUDLETS
-    private static final int NUMBER_OF_CLOUDLETS = 10000000;
+    private static final int NUMBER_OF_CLOUDLETS = 100;
     long lengthCLOUDLETS = 10000;
 
     private final CloudSim simulation;
@@ -109,11 +110,10 @@ public class SmallHAPS {
     private List<DatacenterBroker> createBrokers(double lamda) {
         final List<DatacenterBroker> list = new ArrayList<>(NUMBER_OF_BROKERS);
         for(int i = 0; i < NUMBER_OF_BROKERS; i++) {
-            DatacenterBroker broker = new DatacenterBrokerLambda(simulation,"",NUMBER_OF_HAPS,0,VMS_HAPS_NUMBER,0);
-            ((DatacenterBrokerLambda) broker).setLambdaValue(lamda);
+            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",NUMBER_OF_HAPS/5,VMS_HAPS_NUMBER/5);
+            broker.setLambdaValue(lamda);
             list.add(broker);
         }
-
         return list;
     }
 
@@ -146,28 +146,33 @@ public class SmallHAPS {
     }
 
     private void createVmsAndCloudlets() {
+        // Assigning Vms
+        int i=0;
         for (DatacenterBroker broker : brokers) {
-            vmList.addAll(createAndSubmitVms(broker));
-            cloudletList.addAll(createAndSubmitCloudlets(broker));
-        }
-    }
+            //for(; i<VMS_HAPS_NUMBER;i++) {
 
-    private List<Vm> createAndSubmitVms(DatacenterBroker broker) {
-        final List<Vm> list = new ArrayList<>(VMS_HAPS_NUMBER);
-        for(int i=0; i<VMS_HAPS_NUMBER;i++) {
-            Vm vm = createVm(i);
-            list.add(vm);
+                Vm vm = createVm(i++);
+                vmList.add(vm);
+                broker.submitVm(vm);
+                //if((i+1)%5 == 0)
+                    //break;
+            //}
         }
-        broker.submitVmList(list);
-        return list;
-    }
 
-    private Vm createVm(int id) {
-        Vm vm = new VmSimple(id, mipsHAPSVm, VM_HAPS_PES_NUMBER)
-                .setRam(ramHAPSVm).setBw(bwHAPSVm).setSize(sizeHAPSVm)
-                .setCloudletScheduler(new CloudletSchedulerSpaceShared());
-        vm.enableUtilizationStats();
-        return vm;
+        // Assigning Cloudlets
+        i=0;
+        for (DatacenterBroker broker : brokers) {
+            for (; i<NUMBER_OF_CLOUDLETS; i++) {
+                Cloudlet cloudlet = createCloudlet(i, lengthCLOUDLETS);
+                cloudletList.add(cloudlet);
+                broker.submitCloudlet(cloudlet);
+                if((i+1)%5 == 0) {
+                    i++;
+                    break;
+                }
+
+            }
+        }
     }
 
     private List<Cloudlet> createAndSubmitCloudlets(DatacenterBroker broker) {
@@ -181,6 +186,27 @@ public class SmallHAPS {
         broker.submitCloudletList(list);
         return list;
     }
+
+    private void createAndSubmitVms(DatacenterBroker broker) {
+
+        for(int i=0; i<VMS_HAPS_NUMBER;i++) {
+            for (int j=0; j<5; j++) {
+                Vm vm = createVm(i);
+                vmList.add(vm);
+                broker.submitVm(vm);
+            }
+        }
+    }
+
+    private Vm createVm(int id) {
+        Vm vm = new VmSimple(id, mipsHAPSVm, VM_HAPS_PES_NUMBER)
+                .setRam(ramHAPSVm).setBw(bwHAPSVm).setSize(sizeHAPSVm)
+                .setCloudletScheduler(new CloudletSchedulerSpaceShared());
+        vm.enableUtilizationStats();
+        return vm;
+    }
+
+
 
     private Cloudlet createCloudlet(long id, long length) {
         final long fileSize = 300;
