@@ -61,6 +61,7 @@ public class SmallHAPS {
 
     // Properties of CLOUDLETS
     private static final int NUMBER_OF_CLOUDLETS = 100;
+    private static final int numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
     long lengthCLOUDLETS = 10000;
 
     private final CloudSim simulation;
@@ -166,34 +167,11 @@ public class SmallHAPS {
                 Cloudlet cloudlet = createCloudlet(i, lengthCLOUDLETS);
                 cloudletList.add(cloudlet);
                 broker.submitCloudlet(cloudlet);
-                if((i+1)%5 == 0) {
+                if((i+1)%numberOfCloudletPerBroker == 0) {
                     i++;
                     break;
                 }
 
-            }
-        }
-    }
-
-    private List<Cloudlet> createAndSubmitCloudlets(DatacenterBroker broker) {
-        final List<Cloudlet> list = new ArrayList<>(NUMBER_OF_CLOUDLETS);
-        long cloudletId;
-        for(long i = (broker.getId()-1) * NUMBER_OF_CLOUDLETS; i < NUMBER_OF_CLOUDLETS*broker.getId(); i++){
-            cloudletId = i;
-            Cloudlet cloudlet = createCloudlet(cloudletId,lengthCLOUDLETS);
-            list.add(cloudlet);
-        }
-        broker.submitCloudletList(list);
-        return list;
-    }
-
-    private void createAndSubmitVms(DatacenterBroker broker) {
-
-        for(int i=0; i<VMS_HAPS_NUMBER;i++) {
-            for (int j=0; j<5; j++) {
-                Vm vm = createVm(i);
-                vmList.add(vm);
-                broker.submitVm(vm);
             }
         }
     }

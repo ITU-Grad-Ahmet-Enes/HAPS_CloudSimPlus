@@ -26,7 +26,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
     /**
      * Index of the last HAPS Datacenter selected to place some VM.
      */
-    private int lastSelectedHAPSDcIndex;
+    private int lastSelectedHAPSDcIndex = -1;
 
     private int numberOfDcHAPS;
 
@@ -50,7 +50,6 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
      */
     public BigSmallDCBroker(final CloudSim simulation, final String name) {
         super(simulation, name);
-        this.lastSelectedHAPSDcIndex = -1;
         this.lastSelectedHAPSVmIndex = -1;
     }
 
@@ -64,7 +63,6 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
      */
     public BigSmallDCBroker(final CloudSim simulation, final String name, int numberOfDcHAPS, int numberOfVmHAPS) {
         super(simulation, name);
-        this.lastSelectedHAPSDcIndex = -1;
         this.lastSelectedHAPSVmIndex = -1;
         this.numberOfDcHAPS = numberOfDcHAPS;
         this.numberOfVmHAPS = numberOfVmHAPS;
@@ -92,7 +90,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
             throw new IllegalStateException("You don't have any Datacenter created.");
         }
 
-        return getDatacenterList().get(++lastSelectedHAPSDcIndex);
+        return getDatacenterList().get((int) vm.getId());
 
         /*If all Datacenter were tried already, return Datacenter.NULL to indicate
          * there isn't a suitable Datacenter to place waiting VMs.
@@ -124,8 +122,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
         if(lastSelectedHAPSVmIndex == numberOfVmHAPS-1) {
             lastSelectedHAPSVmIndex = -1;
         }
-        int deneme = getDatacenterList().size();
-        int tempLastSelectedHAPSVmIndex =(++lastSelectedHAPSVmIndex) % (getVmExecList().size());
-        return getVmFromCreatedList(tempLastSelectedHAPSVmIndex);
+
+        return getDatacenterList().get((int) cloudlet.getId() % getDatacenterList().size()).getHost(0).getVmList().get(0);
     }
 }
