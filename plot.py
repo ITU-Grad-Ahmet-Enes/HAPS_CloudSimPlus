@@ -1,9 +1,4 @@
-from mpl_toolkits import mplot3d
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 
 Number_of_Stations_HAPS = 0
 Number_of_Hosts_HAPS = 0

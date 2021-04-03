@@ -28,12 +28,14 @@ import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelFull;
 import org.cloudbus.cloudsim.vms.HostResourceStats;
 import org.cloudbus.cloudsim.vms.Vm;
 import org.cloudbus.cloudsim.vms.VmSimple;
+import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.haps.headers.DatacenterBrokerLambda;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
+import static java.util.Comparator.comparingLong;
 
 public class LambdaPowerConsumption {
     // Number of broker
@@ -81,7 +83,7 @@ public class LambdaPowerConsumption {
     private final long bwHAPSVm;
 
     // Properties of CLOUDLETS
-    private static final int NUMBER_OF_CLOUDLETS = 1000;
+    private static final int NUMBER_OF_CLOUDLETS = 1000; // Broker * NUMBER_OF_CLOUDLETS in total
     long lengthCLOUDLETS = 10000;
 
 
@@ -183,7 +185,7 @@ public class LambdaPowerConsumption {
                 final HostResourceStats cpuStats = broker.getCloudletCreatedList().get(i).getVm().getHost().getCpuUtilizationStats();
                 final double utilizationPercentMean = cpuStats.getMean();
                 powerConsumptionInKWatt = broker.getCloudletCreatedList().get(i).getVm().getHost().getPowerModel().getPower(utilizationPercentMean);
-
+                powerConsumptionInKWatt = powerConsumptionInKWatt * broker.getCloudletCreatedList().get(i).getVm().getHost().getTotalUpTime()/1000;
                 //powerConsumptionInKWatt = Double.parseDouble(df.format(broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getPowerInKWatts()).replaceAll(",", "."));
                 long datacenterID = broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getId();
                 datacenterEnergyConsumption.put(datacenterID,powerConsumptionInKWatt);
@@ -237,12 +239,17 @@ public class LambdaPowerConsumption {
     private void printResults() {
         for (DatacenterBroker broker : brokers) {
 
-            /*final List<Cloudlet> finishedCloudlets = broker.getCloudletFinishedList();
+            final List<Cloudlet> finishedCloudlets = broker.getCloudletFinishedList();
             final Comparator<Cloudlet> hostComparator = comparingLong(cl -> cl.getVm().getHost().getId());
             finishedCloudlets.sort(hostComparator.thenComparing(cl -> cl.getVm().getId()));
 
-            new CloudletsTableBuilder(finishedCloudlets).build();*/
-
+            new CloudletsTableBuilder(finishedCloudlets).build();
+            Double TotalPower = 0.0;
+            for (int i=0; i<vmList.size()/NUMBER_OF_BROKERS;i++) {
+                final HostResourceStats cpuStats = vmList.get(i).getHost().getCpuUtilizationStats();
+                final double utilizationPercentMean = cpuStats.getMean();
+                if(utilizationPercentMean > 0) TotalPower+= vmList.get(i).getHost().getPowerModel().getPower(utilizationPercentMean) * vmList.get(i).getHost().getTotalUpTime() / 1000;
+            }
             Double powerConsumptionInKWatt = 0.0;
             Map<Long,Double> datacenterEnergyConsumption = new TreeMap<>();
             for(int i = 0; i < broker.getCloudletFinishedList().size(); i++){
@@ -251,7 +258,7 @@ public class LambdaPowerConsumption {
                 final HostResourceStats cpuStats = broker.getCloudletCreatedList().get(i).getVm().getHost().getCpuUtilizationStats();
                 final double utilizationPercentMean = cpuStats.getMean();
                 powerConsumptionInKWatt = broker.getCloudletCreatedList().get(i).getVm().getHost().getPowerModel().getPower(utilizationPercentMean);
-
+                powerConsumptionInKWatt = powerConsumptionInKWatt * broker.getCloudletCreatedList().get(i).getVm().getHost().getTotalUpTime()/1000;
                 //powerConsumptionInKWatt = Double.parseDouble(df.format(broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getPowerInKWatts()).replaceAll(",", "."));
                 long datacenterID = broker.getCloudletCreatedList().get(i).getVm().getHost().getDatacenter().getId();
                 datacenterEnergyConsumption.put(datacenterID,powerConsumptionInKWatt);
@@ -373,12 +380,14 @@ public class LambdaPowerConsumption {
                 final List<Host> hostList = new ArrayList<>();
                 hostList.add(createHost(i, false));
                 Datacenter datacenter = new DatacenterSimple(simulation,hostList, new VmAllocationPolicySimple());
+                datacenter.setSchedulingInterval(SCHEDULING_INTERVAL);
                 datacenterList.add(datacenter);
             } else {
                 final List<Host> hostList = new ArrayList<>();
                 //hostList.add(createHost(i, true));
                 hostList.add(createHost(i, true));
                 Datacenter datacenter = new DatacenterSimple(simulation,hostList, new VmAllocationPolicySimple());
+                datacenter.setSchedulingInterval(SCHEDULING_INTERVAL);
                 datacenterList.add(datacenter);
             }
 

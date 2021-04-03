@@ -1,0 +1,311 @@
+Number of Brokers : 5
+Number of HAPS : 5
+Number of CloudLets: 2000
+MAX_HAPS_POWER_WATTS_SEC: 500.0 HAPS_STATIC_POWER_WATTS_SEC: 350.0
+---------------------------------------------------------------------------------------
+HAPS Stations Properties 
+Number of Stations: 5, Number of Hosts: 5, Number of Vms: 5
+Mips for Host: 100000, Ram for Host: 660000, Storage for Host: 100000000, BW for Host: 100000
+Mips for Vm: 100000, Size for Vm: 100000000, Ram for Vm: 660000, BW for Vm: 100000
+
+
+Mean Delay: 25
+Total Energy Consumption is 62387 kW
+
+Mean Delay: 125
+Total Energy Consumption is 61442 kW
+
+Mean Delay: 225
+Total Energy Consumption is 63021 kW
+
+Mean Delay: 325
+Total Energy Consumption is 58312 kW
+
+Mean Delay: 425
+Total Energy Consumption is 60246 kW
+
+Mean Delay: 525
+Total Energy Consumption is 62356 kW
+
+Mean Delay: 625
+Total Energy Consumption is 62257 kW
+
+Mean Delay: 725
+Total Energy Consumption is 60484 kW
+
+Mean Delay: 825
+Total Energy Consumption is 60383 kW
+
+Mean Delay: 925
+Total Energy Consumption is 61311 kW
+
+Mean Delay: 1025
+Total Energy Consumption is 59416 kW
+
+Mean Delay: 1125
+Total Energy Consumption is 60176 kW
+
+Mean Delay: 1225
+Total Energy Consumption is 66154 kW
+
+Mean Delay: 1325
+Total Energy Consumption is 60871 kW
+
+Mean Delay: 1425
+Total Energy Consumption is 59502 kW
+
+Mean Delay: 1525
+Total Energy Consumption is 63085 kW
+
+Mean Delay: 1625
+Total Energy Consumption is 60710 kW
+
+Mean Delay: 1725
+Total Energy Consumption is 62850 kW
+
+Mean Delay: 1825
+Total Energy Consumption is 59483 kW
+
+Mean Delay: 1925
+Total Energy Consumption is 61955 kW
+
+Mean Delay: 2025
+Total Energy Consumption is 56371 kW
+
+Mean Delay: 2125
+Total Energy Consumption is 58815 kW
+
+Mean Delay: 2225
+Total Energy Consumption is 60147 kW
+
+Mean Delay: 2325
+Total Energy Consumption is 61635 kW
+
+Mean Delay: 2425
+Total Energy Consumption is 63239 kW
+
+Mean Delay: 2525
+Total Energy Consumption is 59992 kW
+
+Mean Delay: 2625
+Total Energy Consumption is 60274 kW
+
+Mean Delay: 2725
+Total Energy Consumption is 61354 kW
+
+Mean Delay: 2825
+Total Energy Consumption is 59610 kW
+
+Mean Delay: 2925
+Total Energy Consumption is 62295 kW
+
+Mean Delay: 3025
+Total Energy Consumption is 61153 kW
+
+Mean Delay: 3125
+Total Energy Consumption is 59991 kW
+
+Mean Delay: 3225
+Total Energy Consumption is 59855 kW
+
+Mean Delay: 3325
+Total Energy Consumption is 60232 kW
+
+Mean Delay: 3425
+Total Energy Consumption is 59678 kW
+
+Mean Delay: 3525
+Total Energy Consumption is 62872 kW
+
+Mean Delay: 3625
+Total Energy Consumption is 62152 kW
+
+Mean Delay: 3725
+Total Energy Consumption is 60889 kW
+
+Mean Delay: 3825
+Total Energy Consumption is 62951 kW
+
+Mean Delay: 3925
+Total Energy Consumption is 60957 kW
+
+Mean Delay: 4025
+Total Energy Consumption is 62042 kW
+
+Mean Delay: 4125
+Total Energy Consumption is 61883 kW
+
+Mean Delay: 4225
+Total Energy Consumption is 62015 kW
+
+Mean Delay: 4325
+Total Energy Consumption is 60491 kW
+
+Mean Delay: 4425
+Total Energy Consumption is 69730 kW
+
+Mean Delay: 4525
+Total Energy Consumption is 64228 kW
+
+Mean Delay: 4625
+Total Energy Consumption is 68484 kW
+
+Mean Delay: 4725
+Total Energy Consumption is 61949 kW
+
+Mean Delay: 4825
+Total Energy Consumption is 62937 kW
+
+Mean Delay: 4925
+Total Energy Consumption is 60930 kW
+
+Mean Delay: 5025
+Total Energy Consumption is 66095 kW
+
+Mean Delay: 5125
+Total Energy Consumption is 76020 kW
+
+Mean Delay: 5225
+Total Energy Consumption is 83503 kW
+
+Mean Delay: 5325
+Total Energy Consumption is 64855 kW
+
+Mean Delay: 5425
+Total Energy Consumption is 64609 kW
+
+Mean Delay: 5525
+Total Energy Consumption is 84397 kW
+
+Mean Delay: 5625
+Total Energy Consumption is 89489 kW
+
+Mean Delay: 5725
+Total Energy Consumption is 62952 kW
+
+Mean Delay: 5825
+Total Energy Consumption is 77577 kW
+
+Mean Delay: 5925
+Total Energy Consumption is 65609 kW
+
+Mean Delay: 6025
+Total Energy Consumption is 72693 kW
+
+Mean Delay: 6125
+Total Energy Consumption is 77538 kW
+
+Mean Delay: 6225
+Total Energy Consumption is 101816 kW
+
+Mean Delay: 6325
+Total Energy Consumption is 82858 kW
+
+Mean Delay: 6425
+Total Energy Consumption is 93028 kW
+
+Mean Delay: 6525
+Total Energy Consumption is 72751 kW
+
+Mean Delay: 6625
+Total Energy Consumption is 87669 kW
+
+Mean Delay: 6725
+Total Energy Consumption is 84159 kW
+
+Mean Delay: 6825
+Total Energy Consumption is 117819 kW
+
+Mean Delay: 6925
+Total Energy Consumption is 76383 kW
+
+Mean Delay: 7025
+Total Energy Consumption is 83444 kW
+
+Mean Delay: 7125
+Total Energy Consumption is 73064 kW
+
+Mean Delay: 7225
+Total Energy Consumption is 96414 kW
+
+Mean Delay: 7325
+Total Energy Consumption is 80302 kW
+
+Mean Delay: 7425
+Total Energy Consumption is 79977 kW
+
+Mean Delay: 7525
+Total Energy Consumption is 86953 kW
+
+Mean Delay: 7625
+Total Energy Consumption is 109372 kW
+
+Mean Delay: 7725
+Total Energy Consumption is 109195 kW
+
+Mean Delay: 7825
+Total Energy Consumption is 83907 kW
+
+Mean Delay: 7925
+Total Energy Consumption is 116324 kW
+
+Mean Delay: 8025
+Total Energy Consumption is 94119 kW
+
+Mean Delay: 8125
+Total Energy Consumption is 85911 kW
+
+Mean Delay: 8225
+Total Energy Consumption is 153789 kW
+
+Mean Delay: 8325
+Total Energy Consumption is 148874 kW
+
+Mean Delay: 8425
+Total Energy Consumption is 144541 kW
+
+Mean Delay: 8525
+Total Energy Consumption is 90392 kW
+
+Mean Delay: 8625
+Total Energy Consumption is 98149 kW
+
+Mean Delay: 8725
+Total Energy Consumption is 141584 kW
+
+Mean Delay: 8825
+Total Energy Consumption is 113530 kW
+
+Mean Delay: 8925
+Total Energy Consumption is 112098 kW
+
+Mean Delay: 9025
+Total Energy Consumption is 102091 kW
+
+Mean Delay: 9125
+Total Energy Consumption is 117664 kW
+
+Mean Delay: 9225
+Total Energy Consumption is 132200 kW
+
+Mean Delay: 9325
+Total Energy Consumption is 106722 kW
+
+Mean Delay: 9425
+Total Energy Consumption is 111785 kW
+
+Mean Delay: 9525
+Total Energy Consumption is 123356 kW
+
+Mean Delay: 9625
+Total Energy Consumption is 108071 kW
+
+Mean Delay: 9725
+Total Energy Consumption is 148852 kW
+
+Mean Delay: 9825
+Total Energy Consumption is 110299 kW
+
+Mean Delay: 9925
+Total Energy Consumption is 140825 kW
+
