@@ -61,8 +61,8 @@ public class SmallHAPS {
     private final long bwHAPSVm;
 
     // Properties of CLOUDLETS
-    private static final int NUMBER_OF_CLOUDLETS = 100;
-    private static final int numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
+    private static int NUMBER_OF_CLOUDLETS = 25;
+    private static int numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
     long lengthCLOUDLETS = 28754000;
 
     private final CloudSim simulation;
@@ -70,9 +70,25 @@ public class SmallHAPS {
     private final List<Cloudlet> cloudletList;
     private final List<Datacenter> datacenterList;
     private final List<DatacenterBroker> brokers;
+    private static final List<SmallHAPS> simulationList = new ArrayList<>();
+    private static final List<Integer> cloudletNumbers = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        new SmallHAPS();
+        for(int i=0; i<=200 ;i++){
+            if(i!=0){
+                NUMBER_OF_CLOUDLETS += 25;
+                numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
+            }
+            simulationList.add(new SmallHAPS());
+            cloudletNumbers.add(NUMBER_OF_CLOUDLETS);
+
+        }
+        //new SmallHAPS();
+        simulationList.parallelStream().forEach(SmallHAPS::run);
+        simulationList.forEach(SmallHAPS::printResults);
+    }
+    public void run() {
+        simulation.start();
     }
 
     private SmallHAPS() {
@@ -99,10 +115,8 @@ public class SmallHAPS {
 
         createDatacenter();
         createVmsAndCloudlets();
-        simulation.start();
-
-        printResultsOnlyNumbers();
-        printResults();
+        //simulation.start();
+        //printResults();
 
     }
 
@@ -194,17 +208,10 @@ public class SmallHAPS {
         RandomGenerator rg = new JDKRandomGenerator();
 
         ExponentialDistribution expDist = new ExponentialDistribution(rg,2200);
-        double delayTime = (expDist.sample() + expDist.sample() + expDist.sample()) / 3;
+        double delayTime = (expDist.sample()*0.34561 + expDist.sample()*0.08648 + expDist.sample()*0.56791);
         cloudlet.setSubmissionDelay(delayTime);
         cloudlet.setExecStartTime(delayTime);
         return cloudlet;
-    }
-
-    private void printResultsOnlyNumbers(){
-        for (DatacenterBroker broker : brokers) {
-
-
-        }
     }
 
     private void printResults() {
@@ -234,8 +241,13 @@ public class SmallHAPS {
                 TotalPowerConsumptionInKWatt += Double.parseDouble(df.format(entry.getValue()).replaceAll(",", "."));
             }
         }
-        try(BufferedWriter br = new BufferedWriter(new FileWriter("smallHAPS.txt",false))) {
-            br.write("Number of Brokers : "+ NUMBER_OF_BROKERS);
+        try(BufferedWriter br = new BufferedWriter(new FileWriter("smallHAPS.txt",true))) {
+            int index = simulationList.indexOf(this);
+            br.write("Number of Brokers : " + NUMBER_OF_BROKERS);
+            br.newLine();
+            br.write("Number of Cloudlets : "+ cloudletNumbers.get(index));
+            br.newLine();
+            br.write("Number of HAPS : "+ NUMBER_OF_HAPS);
             br.newLine();
             br.write("MAX_HAPS_POWER_WATTS_SEC: "+ MAX_HAPS_POWER_WATTS_SEC + " HAPS_STATIC_POWER_WATTS_SEC: " + HAPS_STATIC_POWER_WATTS_SEC);
             br.newLine();
@@ -256,6 +268,13 @@ public class SmallHAPS {
                     ", Size for Vm: " + sizeHAPSVm +
                     ", Ram for Vm: " + ramHAPSVm +
                     ", BW for Vm: " + bwHAPSVm + "\n");
+            br.newLine();
+            br.flush();
+        } catch (IOException e) {
+            System.out.println("Unable to read file ");
+        }
+        try(BufferedWriter br = new BufferedWriter(new FileWriter("smallHAPSOnlyNumbers.txt",true))) {
+            br.write(TotalPowerConsumptionInKWatt.intValue() / 1000 + "");
             br.newLine();
             br.flush();
         } catch (IOException e) {
