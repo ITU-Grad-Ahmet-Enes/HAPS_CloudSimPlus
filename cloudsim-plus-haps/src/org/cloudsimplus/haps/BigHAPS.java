@@ -1,9 +1,6 @@
 package org.cloudsimplus.haps;
 
 import org.apache.commons.math3.distribution.ExponentialDistribution;
-import org.apache.commons.math3.distribution.WeibullDistribution;
-import org.apache.commons.math3.random.JDKRandomGenerator;
-import org.apache.commons.math3.random.RandomGenerator;
 import org.cloudbus.cloudsim.allocationpolicies.VmAllocationPolicySimple;
 import org.cloudbus.cloudsim.brokers.DatacenterBroker;
 import org.cloudbus.cloudsim.cloudlets.Cloudlet;
@@ -27,23 +24,19 @@ import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelFull;
 import org.cloudbus.cloudsim.vms.HostResourceStats;
 import org.cloudbus.cloudsim.vms.Vm;
 import org.cloudbus.cloudsim.vms.VmSimple;
-import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.haps.headers.BigSmallDCBroker;
-import org.cloudsimplus.haps.headers.DatacenterBrokerLambda;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.*;
-
-import static java.util.Comparator.comparingLong;
 
 public class BigHAPS {
 
     private static final int NUMBER_OF_BROKERS = 5;
     private static final int SCHEDULING_INTERVAL = 10;
 
-    private double MAX_HAPS_POWER_WATTS_SEC = 500;
+    private double MAX_HAPS_POWER_WATTS_SEC = 1050;
     private double HAPS_STATIC_POWER_WATTS_SEC = 350;
 
     private final int NUMBER_OF_HAPS;
@@ -75,7 +68,10 @@ public class BigHAPS {
     private static final List<BigHAPS> simulationList = new ArrayList<>();
     private static final List<Integer> cloudletNumbers = new ArrayList<>();
     private static final List<Integer> delayNumbers = new ArrayList<>();
+    private static final List<Double> utilizationList = new ArrayList<>();
+    private static final List<Double> totalUpTimeList = new ArrayList<>();
     private static char testType;
+    private static char utilizationType;
     private static int delay;
     private static boolean specWrite = false;
 
@@ -83,6 +79,9 @@ public class BigHAPS {
         Scanner in = new Scanner(System.in);
         System.out.println("For Vm LifeTime Enter v , For CloudLetNumbers Enter c !");
         String s = in.nextLine();
+        System.out.println("For Normal Utilization Enter o , For Gauss Utilization Enter g !");
+        String y = in.nextLine();
+        utilizationType = y.equals("o") ? 'o': 'g';
         if (s.equals("c")){
             testType = 'c';
             for(int i=0; i<100 ;i++){
@@ -101,7 +100,7 @@ public class BigHAPS {
             testType = 'v';
             NUMBER_OF_CLOUDLETS = 2000;
             numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
-            for(int i=0; i<100; i++){
+            for(int i=0; i<200; i++){
                 if(i != 0){
                     delay += 100;
                 }
@@ -121,6 +120,8 @@ public class BigHAPS {
 
         simulationList.parallelStream().forEach(BigHAPS::run);
         simulationList.forEach(BigHAPS::printResults);
+        System.out.println(utilizationList);
+        System.out.println(totalUpTimeList);
     }
 
     public void run() {
@@ -261,7 +262,7 @@ public class BigHAPS {
 
     private void printResults() {
 
-        for (DatacenterBroker broker : brokers) {
+        /*for (DatacenterBroker broker : brokers) {
 
             final List<Cloudlet> finishedCloudlets = broker.getCloudletFinishedList();
             final Comparator<Cloudlet> hostComparator = comparingLong(cl -> cl.getVm().getHost().getId());
@@ -269,15 +270,25 @@ public class BigHAPS {
 
             new CloudletsTableBuilder(finishedCloudlets).build();
 
-        }
+        }*/
 
         Double TotalPowerConsumptionInKWatt = 0.0;
+        Double totalUtilization = 0.0;
+        Double totalUpTime = 0.0;
         for (Vm vm : vmList) {
             final HostResourceStats cpuStats = vm.getHost().getCpuUtilizationStats();
             final double utilizationPercentMean = cpuStats.getMean();
 
-            if(utilizationPercentMean > 0) TotalPowerConsumptionInKWatt += vm.getHost().getPowerModel().getPower(utilizationPercentMean) * vm.getHost().getTotalUpTime() / 1000;
+            if(utilizationPercentMean > 0) {
+                TotalPowerConsumptionInKWatt += vm.getHost().getPowerModel().getPower(utilizationPercentMean) * vm.getHost().getTotalUpTime() / 1000;
+                totalUtilization += utilizationPercentMean;
+                totalUpTime += vm.getHost().getTotalUpTime();
+            }
+
         }
+        totalUtilization /= vmList.size();
+        utilizationList.add(totalUtilization);
+        totalUpTimeList.add(totalUpTime);
 
         //All informations
         if(!specWrite){

@@ -26,22 +26,18 @@ import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelFull;
 import org.cloudbus.cloudsim.vms.HostResourceStats;
 import org.cloudbus.cloudsim.vms.Vm;
 import org.cloudbus.cloudsim.vms.VmSimple;
-import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.haps.headers.BigSmallDCBroker;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.*;
-
-import static java.util.Comparator.comparingLong;
 
 public class SmallHAPS {
 
     private static final int NUMBER_OF_BROKERS = 25;
     private static final int SCHEDULING_INTERVAL = 10;
 
-    private double MAX_HAPS_POWER_WATTS_SEC = 50;
+    private double MAX_HAPS_POWER_WATTS_SEC = 105;
     private double HAPS_STATIC_POWER_WATTS_SEC = 35;
 
     private final int NUMBER_OF_HAPS;
@@ -73,6 +69,8 @@ public class SmallHAPS {
     private static final List<SmallHAPS> simulationList = new ArrayList<>();
     private static final List<Integer> cloudletNumbers = new ArrayList<>();
     private static final List<Integer> delayNumbers = new ArrayList<>();
+    private static final List<Double> utilizationList = new ArrayList<>();
+    private static final List<Double> totalUpTimeList = new ArrayList<>();
     private static char testType;
     private static int delay;
     private static boolean specWrite = false;
@@ -99,7 +97,7 @@ public class SmallHAPS {
             testType = 'v';
             NUMBER_OF_CLOUDLETS = 2000;
             numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
-            for(int i=0; i<100; i++){
+            for(int i=0; i<200; i++){
                 if(i != 0){
                     delay += 100;
                 }
@@ -119,6 +117,8 @@ public class SmallHAPS {
 
         simulationList.parallelStream().forEach(SmallHAPS::run);
         simulationList.forEach(SmallHAPS::printResults);
+        System.out.println(utilizationList);
+        System.out.println(totalUpTimeList);
 
 
     }
@@ -233,7 +233,10 @@ public class SmallHAPS {
         return vm;
     }
 
-
+//x time y energy
+//uniform mid high 50 50
+    //low gauss
+    //%50 low 0.01 %30 mid 0.05 %20 high 0.1
 
     private Cloudlet createCloudlet(long id, long length, int delay) {
         final long fileSize = 300;
@@ -258,22 +261,31 @@ public class SmallHAPS {
     }
 
     private void printResults(){
-        for (DatacenterBroker broker : brokers) {
+        /*for (DatacenterBroker broker : brokers) {
 
             final List<Cloudlet> finishedCloudlets = broker.getCloudletFinishedList();
             final Comparator<Cloudlet> hostComparator = comparingLong(cl -> cl.getVm().getHost().getId());
             finishedCloudlets.sort(hostComparator.thenComparing(cl -> cl.getVm().getId()));
 
             new CloudletsTableBuilder(finishedCloudlets).build();
-        }
+        }*/
 
         Double TotalPowerConsumptionInKWatt = 0.0;
+        Double totalUtilization = 0.0;
+        Double totalUpTime = 0.0;
         for (Vm vm : vmList) {
             final HostResourceStats cpuStats = vm.getHost().getCpuUtilizationStats();
             final double utilizationPercentMean = cpuStats.getMean();
 
-            if(utilizationPercentMean > 0) TotalPowerConsumptionInKWatt += vm.getHost().getPowerModel().getPower(utilizationPercentMean) * vm.getHost().getTotalUpTime() / 1000;
+            if(utilizationPercentMean > 0){
+                TotalPowerConsumptionInKWatt += vm.getHost().getPowerModel().getPower(utilizationPercentMean) * vm.getHost().getTotalUpTime() / 1000;
+                totalUtilization += utilizationPercentMean;
+                totalUpTime += vm.getHost().getTotalUpTime();
+            }
         }
+        totalUtilization /= vmList.size();
+        utilizationList.add(totalUtilization);
+        totalUpTimeList.add(totalUpTime);
 
         if(!specWrite){
             try(BufferedWriter br = new BufferedWriter(testType == 'c' ?

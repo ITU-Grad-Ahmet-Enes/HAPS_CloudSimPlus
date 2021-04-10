@@ -1,6 +1,6 @@
 Number of Brokers : 25
 Number of HAPS : 25
-MAX_HAPS_POWER_WATTS_SEC: 50.0 HAPS_STATIC_POWER_WATTS_SEC: 35.0
+MAX_HAPS_POWER_WATTS_SEC: 105.0 HAPS_STATIC_POWER_WATTS_SEC: 35.0
 ---------------------------------------------------------------------------------------
 HAPS Stations Properties 
 Number of Stations: 25, Number of Hosts: 25, Number of Vms: 25
@@ -9,302 +9,302 @@ Mips for Vm: 10000, Size for Vm: 10000000, Ram for Vm: 66000, BW for Vm: 10000
 
 
 Number of Cloudlets : 25
-Total Energy Consumption is 13469 kW
+Total Energy Consumption is 15447 kW
 
 Number of Cloudlets : 50
-Total Energy Consumption is 11036 kW
+Total Energy Consumption is 14666 kW
 
 Number of Cloudlets : 75
-Total Energy Consumption is 11997 kW
+Total Energy Consumption is 24946 kW
 
 Number of Cloudlets : 100
-Total Energy Consumption is 14448 kW
+Total Energy Consumption is 18185 kW
 
 Number of Cloudlets : 125
-Total Energy Consumption is 12139 kW
+Total Energy Consumption is 30917 kW
 
 Number of Cloudlets : 150
-Total Energy Consumption is 14740 kW
+Total Energy Consumption is 30564 kW
 
 Number of Cloudlets : 175
-Total Energy Consumption is 13415 kW
+Total Energy Consumption is 35463 kW
 
 Number of Cloudlets : 200
-Total Energy Consumption is 23000 kW
+Total Energy Consumption is 31760 kW
 
 Number of Cloudlets : 225
-Total Energy Consumption is 20023 kW
+Total Energy Consumption is 33518 kW
 
 Number of Cloudlets : 250
-Total Energy Consumption is 17582 kW
+Total Energy Consumption is 33938 kW
 
 Number of Cloudlets : 275
-Total Energy Consumption is 17368 kW
+Total Energy Consumption is 34099 kW
 
 Number of Cloudlets : 300
-Total Energy Consumption is 21949 kW
+Total Energy Consumption is 32879 kW
 
 Number of Cloudlets : 325
-Total Energy Consumption is 23083 kW
+Total Energy Consumption is 30608 kW
 
 Number of Cloudlets : 350
-Total Energy Consumption is 19250 kW
+Total Energy Consumption is 41280 kW
 
 Number of Cloudlets : 375
-Total Energy Consumption is 24542 kW
+Total Energy Consumption is 37246 kW
 
 Number of Cloudlets : 400
-Total Energy Consumption is 21380 kW
+Total Energy Consumption is 41390 kW
 
 Number of Cloudlets : 425
-Total Energy Consumption is 19661 kW
+Total Energy Consumption is 48177 kW
 
 Number of Cloudlets : 450
-Total Energy Consumption is 20536 kW
+Total Energy Consumption is 49769 kW
 
 Number of Cloudlets : 475
-Total Energy Consumption is 23491 kW
+Total Energy Consumption is 46535 kW
 
 Number of Cloudlets : 500
-Total Energy Consumption is 20904 kW
+Total Energy Consumption is 49614 kW
 
 Number of Cloudlets : 525
-Total Energy Consumption is 28639 kW
+Total Energy Consumption is 58843 kW
 
 Number of Cloudlets : 550
-Total Energy Consumption is 26057 kW
+Total Energy Consumption is 47294 kW
 
 Number of Cloudlets : 575
-Total Energy Consumption is 24540 kW
+Total Energy Consumption is 55491 kW
 
 Number of Cloudlets : 600
-Total Energy Consumption is 23972 kW
+Total Energy Consumption is 58394 kW
 
 Number of Cloudlets : 625
-Total Energy Consumption is 33187 kW
+Total Energy Consumption is 60553 kW
 
 Number of Cloudlets : 650
-Total Energy Consumption is 29128 kW
+Total Energy Consumption is 56344 kW
 
 Number of Cloudlets : 675
-Total Energy Consumption is 30840 kW
+Total Energy Consumption is 52996 kW
 
 Number of Cloudlets : 700
-Total Energy Consumption is 31615 kW
+Total Energy Consumption is 60732 kW
 
 Number of Cloudlets : 725
-Total Energy Consumption is 31557 kW
+Total Energy Consumption is 63846 kW
 
 Number of Cloudlets : 750
-Total Energy Consumption is 38812 kW
+Total Energy Consumption is 65810 kW
 
 Number of Cloudlets : 775
-Total Energy Consumption is 34459 kW
+Total Energy Consumption is 65855 kW
 
 Number of Cloudlets : 800
-Total Energy Consumption is 33105 kW
+Total Energy Consumption is 74263 kW
 
 Number of Cloudlets : 825
-Total Energy Consumption is 38013 kW
+Total Energy Consumption is 76753 kW
 
 Number of Cloudlets : 850
-Total Energy Consumption is 39899 kW
+Total Energy Consumption is 78886 kW
 
 Number of Cloudlets : 875
-Total Energy Consumption is 35122 kW
+Total Energy Consumption is 70470 kW
 
 Number of Cloudlets : 900
-Total Energy Consumption is 33598 kW
+Total Energy Consumption is 74278 kW
 
 Number of Cloudlets : 925
-Total Energy Consumption is 44705 kW
+Total Energy Consumption is 82066 kW
 
 Number of Cloudlets : 950
-Total Energy Consumption is 39286 kW
+Total Energy Consumption is 78136 kW
 
 Number of Cloudlets : 975
-Total Energy Consumption is 43868 kW
+Total Energy Consumption is 75132 kW
 
 Number of Cloudlets : 1000
-Total Energy Consumption is 41592 kW
+Total Energy Consumption is 105625 kW
 
 Number of Cloudlets : 1025
-Total Energy Consumption is 42314 kW
+Total Energy Consumption is 92953 kW
 
 Number of Cloudlets : 1050
-Total Energy Consumption is 41527 kW
+Total Energy Consumption is 82453 kW
 
 Number of Cloudlets : 1075
-Total Energy Consumption is 46052 kW
+Total Energy Consumption is 88979 kW
 
 Number of Cloudlets : 1100
-Total Energy Consumption is 49095 kW
+Total Energy Consumption is 88690 kW
 
 Number of Cloudlets : 1125
-Total Energy Consumption is 39723 kW
+Total Energy Consumption is 83948 kW
 
 Number of Cloudlets : 1150
-Total Energy Consumption is 40812 kW
+Total Energy Consumption is 91118 kW
 
 Number of Cloudlets : 1175
-Total Energy Consumption is 44297 kW
+Total Energy Consumption is 95344 kW
 
 Number of Cloudlets : 1200
-Total Energy Consumption is 46463 kW
+Total Energy Consumption is 103772 kW
 
 Number of Cloudlets : 1225
-Total Energy Consumption is 46711 kW
+Total Energy Consumption is 87402 kW
 
 Number of Cloudlets : 1250
-Total Energy Consumption is 47709 kW
+Total Energy Consumption is 101493 kW
 
 Number of Cloudlets : 1275
-Total Energy Consumption is 47176 kW
+Total Energy Consumption is 104778 kW
 
 Number of Cloudlets : 1300
-Total Energy Consumption is 51227 kW
+Total Energy Consumption is 101300 kW
 
 Number of Cloudlets : 1325
-Total Energy Consumption is 50869 kW
+Total Energy Consumption is 99578 kW
 
 Number of Cloudlets : 1350
-Total Energy Consumption is 53656 kW
+Total Energy Consumption is 106664 kW
 
 Number of Cloudlets : 1375
-Total Energy Consumption is 62567 kW
+Total Energy Consumption is 100347 kW
 
 Number of Cloudlets : 1400
-Total Energy Consumption is 50474 kW
+Total Energy Consumption is 109002 kW
 
 Number of Cloudlets : 1425
-Total Energy Consumption is 51256 kW
+Total Energy Consumption is 109784 kW
 
 Number of Cloudlets : 1450
-Total Energy Consumption is 55326 kW
+Total Energy Consumption is 119922 kW
 
 Number of Cloudlets : 1475
-Total Energy Consumption is 57284 kW
+Total Energy Consumption is 125481 kW
 
 Number of Cloudlets : 1500
-Total Energy Consumption is 54452 kW
+Total Energy Consumption is 111864 kW
 
 Number of Cloudlets : 1525
-Total Energy Consumption is 63022 kW
+Total Energy Consumption is 116134 kW
 
 Number of Cloudlets : 1550
-Total Energy Consumption is 52474 kW
+Total Energy Consumption is 112993 kW
 
 Number of Cloudlets : 1575
-Total Energy Consumption is 55003 kW
+Total Energy Consumption is 120156 kW
 
 Number of Cloudlets : 1600
-Total Energy Consumption is 55476 kW
+Total Energy Consumption is 112884 kW
 
 Number of Cloudlets : 1625
-Total Energy Consumption is 62621 kW
+Total Energy Consumption is 122931 kW
 
 Number of Cloudlets : 1650
-Total Energy Consumption is 61869 kW
+Total Energy Consumption is 125238 kW
 
 Number of Cloudlets : 1675
-Total Energy Consumption is 68611 kW
+Total Energy Consumption is 120981 kW
 
 Number of Cloudlets : 1700
-Total Energy Consumption is 67038 kW
+Total Energy Consumption is 139079 kW
 
 Number of Cloudlets : 1725
-Total Energy Consumption is 56819 kW
+Total Energy Consumption is 128471 kW
 
 Number of Cloudlets : 1750
-Total Energy Consumption is 71211 kW
+Total Energy Consumption is 135692 kW
 
 Number of Cloudlets : 1775
-Total Energy Consumption is 70737 kW
+Total Energy Consumption is 127687 kW
 
 Number of Cloudlets : 1800
-Total Energy Consumption is 62438 kW
+Total Energy Consumption is 133299 kW
 
 Number of Cloudlets : 1825
-Total Energy Consumption is 68431 kW
+Total Energy Consumption is 130235 kW
 
 Number of Cloudlets : 1850
-Total Energy Consumption is 80391 kW
+Total Energy Consumption is 138847 kW
 
 Number of Cloudlets : 1875
-Total Energy Consumption is 64593 kW
+Total Energy Consumption is 155064 kW
 
 Number of Cloudlets : 1900
-Total Energy Consumption is 65133 kW
+Total Energy Consumption is 145427 kW
 
 Number of Cloudlets : 1925
-Total Energy Consumption is 68830 kW
+Total Energy Consumption is 144985 kW
 
 Number of Cloudlets : 1950
-Total Energy Consumption is 68019 kW
+Total Energy Consumption is 140084 kW
 
 Number of Cloudlets : 1975
-Total Energy Consumption is 70412 kW
+Total Energy Consumption is 149945 kW
 
 Number of Cloudlets : 2000
-Total Energy Consumption is 72539 kW
+Total Energy Consumption is 153605 kW
 
 Number of Cloudlets : 2025
-Total Energy Consumption is 71037 kW
+Total Energy Consumption is 143186 kW
 
 Number of Cloudlets : 2050
-Total Energy Consumption is 74678 kW
+Total Energy Consumption is 153332 kW
 
 Number of Cloudlets : 2075
-Total Energy Consumption is 72246 kW
+Total Energy Consumption is 149218 kW
 
 Number of Cloudlets : 2100
-Total Energy Consumption is 75102 kW
+Total Energy Consumption is 153231 kW
 
 Number of Cloudlets : 2125
-Total Energy Consumption is 81917 kW
+Total Energy Consumption is 155197 kW
 
 Number of Cloudlets : 2150
-Total Energy Consumption is 77442 kW
+Total Energy Consumption is 152144 kW
 
 Number of Cloudlets : 2175
-Total Energy Consumption is 76498 kW
+Total Energy Consumption is 156540 kW
 
 Number of Cloudlets : 2200
-Total Energy Consumption is 77266 kW
+Total Energy Consumption is 158053 kW
 
 Number of Cloudlets : 2225
-Total Energy Consumption is 75923 kW
+Total Energy Consumption is 158645 kW
 
 Number of Cloudlets : 2250
-Total Energy Consumption is 77824 kW
+Total Energy Consumption is 160713 kW
 
 Number of Cloudlets : 2275
-Total Energy Consumption is 74061 kW
+Total Energy Consumption is 165486 kW
 
 Number of Cloudlets : 2300
-Total Energy Consumption is 77936 kW
+Total Energy Consumption is 165843 kW
 
 Number of Cloudlets : 2325
-Total Energy Consumption is 85527 kW
+Total Energy Consumption is 160560 kW
 
 Number of Cloudlets : 2350
-Total Energy Consumption is 83558 kW
+Total Energy Consumption is 157070 kW
 
 Number of Cloudlets : 2375
-Total Energy Consumption is 83959 kW
+Total Energy Consumption is 172695 kW
 
 Number of Cloudlets : 2400
-Total Energy Consumption is 84053 kW
+Total Energy Consumption is 171310 kW
 
 Number of Cloudlets : 2425
-Total Energy Consumption is 85246 kW
+Total Energy Consumption is 174947 kW
 
 Number of Cloudlets : 2450
-Total Energy Consumption is 79750 kW
+Total Energy Consumption is 178768 kW
 
 Number of Cloudlets : 2475
-Total Energy Consumption is 89243 kW
+Total Energy Consumption is 180958 kW
 
 Number of Cloudlets : 2500
-Total Energy Consumption is 85457 kW
+Total Energy Consumption is 172186 kW
 
