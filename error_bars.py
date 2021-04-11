@@ -1,157 +1,175 @@
-import numpy as np
 import plotly.graph_objects as go
+import numpy as np
+import pandas as pd
+import plotly.express as px
+
+outputFile1 = open("smallErrorBarCloudlet.txt", "r")
+outputFile2 = open("bigErrorBarCloudlet.txt", "r")
+
+outputFile3 = open("smallErrorBarVm.txt", "r")
+outputFile4 = open("bigErrorBarVm.txt", "r")
+
+smallHAPS_Cloudlet = outputFile1.read().split('\n')
+smallHAPS_Cloudlet.pop()
+
+bigHAPS_Cloudlet = outputFile2.read().split('\n')
+bigHAPS_Cloudlet.pop()
+
+smallHAPS_Vm_Life_Time = outputFile3.read().split('\n')
+smallHAPS_Vm_Life_Time.pop()
+
+bigHAPS_Vm_Life_Time = outputFile4.read().split('\n')
+bigHAPS_Vm_Life_Time.pop()
+
+std_energy_small_cloudlet = np.array([])
+std_energy_small_vm = np.array([])
+std_energy_big_cloudlet = np.array([])
+std_energy_big_vm = np.array([])
+
+sum_energy_small = 0
+sum_energy_big = 0
+sum_utilization_small = 0.0
+sum_utilization_big = 0.0
+sum_up_time_small = 0
+sum_up_time_big = 0
+
+y_small_cloudlet_energy = []
+y_small_vm_energy = []
+y_big_cloudlet_energy = []
+y_big_vm_energy = []
+small_cloudlet_utilization = []
+small_vm_utilization = []
+big_cloudlet_utilization = []
+big_vm_utilization = []
+small_cloudlet_up_time = []
+small_vm_up_time = []
+big_cloudlet_up_time = []
+big_vm_up_time = []
+
+type_small_cloudlet = []
+type_small_vm = []
+type_big_cloudlet = []
+type_big_vm = []
+Number_of_Cloudlets = []
+Delays = []
+for i in range(25):  # i<5 diger dosyadaki iterasyon cloudlet
+    energy_small_cloudlet = np.array([])
+    energy_big_cloudlet = np.array([])
+    sum_utilization_small = 0.0
+    sum_utilization_big = 0.0
+    sum_up_time_small = 0
+    sum_up_time_big = 0
+    Number_of_Cloudlets.append(500 + i * 100)
+    type_small_cloudlet.append('Small')
+    type_big_cloudlet.append('Big')
+    for j in range(30):  # (number of test = 10 ) * 3
+        if j % 3 == 0:
+            energy_small_cloudlet = np.append(energy_small_cloudlet, int(smallHAPS_Cloudlet[i * 30 + j]))
+            energy_big_cloudlet = np.append(energy_big_cloudlet, int(bigHAPS_Cloudlet[i * 30 + j]))
+        elif j % 3 == 1:
+            sum_utilization_small += float(smallHAPS_Cloudlet[i * 30 + j].replace(',', '.'))
+            sum_utilization_big += float(bigHAPS_Cloudlet[i * 30 + j].replace(',', '.'))
+        elif j % 3 == 2:
+            sum_up_time_small += int(smallHAPS_Cloudlet[i * 30 + j])
+            sum_up_time_big += int(bigHAPS_Cloudlet[i * 30 + j])
+    sum_utilization_small /= 10.0
+    small_cloudlet_utilization.append(round(sum_utilization_small, 4))
+    sum_utilization_big /= 10.0
+    big_cloudlet_utilization.append(round(sum_utilization_big, 4))
+    sum_up_time_small /= 10
+    small_cloudlet_up_time.append(round(sum_up_time_small, 4))
+    sum_up_time_big /= 10
+    big_cloudlet_up_time.append(sum_up_time_big)
+    std_energy_small_cloudlet = np.append(std_energy_small_cloudlet, np.std(energy_small_cloudlet[0:9]))
+    std_energy_big_cloudlet = np.append(std_energy_big_cloudlet, np.std(energy_big_cloudlet[0:9]))
+    y_small_cloudlet_energy.append(np.mean(energy_small_cloudlet))
+    y_big_cloudlet_energy.append(np.mean(energy_big_cloudlet))
+
+for i in range(25):  # i<5 diger dosyadaki iterasyon vm
+    energy_small_vm = np.array([])
+    energy_big_vm = np.array([])
+    sum_utilization_small = 0.0
+    sum_utilization_big = 0.0
+    sum_up_time_small = 0
+    sum_up_time_big = 0
+    Delays.append(500 + i * 5000)
+    type_small_vm.append('Small')
+    type_big_vm.append('Big')
+    for j in range(30):  # (number of test = 10 ) * 3
+        if j % 3 == 0:
+            energy_small_vm = np.append(energy_small_vm, int(smallHAPS_Vm_Life_Time[i * 30 + j]))
+            energy_big_vm = np.append(energy_big_vm, int(bigHAPS_Vm_Life_Time[i * 30 + j]))
+        elif j % 3 == 1:
+            sum_utilization_small += float(smallHAPS_Vm_Life_Time[i * 30 + j].replace(',', '.'))
+            sum_utilization_big += float(bigHAPS_Vm_Life_Time[i * 30 + j].replace(',', '.'))
+        elif j % 3 == 2:
+            sum_up_time_small += int(smallHAPS_Vm_Life_Time[i * 30 + j])
+            sum_up_time_big += int(bigHAPS_Vm_Life_Time[i * 30 + j])
+    sum_utilization_small /= 10.0
+    small_vm_utilization.append(round(sum_utilization_small, 4))
+    sum_utilization_big /= 10.0
+    big_vm_utilization.append(round(sum_utilization_big, 4))
+    sum_up_time_small /= 10
+    small_vm_up_time.append(round(sum_up_time_small, 4))
+    sum_up_time_big /= 10
+    big_vm_up_time.append(sum_up_time_big)
+    std_energy_small_vm = np.append(std_energy_small_vm, np.std(energy_small_vm[0:9]))
+    std_energy_big_vm = np.append(std_energy_big_vm, np.std(energy_big_vm[0:9]))
+    y_small_vm_energy.append(np.mean(energy_small_vm))
+    y_big_vm_energy.append(np.mean(energy_big_vm))
 
 
-def fill_arrays(file):
-    array = file.read().split('\n')
-    array.pop()
-    return array
 
+data1 = {'Cloudlet': Number_of_Cloudlets + Number_of_Cloudlets,
+         'Energy': y_small_cloudlet_energy + y_big_cloudlet_energy,
+         'MeanUtilization': small_cloudlet_utilization + big_cloudlet_utilization,
+         'MeanUpTime': small_cloudlet_up_time + big_cloudlet_up_time,
+         'Type': type_small_cloudlet + type_big_cloudlet}
 
-def read_file(run_id):
-    file_name = run_id + "outputOnlyNumbersEnergyPower.txt"
-    run = open(file_name, "r")
-    array = fill_arrays(run)
-    return array
+data2 = {'Delay': Delays + Delays,
+         'Energy': y_small_vm_energy + y_big_vm_energy,
+         'MeanUtilization': small_vm_utilization + big_vm_utilization,
+         'MeanUpTime': small_vm_up_time + big_vm_up_time,
+         'Type': type_small_vm + type_big_vm}
 
-
-run1 = read_file('1')
-run2 = read_file('2')
-run3 = read_file('3')
-run4 = read_file('4')
-run5 = read_file('5')
-run6 = read_file('6')
-run7 = read_file('7')
-run8 = read_file('8')
-run9 = read_file('9')
-run10 = read_file('10')
-
-lambda00 = np.array([])
-lambda01 = np.array([])
-lambda02 = np.array([])
-lambda03 = np.array([])
-lambda04 = np.array([])
-lambda05 = np.array([])
-lambda06 = np.array([])
-lambda07 = np.array([])
-lambda08 = np.array([])
-lambda09 = np.array([])
-lambda10 = np.array([])
-
-all_runs = [run1, run2, run3, run4, run5, run6, run7, run8, run9, run10]
-
-Number_of_Brokers = int(run1[0])
-Number_of_Tests = int((len(run1) - 1) / (1 + 11 * Number_of_Brokers))
-
-points = [[0 for a in range(11)] for b in range(Number_of_Tests)]
-z_points = [0 for c in range(Number_of_Tests)]
-
-current_index = 1
-# Calculating Mean
-for i in range(0, Number_of_Tests):
-    z_points[i] = float(run1[current_index]) * 0.001
-    current_index += 1
-    lambda_factor = float(0)
-    for m in range(0, 11):
-        sum_mean = 0
-        for k in range(0, Number_of_Brokers):
-            for row in range(0, len(all_runs)):
-                sum_mean += float(all_runs[row][current_index])
-            current_index += 1
-
-        sum_mean /= Number_of_Brokers * len(all_runs)
-        sum_with_wrapping = float("{:.2f}".format(sum_mean))
-
-        points[i][m] = [sum_with_wrapping, lambda_factor, z_points[i]]
-        lambda_factor += 0.1
-        lambda_factor = float("{:.1f}".format(lambda_factor))
-
-
-current_index = 1
-for i in range(0, Number_of_Tests):
-    for m in range(0, 11):
-        current_index += 1
-        for row in range(0, len(all_runs)):
-            sum_local_for_std = 0
-            for k in range(0, Number_of_Brokers):
-                sum_local_for_std += float(all_runs[row][current_index + k])
-            sum_local_for_std /= Number_of_Brokers
-            if m == 0:
-                lambda00 = np.append(lambda00, [sum_local_for_std])
-            elif m == 1:
-                lambda01 = np.append(lambda01, [sum_local_for_std])
-            elif m == 2:
-                lambda02 = np.append(lambda02, [sum_local_for_std])
-            elif m == 3:
-                lambda03 = np.append(lambda03, [sum_local_for_std])
-            elif m == 4:
-                lambda04 = np.append(lambda04, [sum_local_for_std])
-            elif m == 5:
-                lambda05 = np.append(lambda05, [sum_local_for_std])
-            elif m == 6:
-                lambda06 = np.append(lambda06, [sum_local_for_std])
-            elif m == 7:
-                lambda07 = np.append(lambda07, [sum_local_for_std])
-            elif m == 8:
-                lambda08 = np.append(lambda08, [sum_local_for_std])
-            elif m == 9:
-                lambda09 = np.append(lambda09, [sum_local_for_std])
-            elif m == 10:
-                lambda10 = np.append(lambda10, [sum_local_for_std])
-        current_index += 1
-    current_index += 1
-
-
-std = []
-start = 0
-end = 9
-for i in range(0, Number_of_Tests):
-    temp = np.array([np.std(lambda00[start:end]), np.std(lambda01[start:end]), np.std(lambda02[start:end]),
-                     np.std(lambda03[start:end]), np.std(lambda04[start:end]), np.std(lambda05[start:end]),
-                     np.std(lambda06[start:end]), np.std(lambda07[start:end]), np.std(lambda08[start:end]),
-                     np.std(lambda09[start:end]), np.std(lambda10[start:end])])
-    std.append(temp)
-    start += 10
-    end += 10
-
-
-mean_x = [[0 for x in range(11)] for y in range(int(Number_of_Tests))]
-mean_y = [[0 for x in range(11)] for y in range(int(Number_of_Tests))]
-mean_z = [[0 for x in range(11)] for y in range(int(Number_of_Tests))]
-
-for i in range(0, Number_of_Tests):
-    for j in range(0, 11):
-        point = points[i][j]
-        mean_x[i][j] = point[0]
-        mean_y[i][j] = point[1]
-        mean_z[i][j] = point[2]
-
-fig = go.Figure()
-for i in range(0, Number_of_Tests):
-    fig.add_trace(go.Scatter3d(x=mean_y[i], y=mean_x[i], z=mean_z[i],
-                               mode='lines+markers',
-                               error_y=dict(
-                                   type='data',
-                                   array=std[i],
-                                   visible=True)))
-fig.update_layout(
-    title_text="X_Lambda, Y_Total Energy Consumption In KWatt, Z_MAX_HAPS_POWER_KWATTS_SEC",
-    width=1800,
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+std_cloudlet = np.append(std_energy_small_cloudlet, std_energy_big_cloudlet)
+std_vm = np.append(std_energy_small_vm, std_energy_big_vm)
+fig = px.scatter(
+    data_frame=df1,
+    x='Cloudlet',
+    y='Energy',
+    error_y=std_cloudlet,
+    custom_data=['Energy', 'MeanUtilization', 'MeanUpTime'], color="Type"
 )
+
+fig.update_traces(mode="markers+lines",
+                  hovertemplate="<br>".join([
+                      "Cloudlet: %{x}",
+                      "Energy: %{y}",
+                      "MeanUtilization: %{customdata[1]}",
+                      "MeanUpTime: %{customdata[2]}",
+                  ])
+                  )
+fig.update_layout(title_text="x:NumberOfCloudLets y:EnergyConsuptionInKw", width=1800, )
 fig.show()
-
-##########################################################################################################
-
-fig = go.Figure()
-for i in range(0, Number_of_Tests):
-    fig.add_trace(go.Scatter(x=mean_y[i], y=mean_x[i],
-                             mode='lines+markers',
-                             error_y=dict(
-                                 type='data',
-                                 array=std[i],
-                                 visible=True)))
-fig.update_layout(
-    title_text="X_Lambda, Y_Total Energy Consumption In KWatt, Z_MAX_HAPS_POWER_KWATTS_SEC",
-    width=1800,
+# ####################################################################################
+fig = px.scatter(
+    data_frame=df2,
+    x='Delay',
+    y='Energy',
+    error_y=std_vm,
+    custom_data=['Energy', 'MeanUtilization', 'MeanUpTime'], color="Type"
 )
+
+fig.update_traces(mode="markers+lines",
+                  hovertemplate="<br>".join([
+                      "Delay: %{x}",
+                      "Energy: %{y}",
+                      "MeanUtilization: %{customdata[1]}",
+                      "MeanUpTime: %{customdata[2]}",
+                  ])
+                  )
+fig.update_layout(title_text="x:MeanDelay y:EnergyConsuptionInKw, NumberOfCloudlet 2000", width=1800, )
 fig.show()

@@ -4,307 +4,1257 @@ MAX_HAPS_POWER_WATTS_SEC: 105.0 HAPS_STATIC_POWER_WATTS_SEC: 35.0
 ---------------------------------------------------------------------------------------
 HAPS Stations Properties 
 Number of Stations: 25, Number of Hosts: 25, Number of Vms: 25
-Mips for Host: 10000, Ram for Host: 66000, Storage for Host: 10000000, BW for Host: 10000
-Mips for Vm: 10000, Size for Vm: 10000000, Ram for Vm: 66000, BW for Vm: 10000
+Mips for Host: 1000, Ram for Host: 660000, Storage for Host: 100000000, BW for Host: 100000
+Mips for Vm: 1000, Size for Vm: 10000000, Ram for Vm: 66000, BW for Vm: 10000
 
-
-Number of Cloudlets : 25
-Total Energy Consumption is 15447 kW
-
-Number of Cloudlets : 50
-Total Energy Consumption is 14666 kW
-
-Number of Cloudlets : 75
-Total Energy Consumption is 24946 kW
-
-Number of Cloudlets : 100
-Total Energy Consumption is 18185 kW
-
-Number of Cloudlets : 125
-Total Energy Consumption is 30917 kW
-
-Number of Cloudlets : 150
-Total Energy Consumption is 30564 kW
-
-Number of Cloudlets : 175
-Total Energy Consumption is 35463 kW
-
-Number of Cloudlets : 200
-Total Energy Consumption is 31760 kW
-
-Number of Cloudlets : 225
-Total Energy Consumption is 33518 kW
-
-Number of Cloudlets : 250
-Total Energy Consumption is 33938 kW
-
-Number of Cloudlets : 275
-Total Energy Consumption is 34099 kW
-
-Number of Cloudlets : 300
-Total Energy Consumption is 32879 kW
-
-Number of Cloudlets : 325
-Total Energy Consumption is 30608 kW
-
-Number of Cloudlets : 350
-Total Energy Consumption is 41280 kW
-
-Number of Cloudlets : 375
-Total Energy Consumption is 37246 kW
-
-Number of Cloudlets : 400
-Total Energy Consumption is 41390 kW
-
-Number of Cloudlets : 425
-Total Energy Consumption is 48177 kW
-
-Number of Cloudlets : 450
-Total Energy Consumption is 49769 kW
-
-Number of Cloudlets : 475
-Total Energy Consumption is 46535 kW
 
 Number of Cloudlets : 500
-Total Energy Consumption is 49614 kW
+Total Energy Consumption is 434158 kW
+Mean Utilization 0,78602
+Mean Total Up Time is 192912 seconds
 
-Number of Cloudlets : 525
-Total Energy Consumption is 58843 kW
+Number of Cloudlets : 500
+Total Energy Consumption is 392445 kW
+Mean Utilization 0,75227
+Mean Total Up Time is 179079 seconds
 
-Number of Cloudlets : 550
-Total Energy Consumption is 47294 kW
+Number of Cloudlets : 500
+Total Energy Consumption is 429377 kW
+Mean Utilization 0,76139
+Mean Total Up Time is 194514 seconds
 
-Number of Cloudlets : 575
-Total Energy Consumption is 55491 kW
+Number of Cloudlets : 500
+Total Energy Consumption is 489665 kW
+Mean Utilization 0,79838
+Mean Total Up Time is 215506 seconds
+
+Number of Cloudlets : 500
+Total Energy Consumption is 476840 kW
+Mean Utilization 0,75722
+Mean Total Up Time is 216732 seconds
+
+Number of Cloudlets : 500
+Total Energy Consumption is 387806 kW
+Mean Utilization 0,76816
+Mean Total Up Time is 174743 seconds
+
+Number of Cloudlets : 500
+Total Energy Consumption is 365924 kW
+Mean Utilization 0,77007
+Mean Total Up Time is 164636 seconds
+
+Number of Cloudlets : 500
+Total Energy Consumption is 514550 kW
+Mean Utilization 0,77968
+Mean Total Up Time is 229766 seconds
+
+Number of Cloudlets : 500
+Total Energy Consumption is 489751 kW
+Mean Utilization 0,75029
+Mean Total Up Time is 223834 seconds
+
+Number of Cloudlets : 500
+Total Energy Consumption is 542336 kW
+Mean Utilization 0,75756
+Mean Total Up Time is 246435 seconds
 
 Number of Cloudlets : 600
-Total Energy Consumption is 58394 kW
+Total Energy Consumption is 417328 kW
+Mean Utilization 0,78074
+Mean Total Up Time is 186199 seconds
 
-Number of Cloudlets : 625
-Total Energy Consumption is 60553 kW
+Number of Cloudlets : 600
+Total Energy Consumption is 418136 kW
+Mean Utilization 0,80024
+Mean Total Up Time is 183762 seconds
 
-Number of Cloudlets : 650
-Total Energy Consumption is 56344 kW
+Number of Cloudlets : 600
+Total Energy Consumption is 518422 kW
+Mean Utilization 0,80647
+Mean Total Up Time is 226750 seconds
 
-Number of Cloudlets : 675
-Total Energy Consumption is 52996 kW
+Number of Cloudlets : 600
+Total Energy Consumption is 422811 kW
+Mean Utilization 0,80969
+Mean Total Up Time is 184475 seconds
+
+Number of Cloudlets : 600
+Total Energy Consumption is 490433 kW
+Mean Utilization 0,82467
+Mean Total Up Time is 211559 seconds
+
+Number of Cloudlets : 600
+Total Energy Consumption is 513046 kW
+Mean Utilization 0,8246
+Mean Total Up Time is 221327 seconds
+
+Number of Cloudlets : 600
+Total Energy Consumption is 580102 kW
+Mean Utilization 0,8134
+Mean Total Up Time is 252389 seconds
+
+Number of Cloudlets : 600
+Total Energy Consumption is 510504 kW
+Mean Utilization 0,7849
+Mean Total Up Time is 227034 seconds
+
+Number of Cloudlets : 600
+Total Energy Consumption is 483745 kW
+Mean Utilization 0,79539
+Mean Total Up Time is 213391 seconds
+
+Number of Cloudlets : 600
+Total Energy Consumption is 391917 kW
+Mean Utilization 0,80517
+Mean Total Up Time is 171588 seconds
 
 Number of Cloudlets : 700
-Total Energy Consumption is 60732 kW
+Total Energy Consumption is 494715 kW
+Mean Utilization 0,82654
+Mean Total Up Time is 213106 seconds
 
-Number of Cloudlets : 725
-Total Energy Consumption is 63846 kW
+Number of Cloudlets : 700
+Total Energy Consumption is 608265 kW
+Mean Utilization 0,82273
+Mean Total Up Time is 262775 seconds
 
-Number of Cloudlets : 750
-Total Energy Consumption is 65810 kW
+Number of Cloudlets : 700
+Total Energy Consumption is 509734 kW
+Mean Utilization 0,80443
+Mean Total Up Time is 223298 seconds
 
-Number of Cloudlets : 775
-Total Energy Consumption is 65855 kW
+Number of Cloudlets : 700
+Total Energy Consumption is 427278 kW
+Mean Utilization 0,83843
+Mean Total Up Time is 182421 seconds
+
+Number of Cloudlets : 700
+Total Energy Consumption is 488636 kW
+Mean Utilization 0,82022
+Mean Total Up Time is 211495 seconds
+
+Number of Cloudlets : 700
+Total Energy Consumption is 536348 kW
+Mean Utilization 0,82368
+Mean Total Up Time is 231539 seconds
+
+Number of Cloudlets : 700
+Total Energy Consumption is 634779 kW
+Mean Utilization 0,83182
+Mean Total Up Time is 272357 seconds
+
+Number of Cloudlets : 700
+Total Energy Consumption is 476017 kW
+Mean Utilization 0,80978
+Mean Total Up Time is 207676 seconds
+
+Number of Cloudlets : 700
+Total Energy Consumption is 493019 kW
+Mean Utilization 0,83071
+Mean Total Up Time is 211710 seconds
+
+Number of Cloudlets : 700
+Total Energy Consumption is 449002 kW
+Mean Utilization 0,82347
+Mean Total Up Time is 193864 seconds
 
 Number of Cloudlets : 800
-Total Energy Consumption is 74263 kW
+Total Energy Consumption is 599029 kW
+Mean Utilization 0,82668
+Mean Total Up Time is 258014 seconds
 
-Number of Cloudlets : 825
-Total Energy Consumption is 76753 kW
+Number of Cloudlets : 800
+Total Energy Consumption is 525164 kW
+Mean Utilization 0,84065
+Mean Total Up Time is 223841 seconds
 
-Number of Cloudlets : 850
-Total Energy Consumption is 78886 kW
+Number of Cloudlets : 800
+Total Energy Consumption is 577587 kW
+Mean Utilization 0,85463
+Mean Total Up Time is 243644 seconds
 
-Number of Cloudlets : 875
-Total Energy Consumption is 70470 kW
+Number of Cloudlets : 800
+Total Energy Consumption is 563216 kW
+Mean Utilization 0,84242
+Mean Total Up Time is 239745 seconds
+
+Number of Cloudlets : 800
+Total Energy Consumption is 610726 kW
+Mean Utilization 0,82464
+Mean Total Up Time is 263458 seconds
+
+Number of Cloudlets : 800
+Total Energy Consumption is 514312 kW
+Mean Utilization 0,83898
+Mean Total Up Time is 219490 seconds
+
+Number of Cloudlets : 800
+Total Energy Consumption is 542780 kW
+Mean Utilization 0,82505
+Mean Total Up Time is 234073 seconds
+
+Number of Cloudlets : 800
+Total Energy Consumption is 639159 kW
+Mean Utilization 0,83278
+Mean Total Up Time is 274039 seconds
+
+Number of Cloudlets : 800
+Total Energy Consumption is 488665 kW
+Mean Utilization 0,83848
+Mean Total Up Time is 208623 seconds
+
+Number of Cloudlets : 800
+Total Energy Consumption is 593945 kW
+Mean Utilization 0,83659
+Mean Total Up Time is 253927 seconds
 
 Number of Cloudlets : 900
-Total Energy Consumption is 74278 kW
+Total Energy Consumption is 732295 kW
+Mean Utilization 0,86468
+Mean Total Up Time is 306631 seconds
 
-Number of Cloudlets : 925
-Total Energy Consumption is 82066 kW
+Number of Cloudlets : 900
+Total Energy Consumption is 645522 kW
+Mean Utilization 0,85481
+Mean Total Up Time is 272265 seconds
 
-Number of Cloudlets : 950
-Total Energy Consumption is 78136 kW
+Number of Cloudlets : 900
+Total Energy Consumption is 607159 kW
+Mean Utilization 0,84902
+Mean Total Up Time is 257186 seconds
 
-Number of Cloudlets : 975
-Total Energy Consumption is 75132 kW
+Number of Cloudlets : 900
+Total Energy Consumption is 683898 kW
+Mean Utilization 0,83532
+Mean Total Up Time is 292662 seconds
+
+Number of Cloudlets : 900
+Total Energy Consumption is 674487 kW
+Mean Utilization 0,84791
+Mean Total Up Time is 285941 seconds
+
+Number of Cloudlets : 900
+Total Energy Consumption is 668985 kW
+Mean Utilization 0,8502
+Mean Total Up Time is 283125 seconds
+
+Number of Cloudlets : 900
+Total Energy Consumption is 621973 kW
+Mean Utilization 0,83536
+Mean Total Up Time is 266155 seconds
+
+Number of Cloudlets : 900
+Total Energy Consumption is 578948 kW
+Mean Utilization 0,84806
+Mean Total Up Time is 245409 seconds
+
+Number of Cloudlets : 900
+Total Energy Consumption is 611515 kW
+Mean Utilization 0,83826
+Mean Total Up Time is 261114 seconds
+
+Number of Cloudlets : 900
+Total Energy Consumption is 565579 kW
+Mean Utilization 0,86927
+Mean Total Up Time is 236029 seconds
 
 Number of Cloudlets : 1000
-Total Energy Consumption is 105625 kW
+Total Energy Consumption is 725349 kW
+Mean Utilization 0,85753
+Mean Total Up Time is 305323 seconds
 
-Number of Cloudlets : 1025
-Total Energy Consumption is 92953 kW
+Number of Cloudlets : 1000
+Total Energy Consumption is 792927 kW
+Mean Utilization 0,85901
+Mean Total Up Time is 333406 seconds
 
-Number of Cloudlets : 1050
-Total Energy Consumption is 82453 kW
+Number of Cloudlets : 1000
+Total Energy Consumption is 627987 kW
+Mean Utilization 0,87892
+Mean Total Up Time is 260240 seconds
 
-Number of Cloudlets : 1075
-Total Energy Consumption is 88979 kW
+Number of Cloudlets : 1000
+Total Energy Consumption is 630041 kW
+Mean Utilization 0,8568
+Mean Total Up Time is 265348 seconds
+
+Number of Cloudlets : 1000
+Total Energy Consumption is 728950 kW
+Mean Utilization 0,8626
+Mean Total Up Time is 305698 seconds
+
+Number of Cloudlets : 1000
+Total Energy Consumption is 765573 kW
+Mean Utilization 0,85893
+Mean Total Up Time is 321922 seconds
+
+Number of Cloudlets : 1000
+Total Energy Consumption is 701997 kW
+Mean Utilization 0,84448
+Mean Total Up Time is 298362 seconds
+
+Number of Cloudlets : 1000
+Total Energy Consumption is 699023 kW
+Mean Utilization 0,84813
+Mean Total Up Time is 296293 seconds
+
+Number of Cloudlets : 1000
+Total Energy Consumption is 640112 kW
+Mean Utilization 0,84321
+Mean Total Up Time is 272317 seconds
+
+Number of Cloudlets : 1000
+Total Energy Consumption is 607027 kW
+Mean Utilization 0,86414
+Mean Total Up Time is 254279 seconds
 
 Number of Cloudlets : 1100
-Total Energy Consumption is 88690 kW
+Total Energy Consumption is 664987 kW
+Mean Utilization 0,85898
+Mean Total Up Time is 279615 seconds
 
-Number of Cloudlets : 1125
-Total Energy Consumption is 83948 kW
+Number of Cloudlets : 1100
+Total Energy Consumption is 695350 kW
+Mean Utilization 0,84578
+Mean Total Up Time is 295250 seconds
 
-Number of Cloudlets : 1150
-Total Energy Consumption is 91118 kW
+Number of Cloudlets : 1100
+Total Energy Consumption is 678538 kW
+Mean Utilization 0,86937
+Mean Total Up Time is 283150 seconds
 
-Number of Cloudlets : 1175
-Total Energy Consumption is 95344 kW
+Number of Cloudlets : 1100
+Total Energy Consumption is 694952 kW
+Mean Utilization 0,85948
+Mean Total Up Time is 292108 seconds
+
+Number of Cloudlets : 1100
+Total Energy Consumption is 694175 kW
+Mean Utilization 0,86866
+Mean Total Up Time is 289825 seconds
+
+Number of Cloudlets : 1100
+Total Energy Consumption is 616794 kW
+Mean Utilization 0,86923
+Mean Total Up Time is 257411 seconds
+
+Number of Cloudlets : 1100
+Total Energy Consumption is 710703 kW
+Mean Utilization 0,87323
+Mean Total Up Time is 295738 seconds
+
+Number of Cloudlets : 1100
+Total Energy Consumption is 696188 kW
+Mean Utilization 0,85848
+Mean Total Up Time is 292843 seconds
+
+Number of Cloudlets : 1100
+Total Energy Consumption is 671575 kW
+Mean Utilization 0,85026
+Mean Total Up Time is 284209 seconds
+
+Number of Cloudlets : 1100
+Total Energy Consumption is 773835 kW
+Mean Utilization 0,86794
+Mean Total Up Time is 323252 seconds
 
 Number of Cloudlets : 1200
-Total Energy Consumption is 103772 kW
+Total Energy Consumption is 728589 kW
+Mean Utilization 0,86681
+Mean Total Up Time is 304603 seconds
 
-Number of Cloudlets : 1225
-Total Energy Consumption is 87402 kW
+Number of Cloudlets : 1200
+Total Energy Consumption is 780472 kW
+Mean Utilization 0,88162
+Mean Total Up Time is 322798 seconds
 
-Number of Cloudlets : 1250
-Total Energy Consumption is 101493 kW
+Number of Cloudlets : 1200
+Total Energy Consumption is 678760 kW
+Mean Utilization 0,87069
+Mean Total Up Time is 282968 seconds
 
-Number of Cloudlets : 1275
-Total Energy Consumption is 104778 kW
+Number of Cloudlets : 1200
+Total Energy Consumption is 861793 kW
+Mean Utilization 0,86826
+Mean Total Up Time is 359912 seconds
+
+Number of Cloudlets : 1200
+Total Energy Consumption is 690543 kW
+Mean Utilization 0,86474
+Mean Total Up Time is 289136 seconds
+
+Number of Cloudlets : 1200
+Total Energy Consumption is 651646 kW
+Mean Utilization 0,88717
+Mean Total Up Time is 268438 seconds
+
+Number of Cloudlets : 1200
+Total Energy Consumption is 693720 kW
+Mean Utilization 0,865
+Mean Total Up Time is 290411 seconds
+
+Number of Cloudlets : 1200
+Total Energy Consumption is 665217 kW
+Mean Utilization 0,86542
+Mean Total Up Time is 278393 seconds
+
+Number of Cloudlets : 1200
+Total Energy Consumption is 835384 kW
+Mean Utilization 0,86416
+Mean Total Up Time is 349932 seconds
+
+Number of Cloudlets : 1200
+Total Energy Consumption is 732993 kW
+Mean Utilization 0,85743
+Mean Total Up Time is 308564 seconds
 
 Number of Cloudlets : 1300
-Total Energy Consumption is 101300 kW
+Total Energy Consumption is 774674 kW
+Mean Utilization 0,86845
+Mean Total Up Time is 323483 seconds
 
-Number of Cloudlets : 1325
-Total Energy Consumption is 99578 kW
+Number of Cloudlets : 1300
+Total Energy Consumption is 650876 kW
+Mean Utilization 0,87541
+Mean Total Up Time is 270413 seconds
 
-Number of Cloudlets : 1350
-Total Energy Consumption is 106664 kW
+Number of Cloudlets : 1300
+Total Energy Consumption is 713276 kW
+Mean Utilization 0,88198
+Mean Total Up Time is 294930 seconds
 
-Number of Cloudlets : 1375
-Total Energy Consumption is 100347 kW
+Number of Cloudlets : 1300
+Total Energy Consumption is 737250 kW
+Mean Utilization 0,86208
+Mean Total Up Time is 309296 seconds
+
+Number of Cloudlets : 1300
+Total Energy Consumption is 717631 kW
+Mean Utilization 0,87016
+Mean Total Up Time is 299290 seconds
+
+Number of Cloudlets : 1300
+Total Energy Consumption is 737290 kW
+Mean Utilization 0,86653
+Mean Total Up Time is 308306 seconds
+
+Number of Cloudlets : 1300
+Total Energy Consumption is 736766 kW
+Mean Utilization 0,8748
+Mean Total Up Time is 306233 seconds
+
+Number of Cloudlets : 1300
+Total Energy Consumption is 748605 kW
+Mean Utilization 0,88113
+Mean Total Up Time is 309728 seconds
+
+Number of Cloudlets : 1300
+Total Energy Consumption is 782244 kW
+Mean Utilization 0,84927
+Mean Total Up Time is 331288 seconds
+
+Number of Cloudlets : 1300
+Total Energy Consumption is 798272 kW
+Mean Utilization 0,8683
+Mean Total Up Time is 333373 seconds
 
 Number of Cloudlets : 1400
-Total Energy Consumption is 109002 kW
+Total Energy Consumption is 769032 kW
+Mean Utilization 0,86959
+Mean Total Up Time is 320859 seconds
 
-Number of Cloudlets : 1425
-Total Energy Consumption is 109784 kW
+Number of Cloudlets : 1400
+Total Energy Consumption is 751071 kW
+Mean Utilization 0,86513
+Mean Total Up Time is 314391 seconds
 
-Number of Cloudlets : 1450
-Total Energy Consumption is 119922 kW
+Number of Cloudlets : 1400
+Total Energy Consumption is 711055 kW
+Mean Utilization 0,87326
+Mean Total Up Time is 295877 seconds
 
-Number of Cloudlets : 1475
-Total Energy Consumption is 125481 kW
+Number of Cloudlets : 1400
+Total Energy Consumption is 681175 kW
+Mean Utilization 0,86107
+Mean Total Up Time is 285983 seconds
+
+Number of Cloudlets : 1400
+Total Energy Consumption is 829699 kW
+Mean Utilization 0,88851
+Mean Total Up Time is 341455 seconds
+
+Number of Cloudlets : 1400
+Total Energy Consumption is 716691 kW
+Mean Utilization 0,88565
+Mean Total Up Time is 295557 seconds
+
+Number of Cloudlets : 1400
+Total Energy Consumption is 677199 kW
+Mean Utilization 0,87489
+Mean Total Up Time is 281455 seconds
+
+Number of Cloudlets : 1400
+Total Energy Consumption is 783555 kW
+Mean Utilization 0,88995
+Mean Total Up Time is 322130 seconds
+
+Number of Cloudlets : 1400
+Total Energy Consumption is 783151 kW
+Mean Utilization 0,85951
+Mean Total Up Time is 329173 seconds
+
+Number of Cloudlets : 1400
+Total Energy Consumption is 778303 kW
+Mean Utilization 0,87849
+Mean Total Up Time is 322631 seconds
 
 Number of Cloudlets : 1500
-Total Energy Consumption is 111864 kW
+Total Energy Consumption is 825775 kW
+Mean Utilization 0,87805
+Mean Total Up Time is 342419 seconds
 
-Number of Cloudlets : 1525
-Total Energy Consumption is 116134 kW
+Number of Cloudlets : 1500
+Total Energy Consumption is 763998 kW
+Mean Utilization 0,88626
+Mean Total Up Time is 314926 seconds
 
-Number of Cloudlets : 1550
-Total Energy Consumption is 112993 kW
+Number of Cloudlets : 1500
+Total Energy Consumption is 857156 kW
+Mean Utilization 0,85061
+Mean Total Up Time is 362654 seconds
 
-Number of Cloudlets : 1575
-Total Energy Consumption is 120156 kW
+Number of Cloudlets : 1500
+Total Energy Consumption is 807617 kW
+Mean Utilization 0,86055
+Mean Total Up Time is 339197 seconds
+
+Number of Cloudlets : 1500
+Total Energy Consumption is 746890 kW
+Mean Utilization 0,87655
+Mean Total Up Time is 310045 seconds
+
+Number of Cloudlets : 1500
+Total Energy Consumption is 826896 kW
+Mean Utilization 0,88675
+Mean Total Up Time is 340732 seconds
+
+Number of Cloudlets : 1500
+Total Energy Consumption is 792310 kW
+Mean Utilization 0,88596
+Mean Total Up Time is 326667 seconds
+
+Number of Cloudlets : 1500
+Total Energy Consumption is 871359 kW
+Mean Utilization 0,86586
+Mean Total Up Time is 364547 seconds
+
+Number of Cloudlets : 1500
+Total Energy Consumption is 770380 kW
+Mean Utilization 0,86531
+Mean Total Up Time is 322429 seconds
+
+Number of Cloudlets : 1500
+Total Energy Consumption is 743999 kW
+Mean Utilization 0,88
+Mean Total Up Time is 308073 seconds
 
 Number of Cloudlets : 1600
-Total Energy Consumption is 112884 kW
+Total Energy Consumption is 793940 kW
+Mean Utilization 0,87525
+Mean Total Up Time is 329889 seconds
 
-Number of Cloudlets : 1625
-Total Energy Consumption is 122931 kW
+Number of Cloudlets : 1600
+Total Energy Consumption is 703596 kW
+Mean Utilization 0,88167
+Mean Total Up Time is 290992 seconds
 
-Number of Cloudlets : 1650
-Total Energy Consumption is 125238 kW
+Number of Cloudlets : 1600
+Total Energy Consumption is 749997 kW
+Mean Utilization 0,88152
+Mean Total Up Time is 310216 seconds
 
-Number of Cloudlets : 1675
-Total Energy Consumption is 120981 kW
+Number of Cloudlets : 1600
+Total Energy Consumption is 756864 kW
+Mean Utilization 0,88839
+Mean Total Up Time is 311507 seconds
+
+Number of Cloudlets : 1600
+Total Energy Consumption is 838368 kW
+Mean Utilization 0,87612
+Mean Total Up Time is 348128 seconds
+
+Number of Cloudlets : 1600
+Total Energy Consumption is 717995 kW
+Mean Utilization 0,88627
+Mean Total Up Time is 295962 seconds
+
+Number of Cloudlets : 1600
+Total Energy Consumption is 802357 kW
+Mean Utilization 0,88621
+Mean Total Up Time is 330750 seconds
+
+Number of Cloudlets : 1600
+Total Energy Consumption is 753105 kW
+Mean Utilization 0,88214
+Mean Total Up Time is 311362 seconds
+
+Number of Cloudlets : 1600
+Total Energy Consumption is 821204 kW
+Mean Utilization 0,87305
+Mean Total Up Time is 341765 seconds
+
+Number of Cloudlets : 1600
+Total Energy Consumption is 715483 kW
+Mean Utilization 0,87132
+Mean Total Up Time is 298140 seconds
 
 Number of Cloudlets : 1700
-Total Energy Consumption is 139079 kW
+Total Energy Consumption is 759058 kW
+Mean Utilization 0,8779
+Mean Total Up Time is 314788 seconds
 
-Number of Cloudlets : 1725
-Total Energy Consumption is 128471 kW
+Number of Cloudlets : 1700
+Total Energy Consumption is 801729 kW
+Mean Utilization 0,88231
+Mean Total Up Time is 331425 seconds
 
-Number of Cloudlets : 1750
-Total Energy Consumption is 135692 kW
+Number of Cloudlets : 1700
+Total Energy Consumption is 824774 kW
+Mean Utilization 0,87613
+Mean Total Up Time is 342481 seconds
 
-Number of Cloudlets : 1775
-Total Energy Consumption is 127687 kW
+Number of Cloudlets : 1700
+Total Energy Consumption is 824560 kW
+Mean Utilization 0,8755
+Mean Total Up Time is 342549 seconds
+
+Number of Cloudlets : 1700
+Total Energy Consumption is 807419 kW
+Mean Utilization 0,87401
+Mean Total Up Time is 335793 seconds
+
+Number of Cloudlets : 1700
+Total Energy Consumption is 854801 kW
+Mean Utilization 0,88574
+Mean Total Up Time is 352488 seconds
+
+Number of Cloudlets : 1700
+Total Energy Consumption is 804738 kW
+Mean Utilization 0,87759
+Mean Total Up Time is 333806 seconds
+
+Number of Cloudlets : 1700
+Total Energy Consumption is 768574 kW
+Mean Utilization 0,87649
+Mean Total Up Time is 319061 seconds
+
+Number of Cloudlets : 1700
+Total Energy Consumption is 890463 kW
+Mean Utilization 0,88807
+Mean Total Up Time is 366578 seconds
+
+Number of Cloudlets : 1700
+Total Energy Consumption is 754762 kW
+Mean Utilization 0,87827
+Mean Total Up Time is 312923 seconds
 
 Number of Cloudlets : 1800
-Total Energy Consumption is 133299 kW
+Total Energy Consumption is 793364 kW
+Mean Utilization 0,88793
+Mean Total Up Time is 326638 seconds
 
-Number of Cloudlets : 1825
-Total Energy Consumption is 130235 kW
+Number of Cloudlets : 1800
+Total Energy Consumption is 814567 kW
+Mean Utilization 0,87993
+Mean Total Up Time is 337312 seconds
 
-Number of Cloudlets : 1850
-Total Energy Consumption is 138847 kW
+Number of Cloudlets : 1800
+Total Energy Consumption is 860116 kW
+Mean Utilization 0,87491
+Mean Total Up Time is 357473 seconds
 
-Number of Cloudlets : 1875
-Total Energy Consumption is 155064 kW
+Number of Cloudlets : 1800
+Total Energy Consumption is 843164 kW
+Mean Utilization 0,87711
+Mean Total Up Time is 349868 seconds
+
+Number of Cloudlets : 1800
+Total Energy Consumption is 828737 kW
+Mean Utilization 0,87832
+Mean Total Up Time is 343581 seconds
+
+Number of Cloudlets : 1800
+Total Energy Consumption is 813839 kW
+Mean Utilization 0,88557
+Mean Total Up Time is 335639 seconds
+
+Number of Cloudlets : 1800
+Total Energy Consumption is 762714 kW
+Mean Utilization 0,87702
+Mean Total Up Time is 316507 seconds
+
+Number of Cloudlets : 1800
+Total Energy Consumption is 853531 kW
+Mean Utilization 0,87079
+Mean Total Up Time is 355803 seconds
+
+Number of Cloudlets : 1800
+Total Energy Consumption is 864662 kW
+Mean Utilization 0,87979
+Mean Total Up Time is 358093 seconds
+
+Number of Cloudlets : 1800
+Total Energy Consumption is 796843 kW
+Mean Utilization 0,87612
+Mean Total Up Time is 330885 seconds
 
 Number of Cloudlets : 1900
-Total Energy Consumption is 145427 kW
+Total Energy Consumption is 857930 kW
+Mean Utilization 0,87957
+Mean Total Up Time is 355362 seconds
 
-Number of Cloudlets : 1925
-Total Energy Consumption is 144985 kW
+Number of Cloudlets : 1900
+Total Energy Consumption is 857436 kW
+Mean Utilization 0,88578
+Mean Total Up Time is 353565 seconds
 
-Number of Cloudlets : 1950
-Total Energy Consumption is 140084 kW
+Number of Cloudlets : 1900
+Total Energy Consumption is 859468 kW
+Mean Utilization 0,88161
+Mean Total Up Time is 355471 seconds
 
-Number of Cloudlets : 1975
-Total Energy Consumption is 149945 kW
+Number of Cloudlets : 1900
+Total Energy Consumption is 785482 kW
+Mean Utilization 0,88646
+Mean Total Up Time is 323736 seconds
+
+Number of Cloudlets : 1900
+Total Energy Consumption is 830449 kW
+Mean Utilization 0,88599
+Mean Total Up Time is 342384 seconds
+
+Number of Cloudlets : 1900
+Total Energy Consumption is 766376 kW
+Mean Utilization 0,89032
+Mean Total Up Time is 314984 seconds
+
+Number of Cloudlets : 1900
+Total Energy Consumption is 887120 kW
+Mean Utilization 0,88399
+Mean Total Up Time is 366277 seconds
+
+Number of Cloudlets : 1900
+Total Energy Consumption is 812099 kW
+Mean Utilization 0,87495
+Mean Total Up Time is 337507 seconds
+
+Number of Cloudlets : 1900
+Total Energy Consumption is 757653 kW
+Mean Utilization 0,874
+Mean Total Up Time is 315097 seconds
+
+Number of Cloudlets : 1900
+Total Energy Consumption is 856684 kW
+Mean Utilization 0,88709
+Mean Total Up Time is 352922 seconds
 
 Number of Cloudlets : 2000
-Total Energy Consumption is 153605 kW
+Total Energy Consumption is 786195 kW
+Mean Utilization 0,8922
+Mean Total Up Time is 322693 seconds
 
-Number of Cloudlets : 2025
-Total Energy Consumption is 143186 kW
+Number of Cloudlets : 2000
+Total Energy Consumption is 856734 kW
+Mean Utilization 0,88096
+Mean Total Up Time is 354509 seconds
 
-Number of Cloudlets : 2050
-Total Energy Consumption is 153332 kW
+Number of Cloudlets : 2000
+Total Energy Consumption is 819362 kW
+Mean Utilization 0,89986
+Mean Total Up Time is 334465 seconds
 
-Number of Cloudlets : 2075
-Total Energy Consumption is 149218 kW
+Number of Cloudlets : 2000
+Total Energy Consumption is 755034 kW
+Mean Utilization 0,87807
+Mean Total Up Time is 313080 seconds
+
+Number of Cloudlets : 2000
+Total Energy Consumption is 860264 kW
+Mean Utilization 0,89581
+Mean Total Up Time is 352182 seconds
+
+Number of Cloudlets : 2000
+Total Energy Consumption is 918844 kW
+Mean Utilization 0,87532
+Mean Total Up Time is 381769 seconds
+
+Number of Cloudlets : 2000
+Total Energy Consumption is 905695 kW
+Mean Utilization 0,8962
+Mean Total Up Time is 370678 seconds
+
+Number of Cloudlets : 2000
+Total Energy Consumption is 784086 kW
+Mean Utilization 0,87405
+Mean Total Up Time is 326080 seconds
+
+Number of Cloudlets : 2000
+Total Energy Consumption is 790850 kW
+Mean Utilization 0,89509
+Mean Total Up Time is 323931 seconds
+
+Number of Cloudlets : 2000
+Total Energy Consumption is 895495 kW
+Mean Utilization 0,89137
+Mean Total Up Time is 367776 seconds
 
 Number of Cloudlets : 2100
-Total Energy Consumption is 153231 kW
+Total Energy Consumption is 832487 kW
+Mean Utilization 0,88423
+Mean Total Up Time is 343662 seconds
 
-Number of Cloudlets : 2125
-Total Energy Consumption is 155197 kW
+Number of Cloudlets : 2100
+Total Energy Consumption is 792624 kW
+Mean Utilization 0,88863
+Mean Total Up Time is 326168 seconds
 
-Number of Cloudlets : 2150
-Total Energy Consumption is 152144 kW
+Number of Cloudlets : 2100
+Total Energy Consumption is 848014 kW
+Mean Utilization 0,87865
+Mean Total Up Time is 351488 seconds
 
-Number of Cloudlets : 2175
-Total Energy Consumption is 156540 kW
+Number of Cloudlets : 2100
+Total Energy Consumption is 765719 kW
+Mean Utilization 0,87615
+Mean Total Up Time is 317954 seconds
+
+Number of Cloudlets : 2100
+Total Energy Consumption is 828084 kW
+Mean Utilization 0,88911
+Mean Total Up Time is 340642 seconds
+
+Number of Cloudlets : 2100
+Total Energy Consumption is 831397 kW
+Mean Utilization 0,87998
+Mean Total Up Time is 344268 seconds
+
+Number of Cloudlets : 2100
+Total Energy Consumption is 865135 kW
+Mean Utilization 0,88883
+Mean Total Up Time is 355956 seconds
+
+Number of Cloudlets : 2100
+Total Energy Consumption is 838343 kW
+Mean Utilization 0,88658
+Mean Total Up Time is 345491 seconds
+
+Number of Cloudlets : 2100
+Total Energy Consumption is 811482 kW
+Mean Utilization 0,88424
+Mean Total Up Time is 334988 seconds
+
+Number of Cloudlets : 2100
+Total Energy Consumption is 833170 kW
+Mean Utilization 0,87586
+Mean Total Up Time is 346036 seconds
 
 Number of Cloudlets : 2200
-Total Energy Consumption is 158053 kW
+Total Energy Consumption is 917497 kW
+Mean Utilization 0,88563
+Mean Total Up Time is 378371 seconds
 
-Number of Cloudlets : 2225
-Total Energy Consumption is 158645 kW
+Number of Cloudlets : 2200
+Total Energy Consumption is 831454 kW
+Mean Utilization 0,88062
+Mean Total Up Time is 344132 seconds
 
-Number of Cloudlets : 2250
-Total Energy Consumption is 160713 kW
+Number of Cloudlets : 2200
+Total Energy Consumption is 882531 kW
+Mean Utilization 0,86709
+Mean Total Up Time is 368887 seconds
 
-Number of Cloudlets : 2275
-Total Energy Consumption is 165486 kW
+Number of Cloudlets : 2200
+Total Energy Consumption is 823336 kW
+Mean Utilization 0,88845
+Mean Total Up Time is 338851 seconds
+
+Number of Cloudlets : 2200
+Total Energy Consumption is 801871 kW
+Mean Utilization 0,88888
+Mean Total Up Time is 329915 seconds
+
+Number of Cloudlets : 2200
+Total Energy Consumption is 785818 kW
+Mean Utilization 0,88457
+Mean Total Up Time is 324316 seconds
+
+Number of Cloudlets : 2200
+Total Energy Consumption is 858717 kW
+Mean Utilization 0,87379
+Mean Total Up Time is 357184 seconds
+
+Number of Cloudlets : 2200
+Total Energy Consumption is 826614 kW
+Mean Utilization 0,88425
+Mean Total Up Time is 341232 seconds
+
+Number of Cloudlets : 2200
+Total Energy Consumption is 852199 kW
+Mean Utilization 0,88289
+Mean Total Up Time is 352141 seconds
+
+Number of Cloudlets : 2200
+Total Energy Consumption is 841494 kW
+Mean Utilization 0,88262
+Mean Total Up Time is 347784 seconds
 
 Number of Cloudlets : 2300
-Total Energy Consumption is 165843 kW
+Total Energy Consumption is 890921 kW
+Mean Utilization 0,87145
+Mean Total Up Time is 371210 seconds
 
-Number of Cloudlets : 2325
-Total Energy Consumption is 160560 kW
+Number of Cloudlets : 2300
+Total Energy Consumption is 912802 kW
+Mean Utilization 0,88975
+Mean Total Up Time is 375321 seconds
 
-Number of Cloudlets : 2350
-Total Energy Consumption is 157070 kW
+Number of Cloudlets : 2300
+Total Energy Consumption is 868947 kW
+Mean Utilization 0,89594
+Mean Total Up Time is 355703 seconds
 
-Number of Cloudlets : 2375
-Total Energy Consumption is 172695 kW
+Number of Cloudlets : 2300
+Total Energy Consumption is 988300 kW
+Mean Utilization 0,88513
+Mean Total Up Time is 407717 seconds
+
+Number of Cloudlets : 2300
+Total Energy Consumption is 854954 kW
+Mean Utilization 0,88337
+Mean Total Up Time is 353156 seconds
+
+Number of Cloudlets : 2300
+Total Energy Consumption is 877747 kW
+Mean Utilization 0,89481
+Mean Total Up Time is 359596 seconds
+
+Number of Cloudlets : 2300
+Total Energy Consumption is 886022 kW
+Mean Utilization 0,87676
+Mean Total Up Time is 367745 seconds
+
+Number of Cloudlets : 2300
+Total Energy Consumption is 838601 kW
+Mean Utilization 0,89182
+Mean Total Up Time is 344297 seconds
+
+Number of Cloudlets : 2300
+Total Energy Consumption is 895184 kW
+Mean Utilization 0,88771
+Mean Total Up Time is 368616 seconds
+
+Number of Cloudlets : 2300
+Total Energy Consumption is 840831 kW
+Mean Utilization 0,88134
+Mean Total Up Time is 347833 seconds
 
 Number of Cloudlets : 2400
-Total Energy Consumption is 171310 kW
+Total Energy Consumption is 883314 kW
+Mean Utilization 0,88325
+Mean Total Up Time is 364902 seconds
 
-Number of Cloudlets : 2425
-Total Energy Consumption is 174947 kW
+Number of Cloudlets : 2400
+Total Energy Consumption is 877572 kW
+Mean Utilization 0,89621
+Mean Total Up Time is 359165 seconds
 
-Number of Cloudlets : 2450
-Total Energy Consumption is 178768 kW
+Number of Cloudlets : 2400
+Total Energy Consumption is 1004666 kW
+Mean Utilization 0,89334
+Mean Total Up Time is 412029 seconds
 
-Number of Cloudlets : 2475
-Total Energy Consumption is 180958 kW
+Number of Cloudlets : 2400
+Total Energy Consumption is 841549 kW
+Mean Utilization 0,88322
+Mean Total Up Time is 347656 seconds
+
+Number of Cloudlets : 2400
+Total Energy Consumption is 935043 kW
+Mean Utilization 0,89674
+Mean Total Up Time is 382541 seconds
+
+Number of Cloudlets : 2400
+Total Energy Consumption is 1140142 kW
+Mean Utilization 0,88144
+Mean Total Up Time is 471616 seconds
+
+Number of Cloudlets : 2400
+Total Energy Consumption is 861298 kW
+Mean Utilization 0,8932
+Mean Total Up Time is 353265 seconds
+
+Number of Cloudlets : 2400
+Total Energy Consumption is 880132 kW
+Mean Utilization 0,87686
+Mean Total Up Time is 365274 seconds
+
+Number of Cloudlets : 2400
+Total Energy Consumption is 846672 kW
+Mean Utilization 0,88645
+Mean Total Up Time is 348958 seconds
+
+Number of Cloudlets : 2400
+Total Energy Consumption is 851949 kW
+Mean Utilization 0,87578
+Mean Total Up Time is 353857 seconds
 
 Number of Cloudlets : 2500
-Total Energy Consumption is 172186 kW
+Total Energy Consumption is 841637 kW
+Mean Utilization 0,88293
+Mean Total Up Time is 347764 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 917565 kW
+Mean Utilization 0,88125
+Mean Total Up Time is 379601 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 854946 kW
+Mean Utilization 0,88821
+Mean Total Up Time is 351921 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 928432 kW
+Mean Utilization 0,90328
+Mean Total Up Time is 378065 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 908616 kW
+Mean Utilization 0,88478
+Mean Total Up Time is 374939 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 822842 kW
+Mean Utilization 0,89364
+Mean Total Up Time is 337385 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 868323 kW
+Mean Utilization 0,88579
+Mean Total Up Time is 358051 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 898262 kW
+Mean Utilization 0,88218
+Mean Total Up Time is 371364 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 911171 kW
+Mean Utilization 0,8918
+Mean Total Up Time is 374098 seconds
+
+Number of Cloudlets : 2500
+Total Energy Consumption is 911780 kW
+Mean Utilization 0,8707
+Mean Total Up Time is 380109 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 820593 kW
+Mean Utilization 0,89226
+Mean Total Up Time is 336797 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 870176 kW
+Mean Utilization 0,88639
+Mean Total Up Time is 358661 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 880743 kW
+Mean Utilization 0,88399
+Mean Total Up Time is 363646 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 845375 kW
+Mean Utilization 0,89835
+Mean Total Up Time is 345459 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 834779 kW
+Mean Utilization 0,89675
+Mean Total Up Time is 341518 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 880854 kW
+Mean Utilization 0,88577
+Mean Total Up Time is 363224 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 874057 kW
+Mean Utilization 0,89309
+Mean Total Up Time is 358529 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 978757 kW
+Mean Utilization 0,88114
+Mean Total Up Time is 404949 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 839256 kW
+Mean Utilization 0,89184
+Mean Total Up Time is 344561 seconds
+
+Number of Cloudlets : 2600
+Total Energy Consumption is 814836 kW
+Mean Utilization 0,89264
+Mean Total Up Time is 334344 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 880798 kW
+Mean Utilization 0,8904
+Mean Total Up Time is 361992 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 895555 kW
+Mean Utilization 0,8878
+Mean Total Up Time is 368746 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 849752 kW
+Mean Utilization 0,88306
+Mean Total Up Time is 351084 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 853833 kW
+Mean Utilization 0,89391
+Mean Total Up Time is 350025 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 811734 kW
+Mean Utilization 0,88997
+Mean Total Up Time is 333711 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 894142 kW
+Mean Utilization 0,8861
+Mean Total Up Time is 368615 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 819304 kW
+Mean Utilization 0,8864
+Mean Total Up Time is 337689 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 913994 kW
+Mean Utilization 0,88384
+Mean Total Up Time is 377415 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 904480 kW
+Mean Utilization 0,89095
+Mean Total Up Time is 371576 seconds
+
+Number of Cloudlets : 2700
+Total Energy Consumption is 867429 kW
+Mean Utilization 0,89791
+Mean Total Up Time is 354582 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 923141 kW
+Mean Utilization 0,88245
+Mean Total Up Time is 381574 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 899019 kW
+Mean Utilization 0,88759
+Mean Total Up Time is 370227 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 841986 kW
+Mean Utilization 0,88762
+Mean Total Up Time is 346733 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 921697 kW
+Mean Utilization 0,88795
+Mean Total Up Time is 379468 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 987714 kW
+Mean Utilization 0,88524
+Mean Total Up Time is 407445 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 875504 kW
+Mean Utilization 0,88964
+Mean Total Up Time is 360013 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 894706 kW
+Mean Utilization 0,89256
+Mean Total Up Time is 367137 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 868244 kW
+Mean Utilization 0,88922
+Mean Total Up Time is 357136 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 860224 kW
+Mean Utilization 0,88886
+Mean Total Up Time is 353928 seconds
+
+Number of Cloudlets : 2800
+Total Energy Consumption is 859674 kW
+Mean Utilization 0,88391
+Mean Total Up Time is 354967 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 853368 kW
+Mean Utilization 0,8882
+Mean Total Up Time is 351274 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 885438 kW
+Mean Utilization 0,88851
+Mean Total Up Time is 364394 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 944564 kW
+Mean Utilization 0,8915
+Mean Total Up Time is 387891 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 930601 kW
+Mean Utilization 0,89276
+Mean Total Up Time is 381812 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 868894 kW
+Mean Utilization 0,88714
+Mean Total Up Time is 357939 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 846243 kW
+Mean Utilization 0,8847
+Mean Total Up Time is 349221 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 893509 kW
+Mean Utilization 0,89029
+Mean Total Up Time is 367243 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 972880 kW
+Mean Utilization 0,87834
+Mean Total Up Time is 403334 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 893474 kW
+Mean Utilization 0,89205
+Mean Total Up Time is 366765 seconds
+
+Number of Cloudlets : 2900
+Total Energy Consumption is 1036887 kW
+Mean Utilization 0,88468
+Mean Total Up Time is 427902 seconds
 

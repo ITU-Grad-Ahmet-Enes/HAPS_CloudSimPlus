@@ -1,5 +1,6 @@
 package org.cloudsimplus.haps;
 
+import ch.qos.logback.classic.Level;
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 import org.cloudbus.cloudsim.allocationpolicies.VmAllocationPolicySimple;
 import org.cloudbus.cloudsim.brokers.DatacenterBroker;
@@ -17,6 +18,7 @@ import org.cloudbus.cloudsim.provisioners.ResourceProvisionerSimple;
 import org.cloudbus.cloudsim.resources.Pe;
 import org.cloudbus.cloudsim.resources.PeSimple;
 import org.cloudbus.cloudsim.schedulers.cloudlet.CloudletSchedulerSpaceShared;
+import org.cloudbus.cloudsim.schedulers.vm.VmScheduler;
 import org.cloudbus.cloudsim.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudbus.cloudsim.utilizationmodels.UtilizationModel;
 import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelDynamic;
@@ -24,12 +26,15 @@ import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelFull;
 import org.cloudbus.cloudsim.vms.HostResourceStats;
 import org.cloudbus.cloudsim.vms.Vm;
 import org.cloudbus.cloudsim.vms.VmSimple;
+import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.haps.headers.BigSmallDCBroker;
+import org.cloudsimplus.util.Log;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.text.DecimalFormat;
 import java.util.*;
+
+import static java.util.Comparator.comparingLong;
 
 public class BigHAPS {
 
@@ -42,14 +47,14 @@ public class BigHAPS {
     private final int NUMBER_OF_HAPS;
 
     private int HOST_HAPS_NUMBER;
-    private final int HOST_HAPS_PES_NUMBER = 5;
+    private final int HOST_HAPS_PES_NUMBER = 250;
     private final long mipsHAPSHost;
     private final long ramHAPSHost;
     private final long storageHAPSHost;
     private final long bwHAPSHost;
 
     private final int VMS_HAPS_NUMBER;
-    private final int VM_HAPS_PES_NUMBER = 5;
+    private final int VM_HAPS_PES_NUMBER = 250;
     private final int mipsHAPSVm;
     private final long sizeHAPSVm;
     private final int ramHAPSVm;
@@ -68,48 +73,86 @@ public class BigHAPS {
     private static final List<BigHAPS> simulationList = new ArrayList<>();
     private static final List<Integer> cloudletNumbers = new ArrayList<>();
     private static final List<Integer> delayNumbers = new ArrayList<>();
-    private static final List<Double> utilizationList = new ArrayList<>();
-    private static final List<Double> totalUpTimeList = new ArrayList<>();
+    private static final List<String> utilizationList = new ArrayList<String>();
+    private static final List<Integer> totalUpTimeList = new ArrayList<Integer>();
+    private static final List<Double> lengthMeans = new ArrayList<>();
     private static char testType;
     private static char utilizationType;
+    private static boolean errorBars = false;
     private static int delay;
     private static boolean specWrite = false;
 
     public static void main(String[] args) throws IOException {
+//        PrintStream out = new PrintStream(new FileOutputStream("table.txt"));
+//        System.setOut(out);
         Scanner in = new Scanner(System.in);
         System.out.println("For Vm LifeTime Enter v , For CloudLetNumbers Enter c !");
         String s = in.nextLine();
         System.out.println("For Normal Utilization Enter o , For Gauss Utilization Enter g !");
         String y = in.nextLine();
         utilizationType = y.equals("o") ? 'o': 'g';
+        System.out.println("Do you want error bars? If yes enter enter y ");
+        String n = in.nextLine();
+        int number_of_tests = 0;
+        if(n.equals("y")) {
+            System.out.println("Enter number of test! ");
+            number_of_tests = in.nextInt();
+            File file1 = new File("bigErrorBarCloudlet.txt");
+            File file2 = new File("bigErrorBarVm.txt");
+            if (file1.delete()) {
+            }
+            if(file2.delete()){
+            }
+        }
         if (s.equals("c")){
             testType = 'c';
-            for(int i=0; i<100 ;i++){
+            for(int i=0; i<25 ;i++){
                 if(i!=0){
-                    NUMBER_OF_CLOUDLETS += 25;
+                    NUMBER_OF_CLOUDLETS += 100;
                 }
                 else{
-                    NUMBER_OF_CLOUDLETS = 25;
+                    NUMBER_OF_CLOUDLETS = 500;
                 }
                 numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
-                simulationList.add(new BigHAPS());
-                cloudletNumbers.add(NUMBER_OF_CLOUDLETS);
+                if(n.equals("y")){
+                    errorBars = true;
+                    for(int h=0; h < number_of_tests; h++){
+                        simulationList.add(new BigHAPS());
+                        cloudletNumbers.add(NUMBER_OF_CLOUDLETS);
+                    }
+                }
+                else{
+                    simulationList.add(new BigHAPS());
+                    cloudletNumbers.add(NUMBER_OF_CLOUDLETS);
+                }
+
             }
         }
         else if (s.equals("v")){
             testType = 'v';
             NUMBER_OF_CLOUDLETS = 2000;
             numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
-            for(int i=0; i<200; i++){
+            for(int i=0; i<25; i++){
                 if(i != 0){
-                    delay += 100;
+                    delay += 5000;
                 }
                 else {
-                    delay = 25;
+                    delay = 500;
                 }
-                simulationList.add(new BigHAPS());
-                cloudletNumbers.add(NUMBER_OF_CLOUDLETS);
-                delayNumbers.add(delay);
+                if(n.equals("y")){
+                    errorBars = true;
+                    for(int h=0; h < number_of_tests; h++){
+                        simulationList.add(new BigHAPS());
+                        cloudletNumbers.add(NUMBER_OF_CLOUDLETS);
+                        delayNumbers.add(delay);
+                    }
+                }
+                else{
+                    simulationList.add(new BigHAPS());
+                    cloudletNumbers.add(NUMBER_OF_CLOUDLETS);
+                    delayNumbers.add(delay);
+                }
+
             }
         }
 
@@ -117,11 +160,20 @@ public class BigHAPS {
                 new FileWriter("bigHAPSOnlyNumbers_Cloudlet.txt",false) :
                 new FileWriter("bigHAPSOnlyNumbers_VmLifeTime.txt",false))) {
         }
+        /*Log.setLevel(Level.OFF);
+
+        //Enable different log levels for specific classes of objects
+        Log.setLevel(DatacenterBroker.LOGGER, Level.OFF);
+        Log.setLevel(Datacenter.LOGGER, Level.OFF);
+        Log.setLevel(VmScheduler.LOGGER, Level.OFF);
+        Log.setLevel(VmAllocationPolicySimple.LOGGER, Level.OFF);*/
 
         simulationList.parallelStream().forEach(BigHAPS::run);
         simulationList.forEach(BigHAPS::printResults);
         System.out.println(utilizationList);
         System.out.println(totalUpTimeList);
+        System.out.println(lengthMeans);
+
     }
 
     public void run() {
@@ -134,12 +186,22 @@ public class BigHAPS {
         HOST_HAPS_NUMBER = NUMBER_OF_HAPS;
         VMS_HAPS_NUMBER = HOST_HAPS_NUMBER;
 
-        mipsHAPSHost = 10000 * 10;
+        if(NUMBER_OF_CLOUDLETS > 2000 && testType == 'c'){
+            mipsHAPSHost = 1000 + (NUMBER_OF_CLOUDLETS-1000)/10;
+        }
+        else {
+            mipsHAPSHost = 1000;
+        }
         ramHAPSHost = 66000 * 10; //in Megabytes
         storageHAPSHost = 10000000 * 10;
         bwHAPSHost = 10000 * 10;
 
-        mipsHAPSVm = 10000 * 10;
+        if(NUMBER_OF_CLOUDLETS > 2000 && testType == 'c'){
+            mipsHAPSVm = 1000 + (NUMBER_OF_CLOUDLETS-1000)/10;
+        }
+        else{
+            mipsHAPSVm = 1000;
+        }
         ramHAPSVm = 66000 * 10;
         sizeHAPSVm = 10000000 * 10;
         bwHAPSVm = 10000 * 10;
@@ -154,6 +216,7 @@ public class BigHAPS {
         createVmsAndCloudlets();
         //simulation.start();
         //printResults();
+
 
     }
 
@@ -205,6 +268,8 @@ public class BigHAPS {
             broker.submitVm(vm);
         }
         // Assigning Cloudlets
+
+
         i=0;
         for (DatacenterBroker broker : brokers) {
             for (; i<NUMBER_OF_CLOUDLETS; i++) {
@@ -239,20 +304,63 @@ public class BigHAPS {
 
 
     private Cloudlet createCloudlet(long id, long length, int delay) {
-        final long fileSize = 300;
-        final long outputSize = 300;
-        final int pesNumber = 1;
-        final UtilizationModel utilizationModel = new UtilizationModelDynamic(0.2);
-        Cloudlet cloudlet
-                = new CloudletSimple(id, length, pesNumber)
-                .setFileSize(fileSize)
-                .setOutputSize(outputSize)
-                .setUtilizationModelCpu(new UtilizationModelFull())
-                .setUtilizationModelBw(utilizationModel)
-                .setUtilizationModelRam(utilizationModel);
-
-        //RandomGenerator rg = new JDKRandomGenerator();
-
+        long fileSize;
+        long outputSize;
+        int pesNumber;
+        UtilizationModel utilizationModel;
+        Cloudlet cloudlet = null;
+        Random r = new Random();
+        if(utilizationType == 'o'){
+            fileSize = 300;
+            outputSize = 300;
+            pesNumber = 1;
+            utilizationModel = new UtilizationModelDynamic(0.2);
+            cloudlet = new CloudletSimple(id, length, pesNumber)
+                    .setFileSize(fileSize)
+                    .setOutputSize(outputSize)
+                    .setUtilizationModelCpu(new UtilizationModelFull())
+                    .setUtilizationModelBw(utilizationModel)
+                    .setUtilizationModelRam(utilizationModel);
+        }
+        else if(utilizationType == 'g'){
+            if(id % numberOfCloudletPerBroker < numberOfCloudletPerBroker/2){ //LOW
+                fileSize = 100;
+                outputSize = 100;
+                pesNumber = 1;
+                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+5)/100);
+                cloudlet = new CloudletSimple(id, length, pesNumber)
+                        .setFileSize(fileSize)
+                        .setOutputSize(outputSize)
+                        .setUtilizationModelCpu(new UtilizationModelFull())
+                        .setUtilizationModelBw(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,10)) // 10 MB
+                        .setUtilizationModelRam(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,125)); // 125 MB
+            }
+            else if(numberOfCloudletPerBroker/2 <= id % numberOfCloudletPerBroker &&
+                    id % numberOfCloudletPerBroker < numberOfCloudletPerBroker * 0.8 ){  // Mid
+                fileSize = 500;
+                outputSize = 500;
+                pesNumber = 5;
+                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+5)/100);
+                cloudlet = new CloudletSimple(id, length, pesNumber)
+                        .setFileSize(fileSize)
+                        .setOutputSize(outputSize)
+                        .setUtilizationModelCpu(new UtilizationModelFull())
+                        .setUtilizationModelBw(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,50)) // 50 MB
+                        .setUtilizationModelRam(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,250)); // 250 MB
+            }
+            else{ // High
+                fileSize = 1000;
+                outputSize = 1000;
+                pesNumber = 10;
+                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+10)/100);
+                cloudlet = new CloudletSimple(id, length, pesNumber)
+                        .setFileSize(fileSize)
+                        .setOutputSize(outputSize)
+                        .setUtilizationModelCpu(new UtilizationModelFull())
+                        .setUtilizationModelBw(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,100)) // 100 MB
+                        .setUtilizationModelRam(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,500)); // 500 MB
+            }
+        }
         ExponentialDistribution expDist = new ExponentialDistribution(delay);
         double delayTime = (expDist.sample()*0.34561 + expDist.sample()*0.08648 + expDist.sample()*0.56791);
         cloudlet.setSubmissionDelay(delayTime);
@@ -261,8 +369,8 @@ public class BigHAPS {
     }
 
     private void printResults() {
-
-        /*for (DatacenterBroker broker : brokers) {
+        double meanExecTime2 = 0.0;
+        for (DatacenterBroker broker : brokers) {
 
             final List<Cloudlet> finishedCloudlets = broker.getCloudletFinishedList();
             final Comparator<Cloudlet> hostComparator = comparingLong(cl -> cl.getVm().getHost().getId());
@@ -270,7 +378,16 @@ public class BigHAPS {
 
             new CloudletsTableBuilder(finishedCloudlets).build();
 
-        }*/
+            double meanExecTime = 0.0;
+            for(int i=0; i< finishedCloudlets.size(); i++){
+                meanExecTime += finishedCloudlets.get(i).getFinishTime() - finishedCloudlets.get(i).getExecStartTime();
+            }
+            meanExecTime /= finishedCloudlets.size();
+            meanExecTime2 += meanExecTime;
+
+        }
+        System.out.println(meanExecTime2/NUMBER_OF_BROKERS);
+        lengthMeans.add(meanExecTime2/NUMBER_OF_BROKERS);
 
         Double TotalPowerConsumptionInKWatt = 0.0;
         Double totalUtilization = 0.0;
@@ -287,8 +404,11 @@ public class BigHAPS {
 
         }
         totalUtilization /= vmList.size();
-        utilizationList.add(totalUtilization);
-        totalUpTimeList.add(totalUpTime);
+        totalUpTime /= vmList.size();
+        DecimalFormat df = new DecimalFormat("#.#####");
+        utilizationList.add(df.format(totalUtilization));
+        totalUpTimeList.add(totalUpTime.intValue());
+
 
         //All informations
         if(!specWrite){
@@ -344,6 +464,10 @@ public class BigHAPS {
             }
             br.write("Total Energy Consumption is " + TotalPowerConsumptionInKWatt.intValue()  + " kW");
             br.newLine();
+            br.write("Mean Utilization " + df.format(totalUtilization));
+            br.newLine();
+            br.write("Mean Total Up Time is " + totalUpTime.intValue() +" seconds");
+            br.newLine();
             br.newLine();
             br.flush();
         }
@@ -355,10 +479,29 @@ public class BigHAPS {
                 new FileWriter("bigHAPSOnlyNumbers_Cloudlet.txt",true) : new FileWriter("bigHAPSOnlyNumbers_VmLifeTime.txt",true))) {
             br.write(TotalPowerConsumptionInKWatt.intValue() + "");
             br.newLine();
+            br.write(df.format(totalUtilization));
+            br.newLine();
+            br.write(totalUpTime.intValue()+ "");
+            br.newLine();
             br.flush();
         }
         catch (IOException e) {
             System.out.println("Unable to read file ");
+        }
+        if(errorBars){
+            try(BufferedWriter br = new BufferedWriter(testType == 'c' ?
+                    new FileWriter("bigErrorBarCloudlet.txt",true) : new FileWriter("bigErrorBarVm.txt",true))) {
+                br.write(TotalPowerConsumptionInKWatt.intValue() + "");
+                br.newLine();
+                br.write(df.format(totalUtilization));
+                br.newLine();
+                br.write(totalUpTime.intValue()+ "");
+                br.newLine();
+                br.flush();
+            }
+            catch (IOException e) {
+                System.out.println("Unable to read file ");
+            }
         }
     }
 }

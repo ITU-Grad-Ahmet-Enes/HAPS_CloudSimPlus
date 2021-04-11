@@ -2,15 +2,17 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.9" />
+      <configuration sdkName="Python 3.7 (HAPS_CloudSimPlus6.1.0)" />
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.9 interpreter library" level="application" />
-    <orderEntry type="library" name="org.cloudsimplus:cloudsim-plus:Latest" level="project" />
+    <orderEntry type="library" name="Python 3.7 (HAPS_CloudSimPlus6.1.0) interpreter library" level="application" />
+    <orderEntry type="library" name="org.cloudsimplus:cloudsim-plus:6.2.0" level="project" />
   </component>
 </module>
