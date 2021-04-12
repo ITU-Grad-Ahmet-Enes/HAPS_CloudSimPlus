@@ -71,7 +71,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
         if(getDatacenterList().isEmpty()) {
             throw new IllegalStateException("You don't have any Datacenter created.");
         }
-        return getDatacenterList().get((int) vm.getId());
+        return getDatacenterList().get((int) vm.getId() / numberOfCloudletPerBroker);
     }
 
     /**
@@ -94,6 +94,6 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
             return Vm.NULL;
         }
         int division = (int) (cloudlet.getId() / numberOfCloudletPerBroker);
-        return getDatacenterList().get(division).getHost(0).getVmList().get(0);
+        return getDatacenterList().get(division).getHost(0).getVmList().get((int) cloudlet.getId() % numberOfCloudletPerBroker);
     }
 }

@@ -56,7 +56,7 @@ type_small_vm = []
 type_big_vm = []
 for i in range(len(smallHAPS_Vm_Life_Time)):
     if i < len(smallHAPS_Vm_Life_Time) / 3:
-        Delays.append(500 + i * 5000)
+        Delays.append(500 + i * 2500)
         type_small_vm.append('Small')
         type_big_vm.append('Big')
     if i % 3 == 0:
