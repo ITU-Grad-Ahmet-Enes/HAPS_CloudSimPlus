@@ -121,11 +121,24 @@ public class VmPerCloudlet {
             if(n.equals("y")) {
                 System.out.println("Enter number of test! ");
                 number_of_tests = in.nextInt();
-                File file1 = new File("bigErrorBarCloudlet.txt");
-                File file2 = new File("bigErrorBarVm.txt");
-                if (file1.delete()) {
+                File file;
+                if(typeHAPS.equals("b")){
+                    if(s.equals("c")){
+                        file = new File("bigErrorBarCloudlet.txt");
+                    }
+                    else{
+                        file = new File("bigErrorBarVm.txt");
+                    }
                 }
-                if(file2.delete()){
+                else{
+                    if(s.equals("c")){
+                        file = new File("smallErrorBarCloudlet.txt");
+                    }
+                    else{
+                        file = new File("smallErrorBarVm.txt");
+                    }
+                }
+                if (file.delete() ) {
                 }
             }
             System.out.println("Enter vmPerCloudlet");
@@ -158,9 +171,9 @@ public class VmPerCloudlet {
                 testType = 'v';
                 NUMBER_OF_CLOUDLETS = 4000;
                 numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
-                for(int i=0; i<35; i++){
+                for(int i=0; i<20; i++){
                     if(i != 0){
-                        delay += 750;
+                        delay += 500;
                     }
                     else {
                         delay = 50;
