@@ -18,6 +18,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
     }
 
     private int numberOfCloudletPerBroker;
+    private int vmPerCloudlet;
 
     /**
      * Creates a new DatacenterBroker.
@@ -45,9 +46,10 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
      * @param name the DatacenterBroker name
 
      */
-    public BigSmallDCBroker(final CloudSim simulation, final String name, int numberOfCloudletPerBroker) {
+    public BigSmallDCBroker(final CloudSim simulation, final String name, int numberOfCloudletPerBroker, int vmPerCloudlet) {
         super(simulation, name);
         this.numberOfCloudletPerBroker = numberOfCloudletPerBroker;
+        this.vmPerCloudlet = vmPerCloudlet;
     }
 
     /**
@@ -71,7 +73,7 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
         if(getDatacenterList().isEmpty()) {
             throw new IllegalStateException("You don't have any Datacenter created.");
         }
-        return getDatacenterList().get((int) vm.getId() / numberOfCloudletPerBroker);
+        return getDatacenterList().get((int) vm.getId() / (numberOfCloudletPerBroker/vmPerCloudlet));
     }
 
     /**
@@ -94,6 +96,6 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
             return Vm.NULL;
         }
         int division = (int) (cloudlet.getId() / numberOfCloudletPerBroker);
-        return getDatacenterList().get(division).getHost(0).getVmList().get((int) cloudlet.getId() % numberOfCloudletPerBroker);
+        return getDatacenterList().get(division).getHost(0).getVmList().get((int) cloudlet.getId() % (numberOfCloudletPerBroker/vmPerCloudlet));
     }
 }

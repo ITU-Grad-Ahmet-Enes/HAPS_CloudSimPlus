@@ -223,7 +223,7 @@ public class SmallHAPS {
     private List<DatacenterBroker> createBrokers(double lambda) {
         final List<DatacenterBroker> list = new ArrayList<>(NUMBER_OF_BROKERS);
         for(int i = 0; i < NUMBER_OF_BROKERS; i++) {
-            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker);
+            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker,1);
             broker.setLambdaValue(lambda);
             list.add(broker);
         }

@@ -59,7 +59,7 @@ for i in range(25):  # i<5 diger dosyadaki iterasyon cloudlet
     sum_utilization_big = 0.0
     sum_up_time_small = 0
     sum_up_time_big = 0
-    Number_of_Cloudlets.append(500 + i * 100)
+    Number_of_Cloudlets.append(200 + i * 200)
     type_small_cloudlet.append('Small')
     type_big_cloudlet.append('Big')
     for j in range(30):  # (number of test = 10 ) * 3
@@ -92,7 +92,7 @@ for i in range(25):  # i<5 diger dosyadaki iterasyon vm
     sum_utilization_big = 0.0
     sum_up_time_small = 0
     sum_up_time_big = 0
-    Delays.append(500 + i * 2500)
+    Delays.append(50 + i * 750)
     type_small_vm.append('Small')
     type_big_vm.append('Big')
     for j in range(30):  # (number of test = 10 ) * 3

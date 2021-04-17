@@ -1,5 +1,6 @@
 package org.cloudsimplus.haps;
 
+import ch.qos.logback.classic.Level;
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 import org.cloudbus.cloudsim.allocationpolicies.VmAllocationPolicySimple;
 import org.cloudbus.cloudsim.brokers.DatacenterBroker;
@@ -17,6 +18,7 @@ import org.cloudbus.cloudsim.provisioners.ResourceProvisionerSimple;
 import org.cloudbus.cloudsim.resources.Pe;
 import org.cloudbus.cloudsim.resources.PeSimple;
 import org.cloudbus.cloudsim.schedulers.cloudlet.CloudletSchedulerSpaceShared;
+import org.cloudbus.cloudsim.schedulers.vm.VmScheduler;
 import org.cloudbus.cloudsim.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudbus.cloudsim.utilizationmodels.UtilizationModel;
 import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelDynamic;
@@ -29,6 +31,7 @@ import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.builders.tables.TextTableColumn;
 import org.cloudsimplus.haps.headers.BigSmallDCBroker;
 import org.cloudsimplus.haps.headers.VmsTableBuilder;
+import org.cloudsimplus.util.Log;
 
 import java.io.*;
 import java.text.DecimalFormat;
@@ -89,9 +92,10 @@ public class VmPerCloudlet {
     private Double TotalPowerConsumptionInKWatt = 0.0;
     private Double totalUtilization = 0.0;
     private Double totalUpTime = 0.0;
+    private static int vmPerCloudlet;
 
     public static void main(String[] args) throws IOException {
-        Random random = new Random();
+//        Random random = new Random();
 //        PrintStream out = new PrintStream(new FileOutputStream("table" +random.nextInt(250) + ".txt"));
 //        System.setOut(out);
         Scanner in = new Scanner(System.in);
@@ -103,7 +107,7 @@ public class VmPerCloudlet {
                 NUMBER_OF_HAPS = NUMBER_OF_BROKERS;
             }
             else {
-                NUMBER_OF_BROKERS = 25;
+                NUMBER_OF_BROKERS = 50;
                 NUMBER_OF_HAPS = NUMBER_OF_BROKERS;
             }
             System.out.println("For Vm LifeTime Enter v , For CloudLetNumbers Enter c !");
@@ -124,14 +128,16 @@ public class VmPerCloudlet {
                 if(file2.delete()){
                 }
             }
+            System.out.println("Enter vmPerCloudlet");
+            vmPerCloudlet = in.nextInt();
             if (s.equals("c")){
                 testType = 'c';
-                for(int i=0; i<25 ;i++){
+                for(int i=0; i<24 ;i++){
                     if(i!=0){
-                        NUMBER_OF_CLOUDLETS += 100;
+                        NUMBER_OF_CLOUDLETS += 200;
                     }
                     else{
-                        NUMBER_OF_CLOUDLETS = 500;
+                        NUMBER_OF_CLOUDLETS = 200;
                     }
                     numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
                     if(n.equals("y")){
@@ -150,14 +156,14 @@ public class VmPerCloudlet {
             }
             else if (s.equals("v")){
                 testType = 'v';
-                NUMBER_OF_CLOUDLETS = 2000;
+                NUMBER_OF_CLOUDLETS = 4000;
                 numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
                 for(int i=0; i<35; i++){
                     if(i != 0){
-                        delay += 2500;
+                        delay += 750;
                     }
                     else {
-                        delay = 500;
+                        delay = 50;
                     }
                     if(n.equals("y")){
                         errorBars = true;
@@ -184,19 +190,19 @@ public class VmPerCloudlet {
                         new FileWriter("bigHAPSOnlyNumbers_VmLifeTime.txt",false) :
                         new FileWriter("smallHAPSOnlyNumbers_VmLifeTime.txt",false) )) {
             }
-        /*Log.setLevel(Level.OFF);
 
-        //Enable different log levels for specific classes of objects
-        Log.setLevel(DatacenterBroker.LOGGER, Level.OFF);
-        Log.setLevel(Datacenter.LOGGER, Level.OFF);
-        Log.setLevel(VmScheduler.LOGGER, Level.OFF);
-        Log.setLevel(VmAllocationPolicySimple.LOGGER, Level.OFF);*/
+            /*Log.setLevel(Level.OFF);
+            Log.setLevel(DatacenterBroker.LOGGER, Level.OFF);
+            Log.setLevel(Datacenter.LOGGER, Level.OFF);
+            Log.setLevel(VmScheduler.LOGGER, Level.OFF);
+            Log.setLevel(VmAllocationPolicySimple.LOGGER, Level.OFF);*/
 
             simulationList.parallelStream().forEach(VmPerCloudlet::run);
             simulationList.forEach(VmPerCloudlet::printResults);
             System.out.println(utilizationList);
             System.out.println(totalUpTimeList);
             System.out.println(lengthMeans);
+            System.out.println(typeHAPS);
         }
 
     }
@@ -209,15 +215,15 @@ public class VmPerCloudlet {
 
         if(typeHAPS.equals("b")){
             HOST_HAPS_NUMBER = NUMBER_OF_HAPS;
-            HOST_HAPS_PES_NUMBER = 1000 * NUMBER_OF_CLOUDLETS;
-            VM_HAPS_PES_NUMBER = 1000;
+            HOST_HAPS_PES_NUMBER = 10;
+            VM_HAPS_PES_NUMBER = 10;
 
-            mipsHAPSHost = 15000;
+            mipsHAPSHost = 1000 * 10;
             ramHAPSHost = 100000 * 10; //in Megabytes
             storageHAPSHost = 10000000 * 10;
             bwHAPSHost = 10000 * 10;
 
-            mipsHAPSVm = 100;
+            mipsHAPSVm = 10*vmPerCloudlet;
             ramHAPSVm = 100000 * 10 / numberOfCloudletPerBroker;
             sizeHAPSVm = 10000000 * 10 / numberOfCloudletPerBroker;
             bwHAPSVm = 10000 * 10 / numberOfCloudletPerBroker;
@@ -227,19 +233,19 @@ public class VmPerCloudlet {
             HOST_HAPS_PES_NUMBER = 10;
             VM_HAPS_PES_NUMBER = 10;
 
-            mipsHAPSHost = 1500;
+            mipsHAPSHost = 1000;
             ramHAPSHost = 100000;
             storageHAPSHost = 10000000;
             bwHAPSHost = 10000;
 
-            mipsHAPSVm = 10;
-            ramHAPSVm = 100000 / numberOfCloudletPerBroker;
-            sizeHAPSVm = 10000000 / numberOfCloudletPerBroker;
-            bwHAPSVm = 10000 / numberOfCloudletPerBroker;
+            mipsHAPSVm = 10*vmPerCloudlet;
+            ramHAPSVm = 100000 / numberOfCloudletPerBroker * vmPerCloudlet;
+            sizeHAPSVm = (long) 10000000 / numberOfCloudletPerBroker * vmPerCloudlet;
+            bwHAPSVm = (long) 10000 / numberOfCloudletPerBroker * vmPerCloudlet;
         }
 
 
-
+//500 VM limit koy
         simulation = new CloudSim();
         this.vmList = new ArrayList<>(NUMBER_OF_CLOUDLETS);
         this.cloudletList = new ArrayList<>(NUMBER_OF_CLOUDLETS);
@@ -256,7 +262,7 @@ public class VmPerCloudlet {
     private List<DatacenterBroker> createBrokers(double lambda) {
         final List<DatacenterBroker> list = new ArrayList<>(NUMBER_OF_BROKERS);
         for(int i = 0; i < NUMBER_OF_BROKERS; i++) {
-            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker);
+            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker, vmPerCloudlet);
             broker.setLambdaValue(lambda);
             list.add(broker);
         }
@@ -303,7 +309,7 @@ public class VmPerCloudlet {
         // Assigning Vms
         int i=0;
         for (DatacenterBroker broker : brokers) {
-            for(int j=0; j<numberOfCloudletPerBroker; j++){
+            for(int j=0; j<numberOfCloudletPerBroker/vmPerCloudlet; j++){
                 Vm vm = createVm(i++);
                 vmList.add(vm);
                 broker.submitVm(vm);
@@ -316,14 +322,16 @@ public class VmPerCloudlet {
         for (DatacenterBroker broker : brokers) {
             for (; i<NUMBER_OF_CLOUDLETS; i++) {
                 //RandomGenerator rg = new JDKRandomGenerator();
-                ExponentialDistribution lengDist = new ExponentialDistribution(287540);
+                ExponentialDistribution lengDist = new ExponentialDistribution(28754*2);
                 long lengthCLOUDLETS = (long) (lengDist.sample()*0.09325 + lengDist.sample()*0.22251 + lengDist.sample()*0.68424);
+                if(lengthCLOUDLETS > 80000) lengthCLOUDLETS = 80000;
+                if(lengthCLOUDLETS < 20000) lengthCLOUDLETS = 20000;
                 Cloudlet cloudlet;
                 if(testType == 'v'){
                     cloudlet = createCloudlet(i, lengthCLOUDLETS, delay);
                 }
                 else{
-                    cloudlet = createCloudlet(i, lengthCLOUDLETS, 2200);
+                    cloudlet = createCloudlet(i, lengthCLOUDLETS, 220);
                 }
                 cloudletList.add(cloudlet);
                 broker.submitCloudlet(cloudlet);
@@ -353,22 +361,22 @@ public class VmPerCloudlet {
         Cloudlet cloudlet = null;
         Random r = new Random();
         if(utilizationType == 'o'){
-            fileSize = 300;
-            outputSize = 300;
-            pesNumber = 1;
+            fileSize = 600;
+            outputSize = 600;
+            pesNumber = 10;
             utilizationModel = new UtilizationModelDynamic(0.2);
             cloudlet = new CloudletSimple(id, length, pesNumber)
                     .setFileSize(fileSize)
                     .setOutputSize(outputSize)
                     .setUtilizationModelCpu(new UtilizationModelFull())
-                    .setUtilizationModelBw(utilizationModel)
-                    .setUtilizationModelRam(utilizationModel);
+                    .setUtilizationModelBw(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,75))
+                    .setUtilizationModelRam(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,750));
         }
         else if(utilizationType == 'g'){
-            if(id % numberOfCloudletPerBroker < numberOfCloudletPerBroker/2){ //LOW
+            if(id % numberOfCloudletPerBroker < numberOfCloudletPerBroker*0.4){ //LOW
                 fileSize = 100;
                 outputSize = 100;
-                pesNumber = 1;
+                pesNumber = 5;
                 utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+5)/100);
                 cloudlet = new CloudletSimple(id, length, pesNumber)
                         .setFileSize(fileSize)
@@ -377,11 +385,11 @@ public class VmPerCloudlet {
                         .setUtilizationModelBw(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,10)) // 10 MB
                         .setUtilizationModelRam(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,125)); // 125 MB
             }
-            else if(numberOfCloudletPerBroker/2 <= id % numberOfCloudletPerBroker &&
+            else if(numberOfCloudletPerBroker*0.4 <= id % numberOfCloudletPerBroker &&
                     id % numberOfCloudletPerBroker < numberOfCloudletPerBroker * 0.8 ){  // Mid
                 fileSize = 500;
                 outputSize = 500;
-                pesNumber = 5;
+                pesNumber = 7;
                 utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+5)/100);
                 cloudlet = new CloudletSimple(id, length, pesNumber)
                         .setFileSize(fileSize)
@@ -405,6 +413,7 @@ public class VmPerCloudlet {
         }
         ExponentialDistribution expDist = new ExponentialDistribution(delay);
         double delayTime = (expDist.sample()*0.34561 + expDist.sample()*0.08648 + expDist.sample()*0.56791);
+        if(delayTime > delay * 3) delayTime = delay * 3;
         cloudlet.setSubmissionDelay(delayTime);
         cloudlet.setExecStartTime(delayTime);
         return cloudlet;
@@ -448,7 +457,7 @@ public class VmPerCloudlet {
             final HostResourceStats cpuStats = dc.getHost(0).getCpuUtilizationStats();
             final double utilizationPercentMean = cpuStats.getMean();
             TotalPowerConsumptionInKWatt += dc.getHost(0).getPowerModel().getPower(utilizationPercentMean) * dc.getHost(0).getTotalUpTime() / 1000;
-            totalUtilization += utilizationPercentMean;
+            totalUtilization += utilizationPercentMean ;
             totalUpTime += dc.getHost(0).getTotalUpTime();
 
         }
@@ -500,6 +509,7 @@ public class VmPerCloudlet {
                         ", BW for Vm: " + bwHAPSVm + "\n");
                 br.newLine();
                 br.newLine();
+                br.flush();
             }
             catch (IOException e) {
                 System.out.println("Unable to read file ");
@@ -511,11 +521,11 @@ public class VmPerCloudlet {
 
         try(BufferedWriter br = new BufferedWriter(testType == 'c' ?
                 typeHAPS.equals("b") ?
-                        new FileWriter("bigHAPS_Cloudlet.txt",false) :
-                        new FileWriter("smallHAPS_Cloudlet.txt",false) :
+                        new FileWriter("bigHAPS_Cloudlet.txt",true) :
+                        new FileWriter("smallHAPS_Cloudlet.txt",true) :
                 typeHAPS.equals("b") ?
-                        new FileWriter("bigHAPS_VmLifeTime.txt",false) :
-                        new FileWriter("smallHAPS_VmLifeTime.txt",false))) {
+                        new FileWriter("bigHAPS_VmLifeTime.txt",true) :
+                        new FileWriter("smallHAPS_VmLifeTime.txt",true))) {
             if(testType == 'c'){
                 int index = simulationList.indexOf(this);
                 br.write("Number of Cloudlets : "+ cloudletNumbers.get(index));
@@ -541,11 +551,11 @@ public class VmPerCloudlet {
 
         try(BufferedWriter br = new BufferedWriter(testType == 'c' ?
                 typeHAPS.equals("b") ?
-                        new FileWriter("bigHAPSOnlyNumbers_Cloudlet.txt",false) :
-                        new FileWriter("smallHAPSOnlyNumbers_Cloudlet.txt",false) :
+                        new FileWriter("bigHAPSOnlyNumbers_Cloudlet.txt",true) :
+                        new FileWriter("smallHAPSOnlyNumbers_Cloudlet.txt",true) :
                 typeHAPS.equals("b") ?
-                        new FileWriter("bigHAPSOnlyNumbers_VmLifeTime.txt",false) :
-                        new FileWriter("smallHAPSOnlyNumbers_VmLifeTime.txt",false))) {
+                        new FileWriter("bigHAPSOnlyNumbers_VmLifeTime.txt",true) :
+                        new FileWriter("smallHAPSOnlyNumbers_VmLifeTime.txt",true))) {
             br.write(TotalPowerConsumptionInKWatt.intValue() + "");
             br.newLine();
             br.write(df.format(totalUtilization));

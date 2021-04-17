@@ -32,7 +32,7 @@ bigHAPS_Cloudlet_Utilization = []
 bigHAPS_Cloudlet_Mean_Total_Up_Time = []
 for i in range(len(smallHAPS_Cloudlet)):
     if i < len(smallHAPS_Cloudlet) / 3:
-        Number_of_Cloudlets.append(500 + i * 100)
+        Number_of_Cloudlets.append(200 + i * 200)
         type_small_cloudlet.append('Small')
         type_big_cloudlet.append('Big')
     if i % 3 == 0:
@@ -56,7 +56,7 @@ type_small_vm = []
 type_big_vm = []
 for i in range(len(smallHAPS_Vm_Life_Time)):
     if i < len(smallHAPS_Vm_Life_Time) / 3:
-        Delays.append(500 + i * 2500)
+        Delays.append(50 + i * 750)
         type_small_vm.append('Small')
         type_big_vm.append('Big')
     if i % 3 == 0:
