@@ -62,7 +62,7 @@ for i in range(24):  # i<5 diger dosyadaki iterasyon cloudlet
     Number_of_Cloudlets.append(200 + i * 200)
     type_small_cloudlet.append('Small')
     type_big_cloudlet.append('Big')
-    for j in range(30):  # (number of test = 10 ) * 3
+    for j in range(15):  # (number of test = 10 ) * 3
         if j % 3 == 0:
             energy_small_cloudlet = np.append(energy_small_cloudlet, int(smallHAPS_Cloudlet[i * 30 + j]))
             energy_big_cloudlet = np.append(energy_big_cloudlet, int(bigHAPS_Cloudlet[i * 30 + j]))
@@ -95,7 +95,7 @@ for i in range(20):  # i<5 diger dosyadaki iterasyon vm
     Delays.append(50 + i * 500)
     type_small_vm.append('Small')
     type_big_vm.append('Big')
-    for j in range(30):  # (number of test = 10 ) * 3
+    for j in range(15):  # (number of test = 10 ) * 3
         if j % 3 == 0:
             energy_small_vm = np.append(energy_small_vm, int(smallHAPS_Vm_Life_Time[i * 30 + j]))
             energy_big_vm = np.append(energy_big_vm, int(bigHAPS_Vm_Life_Time[i * 30 + j]))
@@ -171,5 +171,5 @@ fig.update_traces(mode="markers+lines",
                       "MeanUpTime: %{customdata[2]}",
                   ])
                   )
-fig.update_layout(title_text="x:MeanDelay y:EnergyConsuptionInKw, NumberOfCloudlet 2000", width=1800, )
+fig.update_layout(title_text="x:MeanDelay y:EnergyConsuptionInKw, NumberOfCloudlet 4000", width=1800, )
 fig.show()

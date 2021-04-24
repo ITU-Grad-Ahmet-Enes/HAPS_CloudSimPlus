@@ -1,1011 +1,111 @@
-Number of Brokers : 5
-Number of HAPS : 5
+Number of Brokers : 1
+Number of HAPS : 1
 Number of CloudLets: 4000
 MAX_HAPS_POWER_WATTS_SEC: 1050.0 HAPS_STATIC_POWER_WATTS_SEC: 350.0
 ---------------------------------------------------------------------------------------
 HAPS Stations Properties 
-Number of Stations: 5, Number of Hosts: 5, Number of Vms: 0
-Mips for Host: 10000, Ram for Host: 1000000, Storage for Host: 100000000, BW for Host: 100000
-Mips for Vm: 40, Size for Vm: 125000, Ram for Vm: 1250, BW for Vm: 125
+Number of Stations: 1, Number of Hosts: 1, Number of Vms: 0
+Mips for Host: 100, Ram for Host: 1000000, Storage for Host: 100000000, BW for Host: 100000
+Mips for Vm: 100, Size for Vm: 100000000, Ram for Vm: 1000000, BW for Vm: 100000
 
 
 Mean Delay: 50
-Total Energy Consumption is 26296 kW
-Mean Utilization 0,36078
-Mean Total Up Time is 8728 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 26066 kW
-Mean Utilization 0,35424
-Mean Total Up Time is 8718 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 25999 kW
-Mean Utilization 0,35877
-Mean Total Up Time is 8650 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 26301 kW
-Mean Utilization 0,3639
-Mean Total Up Time is 8698 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 26142 kW
-Mean Utilization 0,36097
-Mean Total Up Time is 8675 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 26120 kW
-Mean Utilization 0,35594
-Mean Total Up Time is 8719 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 25968 kW
-Mean Utilization 0,35313
-Mean Total Up Time is 8696 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 26112 kW
-Mean Utilization 0,35704
-Mean Total Up Time is 8705 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 26193 kW
-Mean Utilization 0,36444
-Mean Total Up Time is 8657 seconds
-
-Mean Delay: 50
-Total Energy Consumption is 26227 kW
-Mean Utilization 0,35961
-Mean Total Up Time is 8717 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 27545 kW
-Mean Utilization 0,36921
-Mean Total Up Time is 9054 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 27340 kW
-Mean Utilization 0,36752
-Mean Total Up Time is 9004 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 26739 kW
-Mean Utilization 0,3689
-Mean Total Up Time is 8792 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 26983 kW
-Mean Utilization 0,3585
-Mean Total Up Time is 8980 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 26946 kW
-Mean Utilization 0,36649
-Mean Total Up Time is 8885 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 27916 kW
-Mean Utilization 0,35476
-Mean Total Up Time is 9331 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 27611 kW
-Mean Utilization 0,3644
-Mean Total Up Time is 9126 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 27199 kW
-Mean Utilization 0,36756
-Mean Total Up Time is 8957 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 27096 kW
-Mean Utilization 0,37041
-Mean Total Up Time is 8894 seconds
-
-Mean Delay: 550
-Total Energy Consumption is 27609 kW
-Mean Utilization 0,37117
-Mean Total Up Time is 9054 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 27297 kW
-Mean Utilization 0,36299
-Mean Total Up Time is 9037 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 27931 kW
-Mean Utilization 0,37071
-Mean Total Up Time is 9165 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 27749 kW
-Mean Utilization 0,35948
-Mean Total Up Time is 9224 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 28381 kW
-Mean Utilization 0,36043
-Mean Total Up Time is 9424 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 28853 kW
-Mean Utilization 0,37105
-Mean Total Up Time is 9464 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 28367 kW
-Mean Utilization 0,3632
-Mean Total Up Time is 9389 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 28763 kW
-Mean Utilization 0,36079
-Mean Total Up Time is 9547 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 27831 kW
-Mean Utilization 0,36593
-Mean Total Up Time is 9183 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 27579 kW
-Mean Utilization 0,35744
-Mean Total Up Time is 9189 seconds
-
-Mean Delay: 1050
-Total Energy Consumption is 28488 kW
-Mean Utilization 0,35612
-Mean Total Up Time is 9507 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 28323 kW
-Mean Utilization 0,35234
-Mean Total Up Time is 9494 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 29878 kW
-Mean Utilization 0,35403
-Mean Total Up Time is 9995 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 28863 kW
-Mean Utilization 0,35096
-Mean Total Up Time is 9691 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 28793 kW
-Mean Utilization 0,35546
-Mean Total Up Time is 9616 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 29005 kW
-Mean Utilization 0,35003
-Mean Total Up Time is 9749 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 28501 kW
-Mean Utilization 0,34733
-Mean Total Up Time is 9610 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 30129 kW
-Mean Utilization 0,3516
-Mean Total Up Time is 10108 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 30886 kW
-Mean Utilization 0,35034
-Mean Total Up Time is 10377 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 27872 kW
-Mean Utilization 0,34305
-Mean Total Up Time is 9446 seconds
-
-Mean Delay: 1550
-Total Energy Consumption is 28720 kW
-Mean Utilization 0,35877
-Mean Total Up Time is 9555 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 30118 kW
-Mean Utilization 0,33809
-Mean Total Up Time is 10267 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 30528 kW
-Mean Utilization 0,34242
-Mean Total Up Time is 10354 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 31989 kW
-Mean Utilization 0,33523
-Mean Total Up Time is 10942 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 28963 kW
-Mean Utilization 0,33565
-Mean Total Up Time is 9902 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 29742 kW
-Mean Utilization 0,34107
-Mean Total Up Time is 10103 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 30271 kW
-Mean Utilization 0,33365
-Mean Total Up Time is 10375 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 30388 kW
-Mean Utilization 0,34124
-Mean Total Up Time is 10320 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 31143 kW
-Mean Utilization 0,32852
-Mean Total Up Time is 10739 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 31905 kW
-Mean Utilization 0,33754
-Mean Total Up Time is 10884 seconds
-
-Mean Delay: 2050
-Total Energy Consumption is 31244 kW
-Mean Utilization 0,337
-Mean Total Up Time is 10665 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 32156 kW
-Mean Utilization 0,31278
-Mean Total Up Time is 11303 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 30128 kW
-Mean Utilization 0,32075
-Mean Total Up Time is 10488 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 31159 kW
-Mean Utilization 0,31079
-Mean Total Up Time is 10980 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 33045 kW
-Mean Utilization 0,31424
-Mean Total Up Time is 11595 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 32166 kW
-Mean Utilization 0,30865
-Mean Total Up Time is 11365 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 31627 kW
-Mean Utilization 0,31287
-Mean Total Up Time is 11116 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 33395 kW
-Mean Utilization 0,3143
-Mean Total Up Time is 11717 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 30736 kW
-Mean Utilization 0,31091
-Mean Total Up Time is 10829 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 36176 kW
-Mean Utilization 0,31258
-Mean Total Up Time is 12720 seconds
-
-Mean Delay: 2550
-Total Energy Consumption is 29935 kW
-Mean Utilization 0,32053
-Mean Total Up Time is 10423 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 32883 kW
-Mean Utilization 0,28705
-Mean Total Up Time is 11937 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 33342 kW
-Mean Utilization 0,28486
-Mean Total Up Time is 12137 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 32769 kW
-Mean Utilization 0,28038
-Mean Total Up Time is 11997 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 35107 kW
-Mean Utilization 0,28061
-Mean Total Up Time is 12849 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 32665 kW
-Mean Utilization 0,28036
-Mean Total Up Time is 11960 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 33302 kW
-Mean Utilization 0,28312
-Mean Total Up Time is 12150 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 34904 kW
-Mean Utilization 0,27872
-Mean Total Up Time is 12806 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 33497 kW
-Mean Utilization 0,27745
-Mean Total Up Time is 12310 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 35175 kW
-Mean Utilization 0,28506
-Mean Total Up Time is 12801 seconds
-
-Mean Delay: 3050
-Total Energy Consumption is 35662 kW
-Mean Utilization 0,28002
-Mean Total Up Time is 13063 seconds
+Total Energy Consumption is 10017 kW
+Mean Utilization 0,97822
+Mean Total Up Time is 9681 seconds
+
+Mean Delay: 750
+Total Energy Consumption is 10176 kW
+Mean Utilization 0,97644
+Mean Total Up Time is 9846 seconds
+
+Mean Delay: 1450
+Total Energy Consumption is 10393 kW
+Mean Utilization 0,97429
+Mean Total Up Time is 10071 seconds
+
+Mean Delay: 2150
+Total Energy Consumption is 10444 kW
+Mean Utilization 0,96982
+Mean Total Up Time is 10151 seconds
+
+Mean Delay: 2850
+Total Energy Consumption is 12369 kW
+Mean Utilization 0,94093
+Mean Total Up Time is 12263 seconds
 
 Mean Delay: 3550
-Total Energy Consumption is 38521 kW
-Mean Utilization 0,25533
-Mean Total Up Time is 14571 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 34301 kW
-Mean Utilization 0,25724
-Mean Total Up Time is 12942 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 36221 kW
-Mean Utilization 0,2582
-Mean Total Up Time is 13649 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 34503 kW
-Mean Utilization 0,25761
-Mean Total Up Time is 13012 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 37752 kW
-Mean Utilization 0,25454
-Mean Total Up Time is 14295 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 40865 kW
-Mean Utilization 0,25349
-Mean Total Up Time is 15495 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 35401 kW
-Mean Utilization 0,25046
-Mean Total Up Time is 13477 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 35276 kW
-Mean Utilization 0,25749
-Mean Total Up Time is 13305 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 37928 kW
-Mean Utilization 0,26042
-Mean Total Up Time is 14250 seconds
-
-Mean Delay: 3550
-Total Energy Consumption is 39357 kW
-Mean Utilization 0,26235
-Mean Total Up Time is 14750 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 39705 kW
-Mean Utilization 0,23534
-Mean Total Up Time is 15427 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 38913 kW
-Mean Utilization 0,23366
-Mean Total Up Time is 15154 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 40658 kW
-Mean Utilization 0,23254
-Mean Total Up Time is 15858 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 39120 kW
-Mean Utilization 0,23331
-Mean Total Up Time is 15242 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 40422 kW
-Mean Utilization 0,23735
-Mean Total Up Time is 15663 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 36928 kW
-Mean Utilization 0,23911
-Mean Total Up Time is 14275 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 36791 kW
-Mean Utilization 0,23457
-Mean Total Up Time is 14310 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 40399 kW
-Mean Utilization 0,23251
-Mean Total Up Time is 15758 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 36834 kW
-Mean Utilization 0,23806
-Mean Total Up Time is 14259 seconds
-
-Mean Delay: 4050
-Total Energy Consumption is 37272 kW
-Mean Utilization 0,23875
-Mean Total Up Time is 14415 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 43440 kW
-Mean Utilization 0,2193
-Mean Total Up Time is 17254 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 41221 kW
-Mean Utilization 0,21791
-Mean Total Up Time is 16405 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 40465 kW
-Mean Utilization 0,22472
-Mean Total Up Time is 15953 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 45364 kW
-Mean Utilization 0,21433
-Mean Total Up Time is 18144 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 39683 kW
-Mean Utilization 0,21913
-Mean Total Up Time is 15766 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 42379 kW
-Mean Utilization 0,21611
-Mean Total Up Time is 16908 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 41835 kW
-Mean Utilization 0,21588
-Mean Total Up Time is 16697 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 42470 kW
-Mean Utilization 0,21822
-Mean Total Up Time is 16895 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 40410 kW
-Mean Utilization 0,22204
-Mean Total Up Time is 15990 seconds
-
-Mean Delay: 4550
-Total Energy Consumption is 40801 kW
-Mean Utilization 0,21743
-Mean Total Up Time is 16249 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 42444 kW
-Mean Utilization 0,19999
-Mean Total Up Time is 17324 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 45757 kW
-Mean Utilization 0,20186
-Mean Total Up Time is 18627 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 46264 kW
-Mean Utilization 0,20615
-Mean Total Up Time is 18719 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 43890 kW
-Mean Utilization 0,20608
-Mean Total Up Time is 17760 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 42719 kW
-Mean Utilization 0,20734
-Mean Total Up Time is 17255 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 44832 kW
-Mean Utilization 0,20769
-Mean Total Up Time is 18099 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 45912 kW
-Mean Utilization 0,20876
-Mean Total Up Time is 18508 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 46339 kW
-Mean Utilization 0,19958
-Mean Total Up Time is 18925 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 43659 kW
-Mean Utilization 0,20486
-Mean Total Up Time is 17697 seconds
-
-Mean Delay: 5050
-Total Energy Consumption is 43173 kW
-Mean Utilization 0,20043
-Mean Total Up Time is 17611 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 49189 kW
-Mean Utilization 0,18167
-Mean Total Up Time is 20617 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 47779 kW
-Mean Utilization 0,18995
-Mean Total Up Time is 19785 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 46363 kW
-Mean Utilization 0,19471
-Mean Total Up Time is 19067 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 46886 kW
-Mean Utilization 0,19209
-Mean Total Up Time is 19356 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 49744 kW
-Mean Utilization 0,18741
-Mean Total Up Time is 20675 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 47368 kW
-Mean Utilization 0,18728
-Mean Total Up Time is 19692 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 47829 kW
-Mean Utilization 0,19448
-Mean Total Up Time is 19677 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 49415 kW
-Mean Utilization 0,1919
-Mean Total Up Time is 20405 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 46459 kW
-Mean Utilization 0,19117
-Mean Total Up Time is 19205 seconds
-
-Mean Delay: 5550
-Total Energy Consumption is 49847 kW
-Mean Utilization 0,1881
-Mean Total Up Time is 20697 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 48741 kW
-Mean Utilization 0,17662
-Mean Total Up Time is 20581 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 49403 kW
-Mean Utilization 0,18187
-Mean Total Up Time is 20700 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 49671 kW
-Mean Utilization 0,17867
-Mean Total Up Time is 20911 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 47738 kW
-Mean Utilization 0,17419
-Mean Total Up Time is 20230 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 48135 kW
-Mean Utilization 0,18076
-Mean Total Up Time is 20202 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 51465 kW
-Mean Utilization 0,17605
-Mean Total Up Time is 21750 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 48014 kW
-Mean Utilization 0,17816
-Mean Total Up Time is 20228 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 49628 kW
-Mean Utilization 0,18295
-Mean Total Up Time is 20762 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 50728 kW
-Mean Utilization 0,18009
-Mean Total Up Time is 21311 seconds
-
-Mean Delay: 6050
-Total Energy Consumption is 48052 kW
-Mean Utilization 0,17964
-Mean Total Up Time is 20200 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 55412 kW
-Mean Utilization 0,16937
-Mean Total Up Time is 23652 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 53832 kW
-Mean Utilization 0,17111
-Mean Total Up Time is 22918 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 51009 kW
-Mean Utilization 0,17219
-Mean Total Up Time is 21681 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 55720 kW
-Mean Utilization 0,17296
-Mean Total Up Time is 23656 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 51896 kW
-Mean Utilization 0,16818
-Mean Total Up Time is 22191 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 52663 kW
-Mean Utilization 0,16831
-Mean Total Up Time is 22514 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 54361 kW
-Mean Utilization 0,16665
-Mean Total Up Time is 23298 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 52901 kW
-Mean Utilization 0,16988
-Mean Total Up Time is 22563 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 54040 kW
-Mean Utilization 0,16989
-Mean Total Up Time is 23048 seconds
-
-Mean Delay: 6550
-Total Energy Consumption is 53840 kW
-Mean Utilization 0,17149
-Mean Total Up Time is 22908 seconds
+Total Energy Consumption is 14602 kW
+Mean Utilization 0,89383
+Mean Total Up Time is 14966 seconds
+
+Mean Delay: 4250
+Total Energy Consumption is 16542 kW
+Mean Utilization 0,84827
+Mean Total Up Time is 17527 seconds
+
+Mean Delay: 4950
+Total Energy Consumption is 18455 kW
+Mean Utilization 0,78798
+Mean Total Up Time is 20470 seconds
+
+Mean Delay: 5650
+Total Energy Consumption is 19688 kW
+Mean Utilization 0,71716
+Mean Total Up Time is 23108 seconds
+
+Mean Delay: 6350
+Total Energy Consumption is 21059 kW
+Mean Utilization 0,65183
+Mean Total Up Time is 26119 seconds
 
 Mean Delay: 7050
-Total Energy Consumption is 53967 kW
-Mean Utilization 0,15997
-Mean Total Up Time is 23363 seconds
+Total Energy Consumption is 22076 kW
+Mean Utilization 0,59656
+Mean Total Up Time is 28761 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 55288 kW
-Mean Utilization 0,16413
-Mean Total Up Time is 23785 seconds
+Mean Delay: 7750
+Total Energy Consumption is 23451 kW
+Mean Utilization 0,55143
+Mean Total Up Time is 31863 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 58077 kW
-Mean Utilization 0,16161
-Mean Total Up Time is 25080 seconds
+Mean Delay: 8450
+Total Energy Consumption is 24296 kW
+Mean Utilization 0,5131
+Mean Total Up Time is 34260 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 53771 kW
-Mean Utilization 0,16278
-Mean Total Up Time is 23180 seconds
+Mean Delay: 9150
+Total Energy Consumption is 25380 kW
+Mean Utilization 0,47468
+Mean Total Up Time is 37199 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 56109 kW
-Mean Utilization 0,1647
-Mean Total Up Time is 24117 seconds
+Mean Delay: 9850
+Total Energy Consumption is 26229 kW
+Mean Utilization 0,43671
+Mean Total Up Time is 40001 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 55158 kW
-Mean Utilization 0,16231
-Mean Total Up Time is 23794 seconds
+Mean Delay: 10550
+Total Energy Consumption is 27215 kW
+Mean Utilization 0,4058
+Mean Total Up Time is 42921 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 57065 kW
-Mean Utilization 0,1626
-Mean Total Up Time is 24606 seconds
+Mean Delay: 11250
+Total Energy Consumption is 28835 kW
+Mean Utilization 0,39818
+Mean Total Up Time is 45862 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 53841 kW
-Mean Utilization 0,16188
-Mean Total Up Time is 23241 seconds
+Mean Delay: 11950
+Total Energy Consumption is 29452 kW
+Mean Utilization 0,36552
+Mean Total Up Time is 48612 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 53934 kW
-Mean Utilization 0,1649
-Mean Total Up Time is 23176 seconds
+Mean Delay: 12650
+Total Energy Consumption is 30126 kW
+Mean Utilization 0,34144
+Mean Total Up Time is 51148 seconds
 
-Mean Delay: 7050
-Total Energy Consumption is 57590 kW
-Mean Utilization 0,15969
-Mean Total Up Time is 24942 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 60104 kW
-Mean Utilization 0,15433
-Mean Total Up Time is 26244 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 56381 kW
-Mean Utilization 0,1525
-Mean Total Up Time is 24688 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 57540 kW
-Mean Utilization 0,15201
-Mean Total Up Time is 25214 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 61136 kW
-Mean Utilization 0,15633
-Mean Total Up Time is 26613 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 58764 kW
-Mean Utilization 0,15281
-Mean Total Up Time is 25719 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 56433 kW
-Mean Utilization 0,15366
-Mean Total Up Time is 24666 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 58735 kW
-Mean Utilization 0,15245
-Mean Total Up Time is 25721 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 57902 kW
-Mean Utilization 0,15801
-Mean Total Up Time is 25142 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 56319 kW
-Mean Utilization 0,15133
-Mean Total Up Time is 24705 seconds
-
-Mean Delay: 7550
-Total Energy Consumption is 57413 kW
-Mean Utilization 0,1551
-Mean Total Up Time is 25040 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 63674 kW
-Mean Utilization 0,14588
-Mean Total Up Time is 28167 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 63885 kW
-Mean Utilization 0,14812
-Mean Total Up Time is 28162 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 63650 kW
-Mean Utilization 0,14581
-Mean Total Up Time is 28159 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 59668 kW
-Mean Utilization 0,15179
-Mean Total Up Time is 26155 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 60775 kW
-Mean Utilization 0,14982
-Mean Total Up Time is 26721 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 60023 kW
-Mean Utilization 0,14574
-Mean Total Up Time is 26557 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 59177 kW
-Mean Utilization 0,14598
-Mean Total Up Time is 26173 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 61410 kW
-Mean Utilization 0,1442
-Mean Total Up Time is 27236 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 59345 kW
-Mean Utilization 0,1462
-Mean Total Up Time is 26239 seconds
-
-Mean Delay: 8050
-Total Energy Consumption is 59908 kW
-Mean Utilization 0,14818
-Mean Total Up Time is 26407 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 63511 kW
-Mean Utilization 0,1468
-Mean Total Up Time is 28055 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 62045 kW
-Mean Utilization 0,14084
-Mean Total Up Time is 27662 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 62354 kW
-Mean Utilization 0,14409
-Mean Total Up Time is 27660 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 64725 kW
-Mean Utilization 0,14334
-Mean Total Up Time is 28745 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 62537 kW
-Mean Utilization 0,14061
-Mean Total Up Time is 27891 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 65940 kW
-Mean Utilization 0,14105
-Mean Total Up Time is 29389 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 64398 kW
-Mean Utilization 0,14144
-Mean Total Up Time is 28684 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 62538 kW
-Mean Utilization 0,14577
-Mean Total Up Time is 27669 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 66580 kW
-Mean Utilization 0,14144
-Mean Total Up Time is 29656 seconds
-
-Mean Delay: 8550
-Total Energy Consumption is 64993 kW
-Mean Utilization 0,13826
-Mean Total Up Time is 29094 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 65658 kW
-Mean Utilization 0,13862
-Mean Total Up Time is 29375 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 65156 kW
-Mean Utilization 0,1381
-Mean Total Up Time is 29174 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 69153 kW
-Mean Utilization 0,13407
-Mean Total Up Time is 31160 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 66778 kW
-Mean Utilization 0,13533
-Mean Total Up Time is 30031 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 65752 kW
-Mean Utilization 0,13278
-Mean Total Up Time is 29688 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 66559 kW
-Mean Utilization 0,13539
-Mean Total Up Time is 29929 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 65435 kW
-Mean Utilization 0,13665
-Mean Total Up Time is 29365 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 68663 kW
-Mean Utilization 0,13466
-Mean Total Up Time is 30911 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 65495 kW
-Mean Utilization 0,13338
-Mean Total Up Time is 29544 seconds
-
-Mean Delay: 9050
-Total Energy Consumption is 65176 kW
-Mean Utilization 0,13855
-Mean Total Up Time is 29162 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 68624 kW
-Mean Utilization 0,12942
-Mean Total Up Time is 31150 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 69542 kW
-Mean Utilization 0,13405
-Mean Total Up Time is 31336 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 67759 kW
-Mean Utilization 0,13151
-Mean Total Up Time is 30656 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 72337 kW
-Mean Utilization 0,13285
-Mean Total Up Time is 32658 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 68041 kW
-Mean Utilization 0,13407
-Mean Total Up Time is 30659 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 71088 kW
-Mean Utilization 0,12903
-Mean Total Up Time is 32289 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 71649 kW
-Mean Utilization 0,13154
-Mean Total Up Time is 32415 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 67711 kW
-Mean Utilization 0,131
-Mean Total Up Time is 30659 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 70522 kW
-Mean Utilization 0,12886
-Mean Total Up Time is 32040 seconds
-
-Mean Delay: 9550
-Total Energy Consumption is 71928 kW
-Mean Utilization 0,13131
-Mean Total Up Time is 32553 seconds
+Mean Delay: 13350
+Total Energy Consumption is 30940 kW
+Mean Utilization 0,31643
+Mean Total Up Time is 54139 seconds
 

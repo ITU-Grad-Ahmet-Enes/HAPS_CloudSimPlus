@@ -1,5 +1,6 @@
 package org.cloudsimplus.haps;
 
+import com.sun.jdi.DoubleValue;
 import org.apache.commons.math3.distribution.WeibullDistribution;
 import org.apache.commons.math3.random.JDKRandomGenerator;
 import org.apache.commons.math3.random.RandomGenerator;
@@ -39,7 +40,7 @@ import static java.util.Comparator.comparingLong;
 
 public class LambdaPowerConsumption {
     // Number of broker
-    private static final int NUMBER_OF_BROKERS = 2;
+    private static final int NUMBER_OF_BROKERS = 1;
     private static final int SCHEDULING_INTERVAL = 10;
 
     private double MAX_HAPS_POWER_WATTS_SEC = 25;
@@ -195,6 +196,15 @@ public class LambdaPowerConsumption {
             for(Map.Entry entry : datacenterEnergyConsumption.entrySet()) {
                 DecimalFormat df = new DecimalFormat("#.##");
                 TotalPowerConsumptionInKWatt += Double.parseDouble(df.format(entry.getValue()).replaceAll(",", "."));
+            }
+
+            Double x = 0.0;
+            for(Datacenter dc : datacenterList){
+                final HostResourceStats cpuStats = dc.getHost(0).getCpuUtilizationStats();
+                final double utilizationPercentMean = cpuStats.getMean();
+                if(utilizationPercentMean > 0) x += dc.getHost(0).getPowerModel().getPower(utilizationPercentMean) * dc.getHost(0).getTotalUpTime() / 1000;
+
+
             }
 
             List<Cloudlet> sortedFinishedCloudletList;

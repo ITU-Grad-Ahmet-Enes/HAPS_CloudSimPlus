@@ -19,6 +19,8 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
 
     private int numberOfCloudletPerBroker;
     private int vmPerCloudlet;
+    private boolean singleVM;
+    private String typeHAPS;
 
     /**
      * Creates a new DatacenterBroker.
@@ -52,6 +54,18 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
         this.vmPerCloudlet = vmPerCloudlet;
     }
 
+    public BigSmallDCBroker(final CloudSim simulation, final String name, int numberOfCloudletPerBroker, String typeHAPS) {
+        super(simulation, name);
+        this.numberOfCloudletPerBroker = numberOfCloudletPerBroker;
+        this.typeHAPS = typeHAPS;
+    }
+
+    public BigSmallDCBroker(final CloudSim simulation, final String name, int numberOfCloudletPerBroker) {
+        super(simulation, name);
+        this.numberOfCloudletPerBroker = numberOfCloudletPerBroker;
+        this.singleVM = true;
+    }
+
     /**
      * {@inheritDoc}
      *
@@ -72,6 +86,15 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
     protected Datacenter defaultDatacenterMapper(final Datacenter lastDatacenter, final Vm vm) {
         if(getDatacenterList().isEmpty()) {
             throw new IllegalStateException("You don't have any Datacenter created.");
+        }
+        if (singleVM) {
+            return getDatacenterList().get((int) vm.getId());
+        }
+        if(typeHAPS.equals("b")){
+            return getDatacenterList().get((0));
+        }
+        else if(typeHAPS.equals("s")){
+            return getDatacenterList().get((int) vm.getId() % 10);
         }
         return getDatacenterList().get((int) vm.getId() / (numberOfCloudletPerBroker/vmPerCloudlet));
     }
@@ -94,6 +117,19 @@ public class BigSmallDCBroker extends DatacenterBrokerAbstract {
 
         if (getVmExecList().isEmpty()) {
             return Vm.NULL;
+        }
+
+        if(singleVM){
+            int division = (int) (cloudlet.getId() / numberOfCloudletPerBroker);
+            return getDatacenterList().get(division).getHost(0).getVmList().get(0);
+        }
+        if(typeHAPS.equals("b")){
+            int division = (int) (cloudlet.getId() / numberOfCloudletPerBroker);
+            return getDatacenterList().get(division).getHost(0).getVmList().get((int) cloudlet.getId() % 100);
+        }
+        else if(typeHAPS.equals("s")){
+            int division = (int) (cloudlet.getId() / numberOfCloudletPerBroker);
+            return getDatacenterList().get(division).getHost(0).getVmList().get((int) cloudlet.getId() % 10);
         }
         int division = (int) (cloudlet.getId() / numberOfCloudletPerBroker);
         return getDatacenterList().get(division).getHost(0).getVmList().get((int) cloudlet.getId() % (numberOfCloudletPerBroker/vmPerCloudlet));

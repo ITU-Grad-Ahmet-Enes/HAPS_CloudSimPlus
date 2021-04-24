@@ -17,8 +17,11 @@ import org.cloudbus.cloudsim.provisioners.PeProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.ResourceProvisionerSimple;
 import org.cloudbus.cloudsim.resources.Pe;
 import org.cloudbus.cloudsim.resources.PeSimple;
+import org.cloudbus.cloudsim.schedulers.cloudlet.CloudletSchedulerCompletelyFair;
 import org.cloudbus.cloudsim.schedulers.cloudlet.CloudletSchedulerSpaceShared;
+import org.cloudbus.cloudsim.schedulers.cloudlet.CloudletSchedulerTimeShared;
 import org.cloudbus.cloudsim.schedulers.vm.VmScheduler;
+import org.cloudbus.cloudsim.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudbus.cloudsim.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudbus.cloudsim.utilizationmodels.UtilizationModel;
 import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelDynamic;
@@ -27,6 +30,7 @@ import org.cloudbus.cloudsim.vms.HostResourceStats;
 import org.cloudbus.cloudsim.vms.Vm;
 import org.cloudbus.cloudsim.vms.VmResourceStats;
 import org.cloudbus.cloudsim.vms.VmSimple;
+import org.cloudsimplus.autoscaling.VerticalVmScalingSimple;
 import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.builders.tables.TextTableColumn;
 import org.cloudsimplus.haps.headers.BigSmallDCBroker;
@@ -103,11 +107,11 @@ public class VmPerCloudlet {
         typeHAPS = in.nextLine();
         if(typeHAPS.equals("b") || typeHAPS.equals("s")){
             if(typeHAPS.equals("b")){
-                NUMBER_OF_BROKERS = 5;
+                NUMBER_OF_BROKERS = 1;
                 NUMBER_OF_HAPS = NUMBER_OF_BROKERS;
             }
             else {
-                NUMBER_OF_BROKERS = 50;
+                NUMBER_OF_BROKERS = 10;
                 NUMBER_OF_HAPS = NUMBER_OF_BROKERS;
             }
             System.out.println("For Vm LifeTime Enter v , For CloudLetNumbers Enter c !");
@@ -141,16 +145,16 @@ public class VmPerCloudlet {
                 if (file.delete() ) {
                 }
             }
-            System.out.println("Enter vmPerCloudlet");
-            vmPerCloudlet = in.nextInt();
+            /*System.out.println("Enter vmPerCloudlet");
+            vmPerCloudlet = in.nextInt();*/
             if (s.equals("c")){
                 testType = 'c';
-                for(int i=0; i<24 ;i++){
+                for(int i=0; i<10 ;i++){
                     if(i!=0){
-                        NUMBER_OF_CLOUDLETS += 200;
+                        NUMBER_OF_CLOUDLETS += 100;
                     }
                     else{
-                        NUMBER_OF_CLOUDLETS = 200;
+                        NUMBER_OF_CLOUDLETS = 400;
                     }
                     numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
                     if(n.equals("y")){
@@ -173,7 +177,7 @@ public class VmPerCloudlet {
                 numberOfCloudletPerBroker = NUMBER_OF_CLOUDLETS / NUMBER_OF_BROKERS;
                 for(int i=0; i<20; i++){
                     if(i != 0){
-                        delay += 500;
+                        delay += 700;
                     }
                     else {
                         delay = 50;
@@ -212,10 +216,10 @@ public class VmPerCloudlet {
 
             simulationList.parallelStream().forEach(VmPerCloudlet::run);
             simulationList.forEach(VmPerCloudlet::printResults);
-            System.out.println(utilizationList);
-            System.out.println(totalUpTimeList);
-            System.out.println(lengthMeans);
-            System.out.println(typeHAPS);
+            System.out.println("utilizationList " + utilizationList);
+            System.out.println("totalUpTimeList " + totalUpTimeList);
+            System.out.println("lengthMeans " + lengthMeans);
+            System.out.println("typeHAPS " + typeHAPS);
         }
 
     }
@@ -228,37 +232,43 @@ public class VmPerCloudlet {
 
         if(typeHAPS.equals("b")){
             HOST_HAPS_NUMBER = NUMBER_OF_HAPS;
-            HOST_HAPS_PES_NUMBER = 10;
-            VM_HAPS_PES_NUMBER = 10;
+            HOST_HAPS_PES_NUMBER = 100*10;
+            VM_HAPS_PES_NUMBER = 100*10;
 
-            mipsHAPSHost = 1000 * 10;
+            mipsHAPSHost = 100;
             ramHAPSHost = 100000 * 10; //in Megabytes
             storageHAPSHost = 10000000 * 10;
             bwHAPSHost = 10000 * 10;
 
-            mipsHAPSVm = 10*vmPerCloudlet;
-            ramHAPSVm = 100000 * 10 / numberOfCloudletPerBroker;
-            sizeHAPSVm = 10000000 * 10 / numberOfCloudletPerBroker;
-            bwHAPSVm = 10000 * 10 / numberOfCloudletPerBroker;
+            mipsHAPSVm = 100;
+            ramHAPSVm = 100000 * 10;
+            sizeHAPSVm = 10000000 * 10;
+            bwHAPSVm = 10000 * 10;
+            //ramHAPSVm = 100000 * 10 / numberOfCloudletPerBroker;
+            //sizeHAPSVm = 10000000 * 10 / numberOfCloudletPerBroker;
+            //bwHAPSVm = 10000 * 10 / numberOfCloudletPerBroker;
+
         }
         else{
             HOST_HAPS_NUMBER = NUMBER_OF_HAPS;
-            HOST_HAPS_PES_NUMBER = 10;
-            VM_HAPS_PES_NUMBER = 10;
+            HOST_HAPS_PES_NUMBER = 100;
+            VM_HAPS_PES_NUMBER = 100;
 
-            mipsHAPSHost = 1000;
+            mipsHAPSHost = 100;
             ramHAPSHost = 100000;
             storageHAPSHost = 10000000;
-            bwHAPSHost = 10000;
+            bwHAPSHost = 100000;
 
-            mipsHAPSVm = 10*vmPerCloudlet;
-            ramHAPSVm = 100000 / numberOfCloudletPerBroker * vmPerCloudlet;
-            sizeHAPSVm = (long) 10000000 / numberOfCloudletPerBroker * vmPerCloudlet;
-            bwHAPSVm = (long) 10000 / numberOfCloudletPerBroker * vmPerCloudlet;
+            mipsHAPSVm = 100;
+            ramHAPSVm = 100000;
+            sizeHAPSVm = 10000000;
+            bwHAPSVm = 100000;
+            //ramHAPSVm = 100000 / numberOfCloudletPerBroker * vmPerCloudlet;
+            //sizeHAPSVm = (long) 10000000 / numberOfCloudletPerBroker * vmPerCloudlet;
+            //bwHAPSVm = (long) 10000 / numberOfCloudletPerBroker * vmPerCloudlet;
         }
 
 
-//500 VM limit koy
         simulation = new CloudSim();
         this.vmList = new ArrayList<>(NUMBER_OF_CLOUDLETS);
         this.cloudletList = new ArrayList<>(NUMBER_OF_CLOUDLETS);
@@ -275,7 +285,9 @@ public class VmPerCloudlet {
     private List<DatacenterBroker> createBrokers(double lambda) {
         final List<DatacenterBroker> list = new ArrayList<>(NUMBER_OF_BROKERS);
         for(int i = 0; i < NUMBER_OF_BROKERS; i++) {
-            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker, vmPerCloudlet);
+            //BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker, typeHAPS);
+            //BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker, vmPerCloudlet);
+            BigSmallDCBroker broker = new BigSmallDCBroker(simulation,"",numberOfCloudletPerBroker);
             broker.setLambdaValue(lambda);
             list.add(broker);
         }
@@ -312,7 +324,7 @@ public class VmPerCloudlet {
         final Host host = new HostSimple(ramHAPSHost, bwHAPSHost, storageHAPSHost, peList);
         host    .setRamProvisioner(new ResourceProvisionerSimple())
                 .setBwProvisioner(new ResourceProvisionerSimple())
-                .setVmScheduler(new VmSchedulerTimeShared())
+                .setVmScheduler(new VmSchedulerSpaceShared())
                 .setPowerModel(powerModel);
         host.enableUtilizationStats();
         return  host;
@@ -322,7 +334,11 @@ public class VmPerCloudlet {
         // Assigning Vms
         int i=0;
         for (DatacenterBroker broker : brokers) {
-            for(int j=0; j<numberOfCloudletPerBroker/vmPerCloudlet; j++){
+            /*int numberOfVms = 0;
+            if(typeHAPS.equals("b")) numberOfVms = 100;
+            else numberOfVms = 10;
+            for(int j=0; j<numberOfVms; j++){*/
+            for(int j=0; j<1; j++){
                 Vm vm = createVm(i++);
                 vmList.add(vm);
                 broker.submitVm(vm);
@@ -335,10 +351,10 @@ public class VmPerCloudlet {
         for (DatacenterBroker broker : brokers) {
             for (; i<NUMBER_OF_CLOUDLETS; i++) {
                 //RandomGenerator rg = new JDKRandomGenerator();
-                ExponentialDistribution lengDist = new ExponentialDistribution(28754*2);
+                ExponentialDistribution lengDist = new ExponentialDistribution(28750);
                 long lengthCLOUDLETS = (long) (lengDist.sample()*0.09325 + lengDist.sample()*0.22251 + lengDist.sample()*0.68424);
-                if(lengthCLOUDLETS > 80000) lengthCLOUDLETS = 80000;
-                if(lengthCLOUDLETS < 20000) lengthCLOUDLETS = 20000;
+                if(lengthCLOUDLETS > 86250) lengthCLOUDLETS = 86250;
+                if(lengthCLOUDLETS < 8000) lengthCLOUDLETS = 8000;
                 Cloudlet cloudlet;
                 if(testType == 'v'){
                     cloudlet = createCloudlet(i, lengthCLOUDLETS, delay);
@@ -389,8 +405,8 @@ public class VmPerCloudlet {
             if(id % numberOfCloudletPerBroker < numberOfCloudletPerBroker*0.4){ //LOW
                 fileSize = 100;
                 outputSize = 100;
-                pesNumber = 5;
-                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+5)/100);
+                pesNumber = 6;
+                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+5));
                 cloudlet = new CloudletSimple(id, length, pesNumber)
                         .setFileSize(fileSize)
                         .setOutputSize(outputSize)
@@ -402,8 +418,8 @@ public class VmPerCloudlet {
                     id % numberOfCloudletPerBroker < numberOfCloudletPerBroker * 0.8 ){  // Mid
                 fileSize = 500;
                 outputSize = 500;
-                pesNumber = 7;
-                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+5)/100);
+                pesNumber = 8;
+                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+7));
                 cloudlet = new CloudletSimple(id, length, pesNumber)
                         .setFileSize(fileSize)
                         .setOutputSize(outputSize)
@@ -415,7 +431,7 @@ public class VmPerCloudlet {
                 fileSize = 1000;
                 outputSize = 1000;
                 pesNumber = 10;
-                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+10)/100);
+                utilizationModel = new UtilizationModelDynamic(Math.abs(r.nextGaussian()+10));
                 cloudlet = new CloudletSimple(id, length, pesNumber)
                         .setFileSize(fileSize)
                         .setOutputSize(outputSize)
@@ -424,9 +440,12 @@ public class VmPerCloudlet {
                         .setUtilizationModelRam(new UtilizationModelDynamic(UtilizationModel.Unit.ABSOLUTE,500)); // 500 MB
             }
         }
+        /*if(id > 2000){
+            delay = (int) (id);
+        }*/
         ExponentialDistribution expDist = new ExponentialDistribution(delay);
         double delayTime = (expDist.sample()*0.34561 + expDist.sample()*0.08648 + expDist.sample()*0.56791);
-        if(delayTime > delay * 3) delayTime = delay * 3;
+        if(delayTime > delay * 4) delayTime = delay * 4;
         cloudlet.setSubmissionDelay(delayTime);
         cloudlet.setExecStartTime(delayTime);
         return cloudlet;
