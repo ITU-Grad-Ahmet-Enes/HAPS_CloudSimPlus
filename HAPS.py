@@ -32,7 +32,7 @@ bigHAPS_Cloudlet_Utilization = []
 bigHAPS_Cloudlet_Mean_Total_Up_Time = []
 for i in range(len(smallHAPS_Cloudlet)):
     if i < len(smallHAPS_Cloudlet) / 3:
-        Number_of_Cloudlets.append(100 + i * 100)
+        Number_of_Cloudlets.append(400 + i * 100)
         type_small_cloudlet.append('Small')
         type_big_cloudlet.append('Big')
     if i % 3 == 0:

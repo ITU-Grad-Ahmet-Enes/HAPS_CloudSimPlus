@@ -52,33 +52,33 @@ type_big_cloudlet = []
 type_big_vm = []
 Number_of_Cloudlets = []
 Delays = []
-for i in range(24):  # i<5 diger dosyadaki iterasyon cloudlet
+for i in range(10):  # i<5 diger dosyadaki iterasyon cloudlet
     energy_small_cloudlet = np.array([])
     energy_big_cloudlet = np.array([])
     sum_utilization_small = 0.0
     sum_utilization_big = 0.0
     sum_up_time_small = 0
     sum_up_time_big = 0
-    Number_of_Cloudlets.append(200 + i * 200)
+    Number_of_Cloudlets.append(400 + i * 100)
     type_small_cloudlet.append('Small')
     type_big_cloudlet.append('Big')
     for j in range(15):  # (number of test = 10 ) * 3
         if j % 3 == 0:
-            energy_small_cloudlet = np.append(energy_small_cloudlet, int(smallHAPS_Cloudlet[i * 30 + j]))
-            energy_big_cloudlet = np.append(energy_big_cloudlet, int(bigHAPS_Cloudlet[i * 30 + j]))
+            energy_small_cloudlet = np.append(energy_small_cloudlet, int(smallHAPS_Cloudlet[i * 15 + j]))
+            energy_big_cloudlet = np.append(energy_big_cloudlet, int(bigHAPS_Cloudlet[i * 15 + j]))
         elif j % 3 == 1:
-            sum_utilization_small += float(smallHAPS_Cloudlet[i * 30 + j].replace(',', '.'))
-            sum_utilization_big += float(bigHAPS_Cloudlet[i * 30 + j].replace(',', '.'))
+            sum_utilization_small += float(smallHAPS_Cloudlet[i * 15 + j].replace(',', '.'))
+            sum_utilization_big += float(bigHAPS_Cloudlet[i * 15 + j].replace(',', '.'))
         elif j % 3 == 2:
-            sum_up_time_small += int(smallHAPS_Cloudlet[i * 30 + j])
-            sum_up_time_big += int(bigHAPS_Cloudlet[i * 30 + j])
-    sum_utilization_small /= 10.0
+            sum_up_time_small += int(smallHAPS_Cloudlet[i * 15 + j])
+            sum_up_time_big += int(bigHAPS_Cloudlet[i * 15 + j])
+    sum_utilization_small /= 5.0
     small_cloudlet_utilization.append(round(sum_utilization_small, 4))
-    sum_utilization_big /= 10.0
+    sum_utilization_big /= 5.0
     big_cloudlet_utilization.append(round(sum_utilization_big, 4))
-    sum_up_time_small /= 10
+    sum_up_time_small /= 5
     small_cloudlet_up_time.append(round(sum_up_time_small, 4))
-    sum_up_time_big /= 10
+    sum_up_time_big /= 5
     big_cloudlet_up_time.append(sum_up_time_big)
     std_energy_small_cloudlet = np.append(std_energy_small_cloudlet, np.std(energy_small_cloudlet[0:9]))
     std_energy_big_cloudlet = np.append(std_energy_big_cloudlet, np.std(energy_big_cloudlet[0:9]))
@@ -92,26 +92,26 @@ for i in range(20):  # i<5 diger dosyadaki iterasyon vm
     sum_utilization_big = 0.0
     sum_up_time_small = 0
     sum_up_time_big = 0
-    Delays.append(50 + i * 500)
+    Delays.append(50 + i * 700)
     type_small_vm.append('Small')
     type_big_vm.append('Big')
     for j in range(15):  # (number of test = 10 ) * 3
         if j % 3 == 0:
-            energy_small_vm = np.append(energy_small_vm, int(smallHAPS_Vm_Life_Time[i * 30 + j]))
-            energy_big_vm = np.append(energy_big_vm, int(bigHAPS_Vm_Life_Time[i * 30 + j]))
+            energy_small_vm = np.append(energy_small_vm, int(smallHAPS_Vm_Life_Time[i * 15 + j]))
+            energy_big_vm = np.append(energy_big_vm, int(bigHAPS_Vm_Life_Time[i * 15 + j]))
         elif j % 3 == 1:
-            sum_utilization_small += float(smallHAPS_Vm_Life_Time[i * 30 + j].replace(',', '.'))
-            sum_utilization_big += float(bigHAPS_Vm_Life_Time[i * 30 + j].replace(',', '.'))
+            sum_utilization_small += float(smallHAPS_Vm_Life_Time[i * 15 + j].replace(',', '.'))
+            sum_utilization_big += float(bigHAPS_Vm_Life_Time[i * 15 + j].replace(',', '.'))
         elif j % 3 == 2:
-            sum_up_time_small += int(smallHAPS_Vm_Life_Time[i * 30 + j])
-            sum_up_time_big += int(bigHAPS_Vm_Life_Time[i * 30 + j])
-    sum_utilization_small /= 10.0
+            sum_up_time_small += int(smallHAPS_Vm_Life_Time[i * 15 + j])
+            sum_up_time_big += int(bigHAPS_Vm_Life_Time[i * 15 + j])
+    sum_utilization_small /= 5.0
     small_vm_utilization.append(round(sum_utilization_small, 4))
-    sum_utilization_big /= 10.0
+    sum_utilization_big /= 5.0
     big_vm_utilization.append(round(sum_utilization_big, 4))
-    sum_up_time_small /= 10
+    sum_up_time_small /= 5
     small_vm_up_time.append(round(sum_up_time_small, 4))
-    sum_up_time_big /= 10
+    sum_up_time_big /= 5
     big_vm_up_time.append(sum_up_time_big)
     std_energy_small_vm = np.append(std_energy_small_vm, np.std(energy_small_vm[0:9]))
     std_energy_big_vm = np.append(std_energy_big_vm, np.std(energy_big_vm[0:9]))
@@ -172,4 +172,76 @@ fig.update_traces(mode="markers+lines",
                   ])
                   )
 fig.update_layout(title_text="x:MeanDelay y:EnergyConsuptionInKw, NumberOfCloudlet 4000", width=1800, )
+fig.show()
+
+##################################################################################################
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(x=Number_of_Cloudlets, y=y_small_cloudlet_energy, name="Lower Altitude",
+                         mode="lines+markers", marker_symbol="circle",
+                         marker=dict(color='#121111', size=8),
+                         line=dict(color='#45403f', width=2, dash='dash'),
+                         error_y=dict(
+                             type='data',
+                             array=std_energy_small_cloudlet,
+                             visible=True)
+
+                         ))
+
+fig.add_trace(go.Scatter(x=Number_of_Cloudlets, y=y_big_cloudlet_energy, name="Higher Altitude",
+                         mode="lines+markers", marker_symbol="diamond-open-dot",
+                         marker=dict(color='#121111', size=8),
+                         line=dict(color='#45403f', width=2, dash='dashdot'),
+                         error_y=dict(
+                             type='data',
+                             array=std_energy_big_cloudlet,
+                             visible=True)
+
+                         ))
+
+fig.update_layout(
+    title_text="x:NumberOfCloudLets y:EnergyConsuptionInKw",
+    width=1200,
+    yaxis_title='Energy Consumption (KWatt)',
+    xaxis_title='Number of Cloudlets',
+)
+
+fig.update_layout(template="none")
+
+fig.show()
+##################################################################################################
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(x=Delays, y=y_small_vm_energy, name="Lower Altitude",
+                         mode="lines+markers", marker_symbol="square",
+                         marker=dict(color='#121111', size=8),
+                         line=dict(color='#45403f', width=2, dash='dash'),
+                         error_y=dict(
+                             type='data',
+                             array=std_energy_small_vm,
+                             visible=True)
+
+                         ))
+
+fig.add_trace(go.Scatter(x=Delays, y=y_big_vm_energy, name="Higher Altitude",
+                         mode="lines+markers", marker_symbol="diamond-open-dot",
+                         marker=dict(color='#121111', size=8),
+                         line=dict(color='#45403f', width=2, dash='dashdot'),
+                         error_y=dict(
+                             type='data',
+                             array=std_energy_big_vm,
+                             visible=True)
+
+                         ))
+
+fig.update_layout(
+    title_text="x:x:MeanDelay y:EnergyConsumptionInKw, NumberOfCloudlet 2000",
+    width=1200,
+    yaxis_title='Energy Consumption (KWatt)',
+    xaxis_title='Mean Delay (second)',
+)
+
+fig.update_layout(template="none")
+
 fig.show()
